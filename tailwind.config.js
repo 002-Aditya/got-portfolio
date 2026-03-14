@@ -10,6 +10,7 @@ export default {
         gold: "#d4af37",
         frost: "#f8fafc",
         resume: "#6f7a84",
+        darkResume: "#5a646d",
         ravenButton: "#fce9e9ff",
       },
       fontFamily: {

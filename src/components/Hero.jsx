@@ -69,7 +69,7 @@ const Hero = () => {
           <a 
             href={resumePdf} 
             download="AdityaKumar_Resume.pdf"
-            className="bg-[#6f7a84] text-white font-body font-bold text-sm px-5 py-2 rounded-full hover: transition-colors flex items-center gap-2 text-[#000000]"
+            className="bg-resume text-white font-body font-bold text-sm px-5 py-2 rounded-full flex items-center gap-2 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/50 hover:bg-[#5a646d]"
           >
             <Terminal className="w-4 h-4" />
             RESUME
