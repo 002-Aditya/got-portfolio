@@ -116,7 +116,7 @@ const Contact = () => {
                   type="text" 
                   id="name" 
                   name="user_name"
-                  className="w-full bg-[#1e1a18] border border-[#1e1a18] px-4 py-3 text-gray-300 font-body text-sm focus:outline-none focus:border-[#d4af37]/50 focus:bg-[#151211] transition-colors placeholder-gray-600"
+                  className="rounded w-full bg-[#1e1a18] border border-[#1e1a18] px-4 py-3 text-gray-300 font-body text-sm focus:outline-none focus:border-[#d4af37]/50 focus:bg-[#151211] transition-colors placeholder-gray-600"
                   placeholder="Your Name"
                   required
                 />
@@ -131,7 +131,7 @@ const Contact = () => {
                   type="email" 
                   id="email" 
                   name="user_email"
-                  className="w-full bg-[#1e1a18] border border-[#1e1a18] px-4 py-3 text-gray-300 font-body text-sm focus:outline-none focus:border-[#d4af37]/50 focus:bg-[#151211] transition-colors placeholder-gray-600"
+                  className="rounded w-full bg-[#1e1a18] border border-[#1e1a18] px-4 py-3 text-gray-300 font-body text-sm focus:outline-none focus:border-[#d4af37]/50 focus:bg-[#151211] transition-colors placeholder-gray-600"
                   placeholder="your.email@realm.com"
                   required
                 />
@@ -146,7 +146,7 @@ const Contact = () => {
               <select 
                 id="urgency" 
                 name="urgency_level"
-                className="w-full bg-[#1e1a18] border border-[#1e1a18] px-4 py-3 text-gray-300 font-body text-sm focus:outline-none focus:border-[#d4af37]/50 focus:bg-[#151211] transition-colors cursor-pointer"
+                className="appearance-none rounded w-full bg-[#1e1a18] border border-[#1e1a18] px-4 py-3 text-gray-300 font-body text-sm focus:outline-none focus:border-[#d4af37]/50 focus:bg-[#151211] transition-colors cursor-pointer"
               >
                 <option value="Standard Dispatch">Standard Dispatch</option>
                 <option value="Swift Wings (Urgent)">Swift Wings (Urgent)</option>
@@ -163,7 +163,7 @@ const Contact = () => {
                 id="message" 
                 name="message"
                 rows="5" 
-                className="w-full bg-[#1e1a18] border border-[#1e1a18] px-4 py-3 text-gray-300 font-body text-sm focus:outline-none focus:border-[#d4af37]/50 focus:bg-[#151211] transition-colors placeholder-gray-600 resize-y min-h-[50px]"
+                className="rounded w-full bg-[#1e1a18] border border-[#1e1a18] px-4 py-3 text-gray-300 font-body text-sm focus:outline-none focus:border-[#d4af37]/50 focus:bg-[#151211] transition-colors placeholder-gray-600 resize-y min-h-[50px]"
                 placeholder="Speak your mind..."
                 required
               ></textarea>
