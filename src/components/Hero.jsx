@@ -54,13 +54,13 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
         >
-          <a href="#" className="text-gray-400 hover:text-frost transition-colors" title="GitHub">
+          <a href="https://github.com/002-Aditya" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-frost transition-colors" title="GitHub">
             <Github className="w-5 h-5" />
           </a>
-          <a href="#" className="text-gray-400 hover:text-frost transition-colors" title="LinkedIn">
+          <a href="https://www.linkedin.com/in/adityakumar2001/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-frost transition-colors" title="LinkedIn">
             <Linkedin className="w-5 h-5" />
           </a>
-          <a href="#" className="text-gray-400 hover:text-frost transition-colors" title="Contact">
+          <a href="mailto:dr.adityakumar2001@gmail.com" className="text-gray-400 hover:text-frost transition-colors" title="Contact">
             <Mail className="w-5 h-5" />
           </a>
           

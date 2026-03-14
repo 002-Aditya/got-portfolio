@@ -46,14 +46,15 @@ const DragonCursor = () => {
       {/* Fire Clicks */}
       <AnimatePresence>
         {fireDrops.map(fire => (
-          <motion.div
+          <motion.img
             key={fire.id}
-            initial={{ opacity: 1, scale: 0 }}
-            animate={{ opacity: 0, scale: 2 }}
+            src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Fire.png"
+            initial={{ opacity: 0.9, scale: 0.2, y: 0 }}
+            animate={{ opacity: 0, scale: 1.2, y: -60 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 2, ease: "easeOut" }}
-            className="fixed pointer-events-none z-[100] w-48 h-48 rounded-full blur-2xl bg-[radial-gradient(circle,rgba(239,68,68,0.8)_0%,rgba(245,158,11,0.6)_40%,transparent_100%)] mix-blend-screen"
-            style={{ left: fire.x - 96, top: fire.y - 96 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="fixed pointer-events-none z-[100] w-32 h-32 object-contain drop-shadow-[0_0_20px_rgba(255,100,0,0.6)]"
+            style={{ left: fire.x - 64, top: fire.y - 64 }}
           />
         ))}
       </AnimatePresence>
