@@ -163,7 +163,7 @@ const Contact = () => {
                 id="message" 
                 name="message"
                 rows="5" 
-                className="w-full bg-[#1e1a18] border border-[#1e1a18] px-4 py-3 text-gray-300 font-body text-sm focus:outline-none focus:border-[#d4af37]/50 focus:bg-[#151211] transition-colors placeholder-gray-600 resize-y"
+                className="w-full bg-[#1e1a18] border border-[#1e1a18] px-4 py-3 text-gray-300 font-body text-sm focus:outline-none focus:border-[#d4af37]/50 focus:bg-[#151211] transition-colors placeholder-gray-600 resize-y min-h-[50px]"
                 placeholder="Speak your mind..."
                 required
               ></textarea>
