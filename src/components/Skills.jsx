@@ -5,43 +5,74 @@ import { Database, Server, Code, GitBranch, Layers, Terminal } from 'lucide-reac
 const skillsData = [
   {
     category: "Programming Languages",
-    icon: <Code className="w-8 h-8 text-gold mb-4" />,
+    icon: <Code className="w-8 h-8 mb-4" />,
     items: ["Java", "JavaScript"]
   },
   {
     category: "Backend Frameworks",
-    icon: <Server className="w-8 h-8 text-gold mb-4" />,
+    icon: <Server className="w-8 h-8 mb-4" />,
     items: ["Spring Boot", "Express.js (Node.js)"]
   },
   {
     category: "Databases",
-    icon: <Database className="w-8 h-8 text-gold mb-4" />,
+    icon: <Database className="w-8 h-8 mb-4" />,
     items: ["PostgreSQL", "MySQL"]
   },
   {
     category: "ORM & Data Access",
-    icon: <Layers className="w-8 h-8 text-gold mb-4" />,
+    icon: <Layers className="w-8 h-8 mb-4" />,
     items: ["Hibernate", "Sequelize", "Prisma"]
   },
   {
     category: "Messaging Systems",
-    icon: <Terminal className="w-8 h-8 text-gold mb-4" />,
+    icon: <Terminal className="w-8 h-8 mb-4" />,
     items: ["Apache Kafka", "RabbitMQ"]
   },
   {
     category: "DevOps & Version Control",
-    icon: <GitBranch className="w-8 h-8 text-gold mb-4" />,
+    icon: <GitBranch className="w-8 h-8 mb-4" />,
     items: ["Docker", "Git", "Maven", "Bitbucket", "GitHub"]
   }
+];
+
+const bloodDripsConfig = [
+  [ { left: '12%', height: '45px', width: '7px' }, { left: '22%', height: '25px', width: '4px' }, { left: '82%', height: '55px', width: '6px' } ],
+  [ { left: '18%', height: '60px', width: '8px' }, { left: '75%', height: '30px', width: '5px' }, { left: '88%', height: '45px', width: '6px' } ],
+  [ { left: '8%', height: '35px', width: '5px' }, { left: '25%', height: '70px', width: '9px' }, { left: '80%', height: '25px', width: '4px' } ],
+  [ { left: '15%', height: '25px', width: '4px' }, { left: '85%', height: '65px', width: '8px' }, { left: '92%', height: '35px', width: '5px' } ],
+  [ { left: '20%', height: '50px', width: '6px' }, { left: '28%', height: '20px', width: '3px' }, { left: '78%', height: '55px', width: '7px' } ],
+  [ { left: '10%', height: '65px', width: '8px' }, { left: '16%', height: '30px', width: '4px' }, { left: '88%', height: '40px', width: '6px' } ],
+];
+
+const BloodDrip = ({ left, height, width }) => (
+  <svg
+    className="absolute top-0 mix-blend-multiply pointer-events-none z-0"
+    style={{ left, height, width, opacity: 0.85, filter: 'drop-shadow(0px 1px 2px rgba(60,0,0,0.6))' }}
+    preserveAspectRatio="none"
+    viewBox="0 0 10 100"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M 0 0 L 10 0 Q 8 20 5 40 T 6 80 Q 7 95 5 100 Q 3 95 4 80 T 5 40 Q 2 20 0 0 Z" fill="#4a0000" />
+  </svg>
+);
+
+const tools = [
+  { name: 'VS Code', logo: 'https://cdn.simpleicons.org/visualstudiocode/3e2723' },
+  { name: 'Spring Tool Suite', logo: 'https://cdn.simpleicons.org/spring/3e2723' },
+  { name: 'WebStorm', logo: 'https://cdn.simpleicons.org/webstorm/3e2723' },
+  { name: 'Postman', logo: 'https://cdn.simpleicons.org/postman/3e2723' },
+  { name: 'PgAdmin', logo: 'https://cdn.simpleicons.org/postgresql/3e2723' },
+  { name: 'Jira', logo: 'https://cdn.simpleicons.org/jira/3e2723' },
+  { name: 'Datagrip', logo: 'https://cdn.simpleicons.org/datagrip/3e2723' },
+  { name: 'ApiDog', logo: 'https://cdn.simpleicons.org/apidog/3e2723' },
+  { name: 'Antigravity', logo: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%233e2723" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>' },
 ];
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.15
-    }
+    transition: { staggerChildren: 0.15 }
   }
 };
 
@@ -57,7 +88,6 @@ const cardVariants = {
 const Skills = () => {
   return (
     <section id="skills" className="py-24 bg-[#0a0a0a] relative overflow-hidden">
-      {/* Background Decor */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-crimson/5 rounded-full blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/5 rounded-full blur-[100px] pointer-events-none"></div>
 
@@ -73,11 +103,12 @@ const Skills = () => {
           <h2 className="font-cinzel text-4xl md:text-5xl text-frost tracking-wider">
             Weapons of Choice
           </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mt-6"></div>
+          <div className="h-1 w-24 bg-gradient-to-r from-transparent via-crimson to-transparent mx-auto mt-6"></div>
         </motion.div>
 
+        {/* Removed the '/cards' specific naming and just used standard 'group' */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 group"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -87,23 +118,29 @@ const Skills = () => {
             <motion.div 
               key={index}
               variants={cardVariants}
-              className="group relative bg-[#121212] border border-iron p-8 rounded-sm hover:-translate-y-2 transition-transform duration-500 hover:shadow-[0_10px_30px_rgba(212,175,55,0.1)] hover:border-gold/30"
+              whileHover={{ y: -12, scale: 1.02, transition: { duration: 0.2 } }}
+              className="relative bg-[#8b6b4a] border border-[#4a2e1b] p-8 rounded-xl transition-all duration-500 shadow-[inset_0_0_80px_rgba(30,15,10,0.85),0_8px_20px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_0_100px_rgba(30,15,10,0.9),0_15px_40px_rgba(153,27,27,0.25)] hover:border-crimson overflow-hidden group-hover:opacity-60 group-hover:brightness-50 hover:!opacity-100 hover:!brightness-100 cursor-pointer"
+              style={{
+                backgroundImage: `url('https://www.transparenttextures.com/patterns/crumpled-paper.png')`,
+                backgroundBlendMode: 'multiply'
+              }}
             >
-              {/* Top Accent Line */}
-              <div className="absolute top-0 left-0 w-0 h-[2px] bg-gold transition-all duration-500 group-hover:w-full"></div>
+              {bloodDripsConfig[index % bloodDripsConfig.length].map((drip, i) => (
+                <BloodDrip key={i} left={drip.left} height={drip.height} width={drip.width} />
+              ))}
               
-              <div className="flex flex-col items-center text-center">
-                <div className="transform group-hover:scale-110 transition-transform duration-500">
-                  {skillGroup.icon}
+              <div className="flex flex-col items-center text-center relative z-10">
+                <div className="transform transition-transform duration-500 drop-shadow-md">
+                  {React.cloneElement(skillGroup.icon, { className: "w-8 h-8 text-[#5a0000] mb-4" })}
                 </div>
-                <h3 className="font-cinzel text-xl text-frost mb-6 tracking-wide group-hover:text-gold transition-colors duration-300">
+                <h3 className="font-cinzel text-xl text-[#1a0f0a] font-bold mb-6 tracking-wide transition-colors duration-300">
                   {skillGroup.category}
                 </h3>
                 
                 <ul className="flex flex-col gap-3 w-full">
                   {skillGroup.items.map((item, idx) => (
-                    <li key={idx} className="font-inter text-gray-400 text-[15px] flex items-center justify-center gap-2">
-                      <span className="w-1.5 h-1.5 bg-crimson rounded-full opacity-50 block"></span>
+                    <li key={idx} className="font-inter font-bold text-[#2a1610] text-[15px] flex items-center justify-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-[#5a0000] rounded-full block shadow-sm"></span>
                       {item}
                     </li>
                   ))}
@@ -113,15 +150,30 @@ const Skills = () => {
           ))}
         </motion.div>
 
-        {/* Tools Marquee (Optional extra touch) */}
-        <div className="mt-20 pt-10 border-t border-iron/50 text-center">
-          <p className="font-cinzel text-gray-500 tracking-widest uppercase text-sm mb-6">Arsenals & Tools</p>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8 font-inter text-gray-400 text-sm md:text-base">
-            {['VS Code', 'Spring Tool Suite', 'WebStorm', 'Postman', 'PgAdmin', 'Jira'].map(tool => (
-              <span key={tool} className="px-4 py-2 bg-charcoal border border-iron rounded-full hover:text-frost hover:border-gray-500 transition-colors">
-                {tool}
-              </span>
-            ))}
+        {/* Tools Marquee Carousel */}
+        <div className="mt-24 pt-10 border-t border-iron/50 overflow-hidden relative w-full flex flex-col items-center">
+          <p className="font-cinzel text-gray-500 tracking-widest uppercase text-sm mb-10 text-center">
+            Arsenals & Tools
+          </p>
+
+          <div className="flex w-full group overflow-hidden">  
+            <div className="flex shrink-0 w-max animate-marquee gap-8 md:gap-12 items-center group-hover:[animation-play-state:paused] pr-8 md:pr-12 pb-4">
+              {tools.map((tool, idx) => (
+                <div key={`track1-${idx}`} className="flex items-center gap-3 px-6 py-3 bg-[url('https://www.transparenttextures.com/patterns/crumpled-paper.png')] bg-[#bda27e] bg-blend-multiply border border-[#6b4423] rounded-full shadow-[inset_0_0_20px_rgba(62,39,35,0.4),0_4px_10px_rgba(0,0,0,0.6)] flex-shrink-0 transition-transform duration-300 hover:scale-105">
+                  <img src={tool.logo} alt={tool.name} className="w-6 h-6 object-contain" title={tool.name} />
+                  <span className="font-inter font-bold text-[#2a1610] text-sm md:text-base">{tool.name}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex shrink-0 w-max animate-marquee gap-8 md:gap-12 items-center group-hover:[animation-play-state:paused] pr-8 md:pr-12 pb-4" aria-hidden="true">
+              {tools.map((tool, idx) => (
+                <div key={`track2-${idx}`} className="flex items-center gap-3 px-6 py-3 bg-[url('https://www.transparenttextures.com/patterns/crumpled-paper.png')] bg-[#bda27e] bg-blend-multiply border border-[#6b4423] rounded-full shadow-[inset_0_0_20px_rgba(62,39,35,0.4),0_4px_10px_rgba(0,0,0,0.6)] flex-shrink-0 transition-transform duration-300 hover:scale-105">
+                  <img src={tool.logo} alt={tool.name} className="w-6 h-6 object-contain" title={tool.name} />
+                  <span className="font-inter font-bold text-[#2a1610] text-sm md:text-base">{tool.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

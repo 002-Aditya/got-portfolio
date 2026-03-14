@@ -17,7 +17,7 @@ const projects = [
     title: "Distrib. Invoice Workflows",
     description: "A highly resilient Node.js microservice architecture for capturing, storing, and rendering hundreds of invoices with complex SQL-driven validation constraints.",
     tags: ["Node.js", "Express", "PostgreSQL"],
-    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4bcafe4?auto=format&fit=crop&q=80&w=1000",
+    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1000",
     links: { github: "#" }
   },
   {
@@ -55,49 +55,44 @@ const Projects = () => {
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
               custom={index}
-              className="group relative bg-[#121212] border border-iron h-full flex flex-col hover:-translate-y-2 transition-transform duration-500 overflow-hidden hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] hover:border-gold/30"
+              className="group relative bg-[url('https://www.transparenttextures.com/patterns/aged-paper.png')] bg-[#ebd5b3] border-2 border-yellow-900 rounded-2xl h-full flex flex-col hover:-translate-y-2 transition-transform duration-500 overflow-hidden shadow-[0_4px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_10px_30px_rgba(250,204,21,0.3)] hover:border-yellow-700 before:content-[''] before:absolute before:inset-0 before:bg-yellow-900/10 before:pointer-events-none before:rounded-2xl"
             >
-              <div className="aspect-video overflow-hidden relative border-b border-iron">
-                <div className="absolute inset-0 bg-charcoal/40 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+              <div className="aspect-video overflow-hidden relative border-b-2 border-yellow-900">
+                <div className="absolute inset-0 bg-yellow-900/40 group-hover:bg-transparent transition-colors duration-500 z-10 mix-blend-multiply"></div>
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                  className="w-full h-full object-cover filter sepia-[.5] group-hover:sepia-0 group-hover:scale-105 transition-all duration-700"
                 />
               </div>
 
               <div className="p-6 flex-grow flex flex-col relative z-20">
-                <h3 className="font-cinzel text-xl text-gold mb-3 group-hover:text-frost transition-colors">
+                <h3 className="font-cinzel text-xl text-yellow-950 font-bold mb-3 group-hover:text-yellow-700 transition-colors">
                   {project.title}
                 </h3>
-                <p className="font-inter text-gray-400 text-sm mb-6 flex-grow">
+                <p className="font-inter text-yellow-900/80 font-medium text-sm mb-6 flex-grow">
                   {project.description}
                 </p>
                 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map(tag => (
-                    <span key={tag} className="text-xs font-inter font-medium text-crimson bg-crimson/10 px-2 py-1 border border-crimson/20">
+                    <span key={tag} className="text-xs font-inter font-bold text-red-900 bg-red-900/10 px-2 py-1 border border-red-900/30 rounded-sm">
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex items-center gap-4 pt-4 border-t border-iron">
+                <div className="flex items-center gap-4 pt-4 border-t border-yellow-900/30">
                   {project.links.github && (
-                    <a href={project.links.github} className="text-gray-400 hover:text-gold transition-colors flex items-center gap-2 font-inter text-sm">
+                    <a href={project.links.github} className="text-yellow-950 hover:text-yellow-700 font-bold transition-colors flex items-center gap-2 font-inter text-sm">
                       <Github className="w-4 h-4" /> Code
                     </a>
                   )}
-                  {/* {project.links.live && (
-                    <a href={project.links.live} className="text-gray-400 hover:text-gold transition-colors flex items-center gap-2 font-inter text-sm ml-auto">
-                      <ExternalLink className="w-4 h-4" /> Live Demo
-                    </a>
-                  )} */}
                 </div>
               </div>
               
               {/* Animated borders */}
-              <div className="absolute bottom-0 left-0 h-1 bg-gold w-0 group-hover:w-full transition-all duration-500"></div>
+              <div className="absolute bottom-0 left-0 h-1 bg-yellow-700 w-0 group-hover:w-full transition-all duration-500 rounded-b-2xl"></div>
             </motion.div>
           ))}
         </div>

@@ -39,11 +39,11 @@ const Hero = () => {
     <section id="home" className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-charcoal">
       {/* Parallax Background */}
       <motion.div 
-        className="absolute inset-0 w-full h-full object-cover opacity-30 bg-cover bg-center"
+        className="absolute inset-0 w-full h-full object-cover opacity-50 bg-cover bg-center"
         style={{ 
           y: yBackground,
-          backgroundImage: "url('https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=2094&auto=format&fit=crop')",
-          filter: "grayscale(100%) contrast(120%) brightness(40%)"
+          backgroundImage: "url('https://images.unsplash.com/photo-1605806616949-1e87b487cb2a?q=80&w=2000&auto=format&fit=crop')",
+          filter: "grayscale(60%) contrast(140%) brightness(30%)"
         }}
       />
       
