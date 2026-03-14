@@ -57,14 +57,14 @@ const BloodDrip = ({ left, height, width }) => (
 );
 
 const tools = [
-  { name: 'VS Code', logo: 'https://cdn.simpleicons.org/visualstudiocode/3e2723' },
-  { name: 'Spring Tool Suite', logo: 'https://cdn.simpleicons.org/spring/3e2723' },
-  { name: 'WebStorm', logo: 'https://cdn.simpleicons.org/webstorm/3e2723' },
-  { name: 'Postman', logo: 'https://cdn.simpleicons.org/postman/3e2723' },
-  { name: 'PgAdmin', logo: 'https://cdn.simpleicons.org/postgresql/3e2723' },
-  { name: 'Jira', logo: 'https://cdn.simpleicons.org/jira/3e2723' },
-  { name: 'Datagrip', logo: 'https://cdn.simpleicons.org/datagrip/3e2723' },
-  { name: 'ApiDog', logo: 'https://cdn.simpleicons.org/apidog/3e2723' },
+  { name: 'VS Code', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-plain.svg' },
+  { name: 'Spring Tool Suite', logo: 'https://cdn.simpleicons.org/spring' },
+  { name: 'WebStorm', logo: 'https://cdn.simpleicons.org/webstorm' },
+  { name: 'Postman', logo: 'https://cdn.simpleicons.org/postman' },
+  { name: 'PgAdmin', logo: 'https://cdn.simpleicons.org/postgresql' },
+  { name: 'Jira', logo: 'https://cdn.simpleicons.org/jira' },
+  { name: 'Datagrip', logo: 'https://cdn.simpleicons.org/datagrip' },
+  { name: 'ApiDog', logo: 'https://cdn.jsdelivr.net/gh/callback-io/allogo@main/public/logos/apidog/icon.svg' },
   { name: 'Antigravity', logo: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%233e2723" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>' },
 ];
 
@@ -133,13 +133,13 @@ const Skills = () => {
                 <div className="transform transition-transform duration-500 drop-shadow-md">
                   {React.cloneElement(skillGroup.icon, { className: "w-8 h-8 text-[#5a0000] mb-4" })}
                 </div>
-                <h3 className="font-cinzel text-xl text-[#1a0f0a] font-bold mb-6 tracking-wide transition-colors duration-300">
+                <h3 className="font-cinzel text-xl text-[#ebd5b3] font-bold mb-6 tracking-wide transition-colors duration-300">
                   {skillGroup.category}
                 </h3>
                 
                 <ul className="flex flex-col gap-3 w-full">
                   {skillGroup.items.map((item, idx) => (
-                    <li key={idx} className="font-inter font-bold text-[#2a1610] text-[15px] flex items-center justify-center gap-2">
+                    <li key={idx} className="font-inter font-bold text-[#d4bca0] text-[15px] flex items-center justify-center gap-2">
                       <span className="w-1.5 h-1.5 bg-[#5a0000] rounded-full block shadow-sm"></span>
                       {item}
                     </li>
@@ -159,18 +159,18 @@ const Skills = () => {
           <div className="flex w-full group overflow-hidden">  
             <div className="flex shrink-0 w-max animate-marquee gap-8 md:gap-12 items-center group-hover:[animation-play-state:paused] pr-8 md:pr-12 pb-4">
               {tools.map((tool, idx) => (
-                <div key={`track1-${idx}`} className="flex items-center gap-3 px-6 py-3 bg-[url('https://www.transparenttextures.com/patterns/crumpled-paper.png')] bg-[#bda27e] bg-blend-multiply border border-[#6b4423] rounded-full shadow-[inset_0_0_20px_rgba(62,39,35,0.4),0_4px_10px_rgba(0,0,0,0.6)] flex-shrink-0 transition-transform duration-300 hover:scale-105">
-                  <img src={tool.logo} alt={tool.name} className="w-6 h-6 object-contain" title={tool.name} />
-                  <span className="font-inter font-bold text-[#2a1610] text-sm md:text-base">{tool.name}</span>
+                <div key={`track1-${idx}`} className="flex items-center gap-3 px-6 py-3 bg-[#8b6b4a] bg-[url('https://www.transparenttextures.com/patterns/crumpled-paper.png')] bg-blend-multiply border border-[#4a2e1b] rounded-full shadow-[inset_0_0_80px_rgba(30,15,10,0.85),0_8px_20px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_0_100px_rgba(30,15,10,0.9),0_15px_40px_rgba(153,27,27,0.25)] hover:border-crimson hover:-translate-y-1 transition-all duration-500 cursor-pointer flex-shrink-0">
+                  <div className="w-6 h-6 bg-[#ebd5b3]" style={{ WebkitMaskImage: `url('${tool.logo}')`, maskImage: `url('${tool.logo}')`, WebkitMaskSize: 'contain', WebkitMaskRepeat: 'no-repeat', WebkitMaskPosition: 'center' }} title={tool.name} />
+                  <span className="font-inter font-bold text-[#ebd5b3] text-sm md:text-base">{tool.name}</span>
                 </div>
               ))}
             </div>
 
             <div className="flex shrink-0 w-max animate-marquee gap-8 md:gap-12 items-center group-hover:[animation-play-state:paused] pr-8 md:pr-12 pb-4" aria-hidden="true">
               {tools.map((tool, idx) => (
-                <div key={`track2-${idx}`} className="flex items-center gap-3 px-6 py-3 bg-[url('https://www.transparenttextures.com/patterns/crumpled-paper.png')] bg-[#bda27e] bg-blend-multiply border border-[#6b4423] rounded-full shadow-[inset_0_0_20px_rgba(62,39,35,0.4),0_4px_10px_rgba(0,0,0,0.6)] flex-shrink-0 transition-transform duration-300 hover:scale-105">
-                  <img src={tool.logo} alt={tool.name} className="w-6 h-6 object-contain" title={tool.name} />
-                  <span className="font-inter font-bold text-[#2a1610] text-sm md:text-base">{tool.name}</span>
+                <div key={`track2-${idx}`} className="flex items-center gap-3 px-6 py-3 bg-[#8b6b4a] bg-[url('https://www.transparenttextures.com/patterns/crumpled-paper.png')] bg-blend-multiply border border-[#4a2e1b] rounded-full shadow-[inset_0_0_80px_rgba(30,15,10,0.85),0_8px_20px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_0_100px_rgba(30,15,10,0.9),0_15px_40px_rgba(153,27,27,0.25)] hover:border-crimson hover:-translate-y-1 transition-all duration-500 cursor-pointer flex-shrink-0">
+                  <div className="w-6 h-6 bg-[#ebd5b3]" style={{ WebkitMaskImage: `url('${tool.logo}')`, maskImage: `url('${tool.logo}')`, WebkitMaskSize: 'contain', WebkitMaskRepeat: 'no-repeat', WebkitMaskPosition: 'center' }} title={tool.name} />
+                  <span className="font-inter font-bold text-[#ebd5b3] text-sm md:text-base">{tool.name}</span>
                 </div>
               ))}
             </div>

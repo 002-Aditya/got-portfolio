@@ -30,6 +30,27 @@ const projects = [
   }
 ];
 
+const bloodDripsConfig = [
+  [ { left: '12%', height: '45px', width: '7px' }, { left: '22%', height: '25px', width: '4px' }, { left: '82%', height: '55px', width: '6px' } ],
+  [ { left: '18%', height: '60px', width: '8px' }, { left: '75%', height: '30px', width: '5px' }, { left: '88%', height: '45px', width: '6px' } ],
+  [ { left: '8%', height: '35px', width: '5px' }, { left: '25%', height: '70px', width: '9px' }, { left: '80%', height: '25px', width: '4px' } ],
+  [ { left: '15%', height: '25px', width: '4px' }, { left: '85%', height: '65px', width: '8px' }, { left: '92%', height: '35px', width: '5px' } ],
+  [ { left: '20%', height: '50px', width: '6px' }, { left: '28%', height: '20px', width: '3px' }, { left: '78%', height: '55px', width: '7px' } ],
+  [ { left: '10%', height: '65px', width: '8px' }, { left: '16%', height: '30px', width: '4px' }, { left: '88%', height: '40px', width: '6px' } ],
+];
+
+const BloodDrip = ({ left, height, width }) => (
+  <svg
+    className="absolute top-0 mix-blend-multiply pointer-events-none z-30"
+    style={{ left, height, width, opacity: 0.85, filter: 'drop-shadow(0px 1px 2px rgba(60,0,0,0.6))' }}
+    preserveAspectRatio="none"
+    viewBox="0 0 10 100"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M 0 0 L 10 0 Q 8 20 5 40 T 6 80 Q 7 95 5 100 Q 3 95 4 80 T 5 40 Q 2 20 0 0 Z" fill="#4a0000" />
+  </svg>
+);
+
 const Projects = () => {
   return (
     <section id="projects" className="py-24 bg-[#0a0a0a] relative">
@@ -46,7 +67,7 @@ const Projects = () => {
           <div className="h-1 w-24 bg-gradient-to-r from-transparent via-crimson to-transparent mx-auto mt-6"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 group/list">
           {projects.map((project, index) => (
             <motion.div 
               key={project.id}
@@ -55,36 +76,39 @@ const Projects = () => {
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
               custom={index}
-              className="group relative bg-[url('https://www.transparenttextures.com/patterns/aged-paper.png')] bg-[#ebd5b3] border-2 border-yellow-900 rounded-2xl h-full flex flex-col hover:-translate-y-2 transition-transform duration-500 overflow-hidden shadow-[0_4px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_10px_30px_rgba(250,204,21,0.3)] hover:border-yellow-700 before:content-[''] before:absolute before:inset-0 before:bg-yellow-900/10 before:pointer-events-none before:rounded-2xl"
+              className="group/card relative bg-[#8b6b4a] bg-[url('https://www.transparenttextures.com/patterns/crumpled-paper.png')] bg-blend-multiply border border-[#4a2e1b] rounded-2xl h-full flex flex-col hover:-translate-y-2 transition-all duration-500 overflow-hidden shadow-[inset_0_0_80px_rgba(30,15,10,0.85),0_8px_20px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_0_100px_rgba(30,15,10,0.9),0_15px_40px_rgba(153,27,27,0.25)] hover:border-crimson group-hover/list:opacity-60 group-hover/list:brightness-50 hover:!opacity-100 hover:!brightness-100 cursor-pointer"
             >
-              <div className="aspect-video overflow-hidden relative border-b-2 border-yellow-900">
-                <div className="absolute inset-0 bg-yellow-900/40 group-hover:bg-transparent transition-colors duration-500 z-10 mix-blend-multiply"></div>
+              {bloodDripsConfig[index % bloodDripsConfig.length].map((drip, i) => (
+                <BloodDrip key={i} left={drip.left} height={drip.height} width={drip.width} />
+              ))}
+              <div className="aspect-video overflow-hidden relative border-b border-[#4a2e1b]">
+                <div className="absolute inset-0 bg-[#3a1a0a]/40 group-hover/card:bg-transparent transition-colors duration-500 z-10 mix-blend-multiply"></div>
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover filter sepia-[.5] group-hover:sepia-0 group-hover:scale-105 transition-all duration-700"
+                  className="w-full h-full object-cover filter sepia-[.5] group-hover/card:sepia-0 group-hover/card:scale-105 transition-all duration-700"
                 />
               </div>
 
               <div className="p-6 flex-grow flex flex-col relative z-20">
-                <h3 className="font-cinzel text-xl text-yellow-950 font-bold mb-3 group-hover:text-yellow-700 transition-colors">
+                <h3 className="font-cinzel text-xl text-[#ebd5b3] font-bold mb-3 group-hover/card:text-crimson transition-colors">
                   {project.title}
                 </h3>
-                <p className="font-inter text-yellow-900/80 font-medium text-sm mb-6 flex-grow">
+                <p className="font-inter text-[#d4bca0] font-medium text-sm mb-6 flex-grow">
                   {project.description}
                 </p>
                 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map(tag => (
-                    <span key={tag} className="text-xs font-inter font-bold text-red-900 bg-red-900/10 px-2 py-1 border border-red-900/30 rounded-sm">
+                    <span key={tag} className="text-xs font-inter font-bold text-crimson bg-[#5a0000]/20 px-2 py-1 border border-[#5a0000]/50 rounded-sm">
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex items-center gap-4 pt-4 border-t border-yellow-900/30">
+                <div className="flex items-center gap-4 pt-4 border-t border-[#4a2e1b]/30">
                   {project.links.github && (
-                    <a href={project.links.github} className="text-yellow-950 hover:text-yellow-700 font-bold transition-colors flex items-center gap-2 font-inter text-sm">
+                    <a href={project.links.github} className="text-[#ebd5b3] hover:text-crimson font-bold transition-colors flex items-center gap-2 font-inter text-sm">
                       <Github className="w-4 h-4" /> Code
                     </a>
                   )}
@@ -92,7 +116,7 @@ const Projects = () => {
               </div>
               
               {/* Animated borders */}
-              <div className="absolute bottom-0 left-0 h-1 bg-yellow-700 w-0 group-hover:w-full transition-all duration-500 rounded-b-2xl"></div>
+              <div className="absolute bottom-0 left-0 h-1 bg-crimson w-0 group-hover/card:w-full transition-all duration-500 rounded-b-2xl"></div>
             </motion.div>
           ))}
         </div>
