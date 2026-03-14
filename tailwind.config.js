@@ -10,6 +10,7 @@ export default {
         gold: "#d4af37",
         frost: "#f8fafc",
         resume: "#6f7a84",
+        ravenButton: "#fce9e9ff",
       },
       fontFamily: {
         primary: ["'Cinzel Decorative'", "serif"],
