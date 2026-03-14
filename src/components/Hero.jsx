@@ -21,10 +21,10 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <h1 className="font-cinzel text-5xl md:text-7xl lg:text-8xl text-frost mb-2 drop-shadow-lg">
+          <h1 className="font-cinzel text-5xl md:text-7xl lg:text-8xl text-frost mb-2 drop-shadow-lg font-weight: 900 font-bold">
             Aditya Kumar,
           </h1>
-          <h2 className="font-cinzel text-4xl md:text-6xl lg:text-7xl text-gold italic mb-6 drop-shadow-md">
+          <h2 className="font-cinzel text-3xl md:text-4xl lg:text-5xl text-[#f77069] italic mb-6 drop-shadow-md">
             Warden of the Backend
           </h2>
           <p className="font-inter text-gray-300 max-w-2xl mx-auto text-lg md:text-xl mb-10 drop-shadow-md font-bold">
@@ -33,7 +33,7 @@ const Hero = () => {
         </motion.div>
 
         {/* Action Buttons */}
-        <motion.div 
+        {/* <motion.div 
           className="flex flex-col sm:flex-row gap-6 mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -45,11 +45,11 @@ const Hero = () => {
           <a href="#contact" className="bg-[#0b0b0b]/60 backdrop-blur-sm text-gold px-8 py-3.5 font-cinzel font-bold tracking-widest border border-gold hover:bg-gold/10 transition-colors duration-300 text-center">
             SEND A RAVEN
           </a>
-        </motion.div>
+        </motion.div> */}
 
         {/* Bottom Socials/Resume Pill (Matches the floating pill in Image 1) */}
         <motion.div 
-          className="flex items-center gap-6 bg-[#121212]/80 backdrop-blur-md border border-iron px-8 py-4 rounded-full shadow-2xl"
+          className="flex items-center gap-6 bg-[#121212]/80 backdrop-blur-md border border-iron px-8 py-4 rounded-full shadow-2xl mt-20"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
@@ -69,7 +69,7 @@ const Hero = () => {
           <a 
             href={resumePdf} 
             download="AdityaKumar_Resume.pdf"
-            className="bg-gold text-charcoal font-inter font-bold text-sm px-5 py-2 rounded hover:bg-yellow-500 transition-colors flex items-center gap-2"
+            className="bg-[#6f7a84] text-white font-inter font-bold text-sm px-5 py-2 rounded-full hover:bg-white hover: transition-colors flex items-center gap-2 text-[#000000]"
           >
             <Terminal className="w-4 h-4" />
             RESUME

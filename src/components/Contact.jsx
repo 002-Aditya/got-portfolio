@@ -4,7 +4,7 @@ import { Bird, Mail } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { fadeUp } from '../animations';
 
-import crowVideo from '../assets/videos/AnimatedCrow.webm';
+import crowVideo from '../assets/videos/AnimatedCrow.gif';
 
 const Contact = () => {
   const formRef = useRef();

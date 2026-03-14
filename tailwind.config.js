@@ -6,9 +6,10 @@ export default {
       colors: {
         charcoal: "#0b0b0b",
         iron: "#1f2937",
-        crimson: "#991b1b",
+        crimson: "#f77069",
         gold: "#d4af37",
         frost: "#f8fafc",
+        resume: "#6f7a84",
       },
       fontFamily: {
         cinzel: ["Cinzel", "serif"],
