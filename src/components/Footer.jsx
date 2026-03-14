@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center justify-center gap-6">
           <div className="flex gap-6">
-            <a href="https://github.com/adityakumar2001" target="_blank" rel="noopener noreferrer" className="p-3 bg-iron rounded-full text-gray-300 hover:text-gold hover:bg-charcoal hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all duration-300">
+            <a href="https://github.com/002-Aditya" target="_blank" rel="noopener noreferrer" className="p-3 bg-iron rounded-full text-gray-300 hover:text-gold hover:bg-charcoal hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all duration-300">
               <Github className="w-6 h-6" />
             </a>
             <a href="https://www.linkedin.com/in/aditya-kumar-aa6838201" target="_blank" rel="noopener noreferrer" className="p-3 bg-iron rounded-full text-gray-300 hover:text-gold hover:bg-charcoal hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all duration-300">
