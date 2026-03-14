@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Bird } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { fadeUp } from '../animations';
 
-import crowVideo from '../assets/videos/AnimatedCrow.mp4';
+import crowVideo from '../assets/videos/AnimatedCrow.webm';
 
 const Contact = () => {
   const formRef = useRef();
@@ -62,9 +62,9 @@ const Contact = () => {
             loop={false}
             muted 
             playsInline
-            className="w-72 h-72 md:w-96 md:h-96 object-contain mix-blend-screen opacity-90 drop-shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+            className="w-72 h-72 md:w-96 md:h-96 object-contain opacity-90 drop-shadow-[0_0_20px_rgba(255,255,255,0.2)]"
           >
-            <source src={crowVideo} type="video/mp4" />
+            <source src={crowVideo} type="video/webm" />
           </video>
         </motion.div>
       )}

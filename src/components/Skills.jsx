@@ -156,7 +156,7 @@ const Skills = () => {
             Arsenals & Tools
           </p>
 
-          <div className="flex w-full group overflow-hidden">  
+          <div className="flex w-full group overflow-hidden h-[80px]">  
             <div className="flex shrink-0 w-max animate-marquee gap-8 md:gap-12 items-center group-hover:[animation-play-state:paused] pr-8 md:pr-12 pb-4">
               {tools.map((tool, idx) => (
                 <div key={`track1-${idx}`} className="flex items-center gap-3 px-6 py-3 bg-[#8b6b4a] bg-[url('https://www.transparenttextures.com/patterns/crumpled-paper.png')] bg-blend-multiply border border-[#4a2e1b] rounded-full shadow-[inset_0_0_80px_rgba(30,15,10,0.85),0_8px_20px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_0_100px_rgba(30,15,10,0.9),0_15px_40px_rgba(153,27,27,0.25)] hover:border-crimson hover:-translate-y-1 transition-all duration-500 cursor-pointer flex-shrink-0">
