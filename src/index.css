@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Goudy+Bookletter+1911&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Stoke:wght@300;400&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,7 +7,7 @@
 @layer base {
   body {
     @apply bg-charcoal text-frost overflow-x-hidden antialiased selection:bg-crimson/40 selection:text-frost;
-    font-family: "Goudy Bookletter 1911", serif;
+    font-family: "Stoke", serif;
   }
   
   h1, h2, h3, h4, h5, h6 {

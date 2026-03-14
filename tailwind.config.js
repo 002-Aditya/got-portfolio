@@ -13,7 +13,7 @@ export default {
       },
       fontFamily: {
         primary: ["'Cinzel Decorative'", "serif"],
-        body: ["'Goudy Bookletter 1911'", "serif"],
+        body: ["'Stoke'", "serif"],
       },
       animation: {
         "fade-in": "fadeIn 1.5s ease-out forwards",
