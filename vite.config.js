@@ -7,6 +7,7 @@ export default defineConfig({
   server: {
     allowedHosts: [
       "characteristics-brilliant-appreciated-hist.trycloudflare.com",
+      "kent-transformation-brick-eggs.trycloudflare.com"
     ],
   },
 });
