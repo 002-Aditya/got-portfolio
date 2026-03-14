@@ -186,10 +186,10 @@ const Contact = () => {
             <button 
               type="submit" 
               disabled={isSending || isSent}
-              className={`w-full py-4 font-body text-sm tracking-[0.2em] uppercase transition-all duration-300 flex items-center justify-center gap-2 ${
+              className={`w-full rounded py-4 font-body text-sm tracking-[0.2em] uppercase transition-all duration-300 flex items-center justify-center gap-2 ${
                 isSent 
                   ? 'bg-[#1b4332] text-green-200 cursor-default' 
-                  : 'bg-ravenButton hover:bg-crimson text-gray-200 shadow-[0_4px_15px_rgba(139,38,33,0.3)] hover:shadow-[0_4px_20px_rgba(139,38,33,0.5)]'
+                  : 'bg-crimson text-gray-200 hover:-translate-y-1 hover:bg-[#f65c5cff] shadow-[0_4px_15px_rgba(139,38,33,0.3)] hover:shadow-[0_8px_25px_rgba(139,38,33,0.5)]'
               }`}
             >
               {isSending ? 'ASSIGNING RAVEN...' : isSent ? 'RAVEN DEPARTED' : 'DISPATCH RAVEN'}

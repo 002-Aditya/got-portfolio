@@ -11,7 +11,7 @@ export default {
         frost: "#f8fafc",
         resume: "#6f7a84",
         darkResume: "#5a646d",
-        ravenButton: "#fce9e9ff",
+        raven: "#f65c5cff",
       },
       fontFamily: {
         primary: ["'Cinzel Decorative'", "serif"],
