@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Bird } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { fadeUp } from '../animations';
 
-import crowVideo from '../assets/videos/Crow_Messenger_Animated_Video.mp4';
+import crowVideo from '../assets/videos/AnimatedCrow.mp4';
 
 const Contact = () => {
   const formRef = useRef();
@@ -166,6 +166,20 @@ const Contact = () => {
                   />
                 </div>
 
+                {/* NEW FIELD: Urgency Dropdown */}
+                <div>
+                  <label htmlFor="urgency" className="font-cinzel text-sm text-gold tracking-widest block mb-2 cursor-pointer">Urgency of Dispatch</label>
+                  <select 
+                    id="urgency" 
+                    name="urgency_level"
+                    className="w-full bg-charcoal border border-iron rounded-sm px-4 py-3 text-frost font-inter focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all appearance-none cursor-pointer"
+                  >
+                    <option value="Standard Dispatch">Standard Dispatch</option>
+                    <option value="Swift Wings (Urgent)">Swift Wings (Urgent)</option>
+                    <option value="Dark Wings (Critical)">Dark Wings, Dark Words (Critical)</option>
+                  </select>
+                </div>
+
                 <div>
                   <label htmlFor="message" className="font-cinzel text-sm text-gold tracking-widest block mb-2 cursor-pointer">The Message</label>
                   <textarea 
@@ -196,7 +210,6 @@ const Contact = () => {
                   </span>
                 </button>
                 
-                {/* Modern Error UI */}
                 {errorMsg && (
                   <motion.div 
                     initial={{ opacity: 0, y: -10 }}
@@ -204,7 +217,7 @@ const Contact = () => {
                     exit={{ opacity: 0, y: -10 }}
                     className="p-4 bg-red-900/20 border border-red-500/50 rounded-sm mt-4 text-center"
                   >
-                    <p className="font-inter text-red-400 text-sm">
+                    <p className="font-inter text-red-400 text-sm whitespace-pre-wrap">
                       {errorMsg}
                     </p>
                   </motion.div>
