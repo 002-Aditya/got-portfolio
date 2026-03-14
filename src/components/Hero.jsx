@@ -21,13 +21,13 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <h1 className="font-cinzel text-5xl md:text-7xl lg:text-8xl text-frost mb-2 drop-shadow-lg font-weight: 900 font-bold">
+          <h1 className="font-primary text-5xl md:text-7xl lg:text-8xl text-frost mb-2 drop-shadow-lg font-weight: 900 font-bold">
             Aditya Kumar,
           </h1>
-          <h2 className="font-cinzel text-3xl md:text-4xl lg:text-5xl text-[#f77069] italic mb-6 drop-shadow-md">
+          <h2 className="font-primary text-3xl md:text-4xl lg:text-5xl text-[#f77069] italic mb-6 drop-shadow-md">
             Warden of the Backend
           </h2>
-          <p className="font-inter text-gray-300 max-w-2xl mx-auto text-lg md:text-xl mb-10 drop-shadow-md font-bold">
+          <p className="font-body text-gray-300 max-w-2xl mx-auto text-lg md:text-xl mb-10 drop-shadow-md font-bold">
             Architect of Scalable APIs, Distributed Systems, and Powerful Backend Engines forged in the fires of code.
           </p>
         </motion.div>
@@ -39,10 +39,10 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
         >
-          <a href="#about" className="bg-crimson text-frost px-8 py-3.5 font-cinzel font-bold tracking-widest hover:bg-red-800 transition-colors duration-300 shadow-[0_0_15px_rgba(153,27,27,0.5)] hover:shadow-[0_0_25px_rgba(153,27,27,0.8)] text-center">
+          <a href="#about" className="bg-crimson text-frost px-8 py-3.5 font-primary font-bold tracking-widest hover:bg-red-800 transition-colors duration-300 shadow-[0_0_15px_rgba(153,27,27,0.5)] hover:shadow-[0_0_25px_rgba(153,27,27,0.8)] text-center">
             ENTER THE REALM
           </a>
-          <a href="#contact" className="bg-[#0b0b0b]/60 backdrop-blur-sm text-gold px-8 py-3.5 font-cinzel font-bold tracking-widest border border-gold hover:bg-gold/10 transition-colors duration-300 text-center">
+          <a href="#contact" className="bg-[#0b0b0b]/60 backdrop-blur-sm text-gold px-8 py-3.5 font-primary font-bold tracking-widest border border-gold hover:bg-gold/10 transition-colors duration-300 text-center">
             SEND A RAVEN
           </a>
         </motion.div> */}
@@ -69,7 +69,7 @@ const Hero = () => {
           <a 
             href={resumePdf} 
             download="AdityaKumar_Resume.pdf"
-            className="bg-[#6f7a84] text-white font-inter font-bold text-sm px-5 py-2 rounded-full hover:bg-white hover: transition-colors flex items-center gap-2 text-[#000000]"
+            className="bg-[#6f7a84] text-white font-body font-bold text-sm px-5 py-2 rounded-full hover: transition-colors flex items-center gap-2 text-[#000000]"
           >
             <Terminal className="w-4 h-4" />
             RESUME

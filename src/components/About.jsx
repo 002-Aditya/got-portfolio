@@ -16,7 +16,7 @@ const About = () => {
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeIn}
         >
-          <h2 className="font-cinzel text-4xl md:text-5xl text-frost tracking-wider flex items-center justify-center gap-4">
+          <h2 className="font-primary text-4xl md:text-5xl text-frost tracking-wider flex items-center justify-center gap-4">
             <span className="w-12 h-[2px] bg-crimson"></span>
             The Origin Story
             <span className="w-12 h-[2px] bg-crimson"></span>
@@ -60,12 +60,12 @@ const About = () => {
             variants={fadeUp}
           >
             <div className="prose prose-invert prose-lg">
-              <p className="font-inter text-gray-300 leading-relaxed text-lg first-letter:text-6xl first-letter:font-cinzel first-letter:text-gold first-letter:mr-3 first-letter:float-left">
+              <p className="font-body text-gray-300 leading-relaxed text-lg first-letter:text-6xl first-letter:font-primary first-letter:text-gold first-letter:mr-3 first-letter:float-left">
                 From the halls of Maharaja Surajmal Institute of Technology to building scalable 
                 backend systems in production environments, Aditya Kumar has forged his skills 
                 in the fires of modern backend engineering.
               </p>
-              <p className="font-inter text-gray-400 leading-relaxed mt-4">
+              <p className="font-body text-gray-400 leading-relaxed mt-4">
                 With a Bachelor’s in Engineering and over 2+ years of battle-tested experience, 
                 he specializes in crafting robust, highly available architectures. Drawing strength 
                 from robust frameworks like Spring Boot and Node.js, and scaling data across expansive 
@@ -77,12 +77,12 @@ const About = () => {
             <div className="mt-6 border-l-2 border-crimson pl-6 py-2 relative">
               <div className="absolute w-3 h-3 bg-crimson rounded-full -left-[7px] top-4 shadow-[0_0_10px_rgba(153,27,27,0.8)]"></div>
               
-              <h3 className="font-cinzel text-xl text-gold mb-4 tracking-widest">Crucible of Learning</h3>
+              <h3 className="font-primary text-xl text-gold mb-4 tracking-widest">Crucible of Learning</h3>
               
               <div className="flex flex-col gap-2">
-                <h4 className="font-inter font-bold text-frost text-lg">B.Tech in Electronics and Communication Engineering</h4>
-                <p className="font-inter text-gray-400">Maharaja Surajmal Institute of Technology</p>
-                <div className="flex flex-wrap gap-4 mt-2 font-inter text-sm md:text-base">
+                <h4 className="font-body font-bold text-frost text-lg">B.Tech in Electronics and Communication Engineering</h4>
+                <p className="font-body text-gray-400">Maharaja Surajmal Institute of Technology</p>
+                <div className="flex flex-wrap gap-4 mt-2 font-body text-sm md:text-base">
                   <span className="bg-iron px-3 py-1 rounded text-gray-300 border border-gray-700">CGPA: <span className="text-gold">8.9</span></span>
                   <span className="bg-iron px-3 py-1 rounded text-gray-300 border border-gray-700">Graduated: <span className="text-gold">June 2023</span></span>
                 </div>

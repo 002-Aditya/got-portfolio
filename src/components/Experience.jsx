@@ -40,10 +40,10 @@ const Experience = () => {
           <div className="flex justify-center mb-4">
             <Shield className="w-12 h-12 text-iron mb-2" />
           </div>
-          <h2 className="font-cinzel text-4xl md:text-5xl text-frost tracking-wider">
+          <h2 className="font-primary text-4xl md:text-5xl text-frost tracking-wider">
             Battles Fought
           </h2>
-          <p className="font-inter text-gray-400 mt-4 max-w-2xl mx-auto">
+          <p className="font-body text-gray-400 mt-4 max-w-2xl mx-auto">
             Records of active campaigns forged at <span className="text-gold font-medium">MPC Cloud Consulting Pvt. Ltd.</span> as an <span className="text-frost font-medium">Associate Software Engineer</span> (Aug 2023 – Present).
           </p>
         </motion.div>
@@ -67,16 +67,16 @@ const Experience = () => {
               <div className="relative z-10">
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 pb-6 border-b border-iron/50">
                   <div>
-                    <h3 className="font-cinzel text-2xl text-gold mb-2 group-hover:drop-shadow-[0_0_8px_rgba(212,175,55,0.5)] transition-all">
+                    <h3 className="font-primary text-2xl text-gold mb-2 group-hover:drop-shadow-[0_0_8px_rgba(212,175,55,0.5)] transition-all">
                       {exp.title}
                     </h3>
-                    <p className="font-inter text-sm md:text-base text-gray-400 font-medium">
+                    <p className="font-secondary text-sm md:text-base text-gray-400 font-medium">
                       Technologies: <span className="text-frost">{exp.tech}</span>
                     </p>
                   </div>
                 </div>
 
-                <ul className="space-y-3 font-inter text-gray-300 text-sm md:text-base ml-2">
+                <ul className="space-y-3 font-body text-gray-300 text-sm md:text-base ml-2">
                   {exp.responsibilities.map((resp, idx) => (
                     <li key={idx} className="flex items-start gap-4">
                       <span className="w-2 h-2 mt-2 bg-crimson shadow-[0_0_5px_rgba(153,27,27,1)] flex-shrink-0 rotate-45"></span>

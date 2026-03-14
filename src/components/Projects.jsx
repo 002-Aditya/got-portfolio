@@ -61,7 +61,7 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-cinzel text-4xl md:text-5xl text-frost tracking-wider">
+          <h2 className="font-primary text-4xl md:text-5xl text-frost tracking-wider">
             Battles Won
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-transparent via-crimson to-transparent mx-auto mt-6"></div>
@@ -91,16 +91,16 @@ const Projects = () => {
               </div>
 
               <div className="p-6 flex-grow flex flex-col relative z-20">
-                <h3 className="font-cinzel text-xl text-[#ebd5b3] font-bold mb-3 group-hover/card:text-crimson transition-colors">
+                <h3 className="font-primary text-xl text-[#ebd5b3] font-bold mb-3 group-hover/card:text-crimson transition-colors">
                   {project.title}
                 </h3>
-                <p className="font-inter text-[#d4bca0] font-medium text-sm mb-6 flex-grow">
+                <p className="font-body text-[#d4bca0] font-medium text-sm mb-6 flex-grow">
                   {project.description}
                 </p>
                 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map(tag => (
-                    <span key={tag} className="text-xs font-inter font-bold text-crimson bg-[#5a0000]/20 px-2 py-1 border border-[#5a0000]/50 rounded-sm">
+                    <span key={tag} className="text-xs font-body font-bold text-crimson bg-[#5a0000]/20 px-2 py-1 border border-[#5a0000]/50 rounded-sm">
                       {tag}
                     </span>
                   ))}
@@ -108,7 +108,7 @@ const Projects = () => {
 
                 <div className="flex items-center gap-4 pt-4 border-t border-[#4a2e1b]/30">
                   {project.links.github && (
-                    <a href={project.links.github} className="text-[#ebd5b3] hover:text-crimson font-bold transition-colors flex items-center gap-2 font-inter text-sm">
+                    <a href={project.links.github} className="text-[#ebd5b3] hover:text-crimson font-bold transition-colors flex items-center gap-2 font-body text-sm">
                       <Github className="w-4 h-4" /> Code
                     </a>
                   )}

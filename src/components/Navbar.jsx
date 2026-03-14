@@ -29,7 +29,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6 lg:px-12 flex justify-between items-center">
         <a href="#home" className="flex items-center gap-2 group">
           <Code className="w-8 h-8 text-crimson group-hover:text-gold transition-colors duration-300" />
-          <span className="font-cinzel text-xl font-bold tracking-wider text-frost group-hover:text-gold transition-colors duration-300">
+          <span className="font-primary text-xl font-bold tracking-wider text-frost group-hover:text-gold transition-colors duration-300">
             A.K.
           </span>
         </a>
@@ -40,7 +40,7 @@ const Navbar = () => {
             <a 
               key={link.name} 
               href={link.href}
-              className="font-inter text-sm md:text-base font-medium text-gray-300 hover:text-gold transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-crimson after:transition-all hover:after:w-full"
+              className="font-body text-sm md:text-base font-medium text-gray-300 hover:text-gold transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-crimson after:transition-all hover:after:w-full"
             >
               {link.name}
             </a>
@@ -71,7 +71,7 @@ const Navbar = () => {
                   key={link.name} 
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="font-cinzel text-lg tracking-widest text-gray-300 hover:text-gold transition-colors"
+                  className="font-primary text-lg tracking-widest text-gray-300 hover:text-gold transition-colors"
                 >
                   {link.name}
                 </a>

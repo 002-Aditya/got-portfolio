@@ -99,8 +99,8 @@ const Skills = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <p className="font-inter text-crimson font-medium tracking-[0.2em] uppercase text-sm mb-4">Mastery of the Craft</p>
-          <h2 className="font-cinzel text-4xl md:text-5xl text-frost tracking-wider">
+          <p className="font-secondary text-crimson font-medium tracking-[0.2em] uppercase text-sm mb-4">Mastery of the Craft</p>
+          <h2 className="font-primary text-4xl md:text-5xl text-frost tracking-wider">
             Weapons of Choice
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-transparent via-crimson to-transparent mx-auto mt-6"></div>
@@ -133,13 +133,13 @@ const Skills = () => {
                 <div className="transform transition-transform duration-500 drop-shadow-md">
                   {React.cloneElement(skillGroup.icon, { className: "w-8 h-8 text-[#5a0000] mb-4" })}
                 </div>
-                <h3 className="font-cinzel text-xl text-[#ebd5b3] font-bold mb-6 tracking-wide transition-colors duration-300">
+                <h3 className="font-primary text-xl text-[#ebd5b3] font-bold mb-6 tracking-wide transition-colors duration-300">
                   {skillGroup.category}
                 </h3>
                 
                 <ul className="flex flex-col gap-3 w-full">
                   {skillGroup.items.map((item, idx) => (
-                    <li key={idx} className="font-inter font-bold text-[#d4bca0] text-[15px] flex items-center justify-center gap-2">
+                    <li key={idx} className="font-body font-bold text-[#d4bca0] text-[15px] flex items-center justify-center gap-2">
                       <span className="w-1.5 h-1.5 bg-[#5a0000] rounded-full block shadow-sm"></span>
                       {item}
                     </li>
@@ -152,7 +152,7 @@ const Skills = () => {
 
         {/* Tools Marquee Carousel */}
         <div className="mt-24 pt-10 border-t border-iron/50 overflow-hidden relative w-full flex flex-col items-center">
-          <p className="font-cinzel text-gray-500 tracking-widest uppercase text-sm mb-10 text-center">
+          <p className="font-secondary text-gray-500 tracking-widest uppercase text-sm mb-10 text-center">
             Arsenals & Tools
           </p>
 
@@ -161,7 +161,7 @@ const Skills = () => {
               {tools.map((tool, idx) => (
                 <div key={`track1-${idx}`} className="flex items-center gap-3 px-6 py-3 bg-[#8b6b4a] bg-[url('https://www.transparenttextures.com/patterns/crumpled-paper.png')] bg-blend-multiply border border-[#4a2e1b] rounded-full shadow-[inset_0_0_80px_rgba(30,15,10,0.85),0_8px_20px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_0_100px_rgba(30,15,10,0.9),0_15px_40px_rgba(153,27,27,0.25)] hover:border-crimson hover:-translate-y-1 transition-all duration-500 cursor-pointer flex-shrink-0">
                   <div className="w-6 h-6 bg-[#ebd5b3]" style={{ WebkitMaskImage: `url('${tool.logo}')`, maskImage: `url('${tool.logo}')`, WebkitMaskSize: 'contain', WebkitMaskRepeat: 'no-repeat', WebkitMaskPosition: 'center' }} title={tool.name} />
-                  <span className="font-inter font-bold text-[#ebd5b3] text-sm md:text-base">{tool.name}</span>
+                  <span className="font-body font-bold text-[#ebd5b3] text-sm md:text-base">{tool.name}</span>
                 </div>
               ))}
             </div>
@@ -170,7 +170,7 @@ const Skills = () => {
               {tools.map((tool, idx) => (
                 <div key={`track2-${idx}`} className="flex items-center gap-3 px-6 py-3 bg-[#8b6b4a] bg-[url('https://www.transparenttextures.com/patterns/crumpled-paper.png')] bg-blend-multiply border border-[#4a2e1b] rounded-full shadow-[inset_0_0_80px_rgba(30,15,10,0.85),0_8px_20px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_0_100px_rgba(30,15,10,0.9),0_15px_40px_rgba(153,27,27,0.25)] hover:border-crimson hover:-translate-y-1 transition-all duration-500 cursor-pointer flex-shrink-0">
                   <div className="w-6 h-6 bg-[#ebd5b3]" style={{ WebkitMaskImage: `url('${tool.logo}')`, maskImage: `url('${tool.logo}')`, WebkitMaskSize: 'contain', WebkitMaskRepeat: 'no-repeat', WebkitMaskPosition: 'center' }} title={tool.name} />
-                  <span className="font-inter font-bold text-[#ebd5b3] text-sm md:text-base">{tool.name}</span>
+                  <span className="font-body font-bold text-[#ebd5b3] text-sm md:text-base">{tool.name}</span>
                 </div>
               ))}
             </div>

@@ -32,7 +32,7 @@ const Timeline = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-cinzel text-4xl md:text-5xl text-frost tracking-wider">
+          <h2 className="font-primary text-4xl md:text-5xl text-frost tracking-wider">
             The Journey
           </h2>
         </motion.div>
@@ -72,9 +72,9 @@ const Timeline = () => {
                         viewport={{ once: true }}
                         className="bg-iron/10 p-6 border border-iron/50 hover:border-gold/30 transition-colors"
                       >
-                        <span className="font-cinzel text-gold text-xl block mb-2">{milestone.year}</span>
-                        <h3 className="font-cinzel text-frost text-2xl mb-2">{milestone.title}</h3>
-                        <p className="font-inter text-gray-400">{milestone.description}</p>
+                        <span className="font-primary text-gold text-xl block mb-2">{milestone.year}</span>
+                        <h3 className="font-primary text-frost text-2xl mb-2">{milestone.title}</h3>
+                        <p className="font-body text-gray-400">{milestone.description}</p>
                       </motion.div>
                     )}
                   </div>
@@ -99,9 +99,9 @@ const Timeline = () => {
                         viewport={{ once: true }}
                         className={`bg-iron/10 p-6 border border-iron/50 hover:border-gold/30 transition-colors ${isEven ? 'block md:hidden' : ''}`}
                       >
-                        <span className="font-cinzel text-gold text-xl block mb-2">{milestone.year}</span>
-                        <h3 className="font-cinzel text-frost text-2xl mb-2">{milestone.title}</h3>
-                        <p className="font-inter text-gray-400">{milestone.description}</p>
+                        <span className="font-primary text-gold text-xl block mb-2">{milestone.year}</span>
+                        <h3 className="font-primary text-frost text-2xl mb-2">{milestone.title}</h3>
+                        <p className="font-body text-gray-400">{milestone.description}</p>
                       </motion.div>
                     )}
                   </div>

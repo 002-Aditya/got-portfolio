@@ -12,8 +12,9 @@ export default {
         resume: "#6f7a84",
       },
       fontFamily: {
-        cinzel: ["Cinzel", "serif"],
-        inter: ["Inter", "sans-serif"],
+        primary: ["'Cinzel Decorative'", "serif"],
+        secondary: ["'Goudy Bookletter 1911'", "serif"],
+        body: ["'Nanum Myeongjo'", "serif"],
       },
       animation: {
         "fade-in": "fadeIn 1.5s ease-out forwards",

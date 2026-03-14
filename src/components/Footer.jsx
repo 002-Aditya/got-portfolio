@@ -22,8 +22,8 @@ const Footer = () => {
           </div>
           
           <div className="text-center">
-            <p className="font-cinzel text-xl text-gold mb-2 tracking-widest">"The Night is Dark and Full of Code."</p>
-            <p className="font-inter text-sm text-gray-500">
+            <p className="font-primary text-xl text-gold mb-2 tracking-widest">"The Night is Dark and Full of Code."</p>
+            <p className="font-body text-sm text-gray-500">
               &copy; {new Date().getFullYear()} Aditya Kumar. Forged in Code and Systems.
             </p>
           </div>

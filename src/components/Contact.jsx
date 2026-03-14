@@ -93,10 +93,10 @@ const Contact = () => {
             <div className="flex justify-center mb-4">
               <Mail className="w-8 h-8 text-[#d4af37]" />
             </div>
-            <h2 className="font-cinzel text-3xl md:text-4xl text-frost tracking-wider mb-2">
+            <h2 className="font-primary text-3xl md:text-4xl text-frost tracking-wider mb-2">
               Send a Raven
             </h2>
-            <p className="font-inter text-gray-400 italic text-sm md:text-base">
+            <p className="font-secondary text-gray-400 italic text-sm md:text-base">
               Whether for a new alliance or a question of strategy, your message shall be delivered swiftly.
             </p>
           </div>
@@ -109,14 +109,14 @@ const Contact = () => {
               
               {/* Name Field */}
               <div>
-                <label htmlFor="name" className="font-inter text-xs text-[#b89b4f] font-bold tracking-[0.15em] uppercase block mb-2 cursor-pointer">
+                <label htmlFor="name" className="font-secondary text-xs text-[#b89b4f] font-bold tracking-[0.15em] uppercase block mb-2 cursor-pointer">
                   LORD / LADY (NAME)
                 </label>
                 <input 
                   type="text" 
                   id="name" 
                   name="user_name"
-                  className="w-full bg-[#1e1a18] border border-[#1e1a18] px-4 py-3 text-gray-300 font-inter text-sm focus:outline-none focus:border-[#d4af37]/50 focus:bg-[#151211] transition-colors placeholder-gray-600"
+                  className="w-full bg-[#1e1a18] border border-[#1e1a18] px-4 py-3 text-gray-300 font-body text-sm focus:outline-none focus:border-[#d4af37]/50 focus:bg-[#151211] transition-colors placeholder-gray-600"
                   placeholder="Your Name"
                   required
                 />
@@ -124,14 +124,14 @@ const Contact = () => {
 
               {/* Email Field */}
               <div>
-                <label htmlFor="email" className="font-inter text-xs text-[#b89b4f] font-bold tracking-[0.15em] uppercase block mb-2 cursor-pointer">
+                <label htmlFor="email" className="font-secondary text-xs text-[#b89b4f] font-bold tracking-[0.15em] uppercase block mb-2 cursor-pointer">
                   SEAL (EMAIL)
                 </label>
                 <input 
                   type="email" 
                   id="email" 
                   name="user_email"
-                  className="w-full bg-[#1e1a18] border border-[#1e1a18] px-4 py-3 text-gray-300 font-inter text-sm focus:outline-none focus:border-[#d4af37]/50 focus:bg-[#151211] transition-colors placeholder-gray-600"
+                  className="w-full bg-[#1e1a18] border border-[#1e1a18] px-4 py-3 text-gray-300 font-body text-sm focus:outline-none focus:border-[#d4af37]/50 focus:bg-[#151211] transition-colors placeholder-gray-600"
                   placeholder="your.email@realm.com"
                   required
                 />
@@ -140,13 +140,13 @@ const Contact = () => {
 
             {/* Urgency of Dispatch Field */}
             <div className="mb-6">
-              <label htmlFor="urgency" className="font-inter text-xs text-[#b89b4f] font-bold tracking-[0.15em] uppercase block mb-2 cursor-pointer">
+              <label htmlFor="urgency" className="font-secondary text-xs text-[#b89b4f] font-bold tracking-[0.15em] uppercase block mb-2 cursor-pointer">
                 URGENCY OF DISPATCH
               </label>
               <select 
                 id="urgency" 
                 name="urgency_level"
-                className="w-full bg-[#1e1a18] border border-[#1e1a18] px-4 py-3 text-gray-300 font-inter text-sm focus:outline-none focus:border-[#d4af37]/50 focus:bg-[#151211] transition-colors cursor-pointer"
+                className="w-full bg-[#1e1a18] border border-[#1e1a18] px-4 py-3 text-gray-300 font-body text-sm focus:outline-none focus:border-[#d4af37]/50 focus:bg-[#151211] transition-colors cursor-pointer"
               >
                 <option value="Standard Dispatch">Standard Dispatch</option>
                 <option value="Swift Wings (Urgent)">Swift Wings (Urgent)</option>
@@ -156,14 +156,14 @@ const Contact = () => {
 
             {/* Message Field */}
             <div className="mb-8">
-              <label htmlFor="message" className="font-inter text-xs text-[#b89b4f] font-bold tracking-[0.15em] uppercase block mb-2 cursor-pointer">
+              <label htmlFor="message" className="font-secondary text-xs text-[#b89b4f] font-bold tracking-[0.15em] uppercase block mb-2 cursor-pointer">
                 THE MESSAGE
               </label>
               <textarea 
                 id="message" 
                 name="message"
                 rows="5" 
-                className="w-full bg-[#1e1a18] border border-[#1e1a18] px-4 py-3 text-gray-300 font-inter text-sm focus:outline-none focus:border-[#d4af37]/50 focus:bg-[#151211] transition-colors placeholder-gray-600 resize-y"
+                className="w-full bg-[#1e1a18] border border-[#1e1a18] px-4 py-3 text-gray-300 font-body text-sm focus:outline-none focus:border-[#d4af37]/50 focus:bg-[#151211] transition-colors placeholder-gray-600 resize-y"
                 placeholder="Speak your mind..."
                 required
               ></textarea>
@@ -176,7 +176,7 @@ const Contact = () => {
                 animate={{ opacity: 1, height: 'auto' }}
                 className="mb-6 text-center"
               >
-                <p className="font-inter text-red-400 text-sm">
+                <p className="font-body text-red-400 text-sm">
                   {errorMsg}
                 </p>
               </motion.div>
@@ -186,7 +186,7 @@ const Contact = () => {
             <button 
               type="submit" 
               disabled={isSending || isSent}
-              className={`w-full py-4 font-inter text-sm tracking-[0.2em] uppercase transition-all duration-300 flex items-center justify-center gap-2 ${
+              className={`w-full py-4 font-body text-sm tracking-[0.2em] uppercase transition-all duration-300 flex items-center justify-center gap-2 ${
                 isSent 
                   ? 'bg-[#1b4332] text-green-200 cursor-default' 
                   : 'bg-[#8b2621] hover:bg-[#a62d27] text-gray-200 shadow-[0_4px_15px_rgba(139,38,33,0.3)] hover:shadow-[0_4px_20px_rgba(139,38,33,0.5)]'
