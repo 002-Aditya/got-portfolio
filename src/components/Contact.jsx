@@ -4,7 +4,7 @@ import { Bird, Mail } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { fadeUp } from '../animations';
 
-import crowVideo from '../assets/videos/AnimatedCrow.gif';
+import crowVideo from '../assets/videos/Direction.gif';
 
 const Contact = () => {
   const formRef = useRef();
@@ -12,7 +12,7 @@ const Contact = () => {
   const [isSent, setIsSent] = useState(false);
   const [showCrow, setShowCrow] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
-
+  
   const sendEmail = (e) => {
     e.preventDefault();
     setIsSending(true);
@@ -25,17 +25,14 @@ const Contact = () => {
       import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'public_key'
     )
     .then((result) => {
-        setIsSending(false);
-        setIsSent(true);
         setShowCrow(true);
-        formRef.current.reset();
-        
-        // Hide crow animation after ~4.5 seconds
+        setIsSent(true);
         setTimeout(() => setShowCrow(false), 4500);
         setTimeout(() => setIsSent(false), 5000);
+        setIsSending(false);
+        formRef.current.reset();
     }, (error) => {
         setIsSending(false);
-        console.error(error.text);
         setErrorMsg("The raven was intercepted! Dark winds prevent dispatch. Please try again.");
         setTimeout(() => setErrorMsg(""), 6000);
     });
@@ -56,20 +53,16 @@ const Contact = () => {
       {/* Crow Video Overlay */}
       {showCrow && (
         <motion.div
-           initial={{ x: "-50vw", y: "30vh", scale: 0.8 }}
-           animate={{ x: "120vw", y: "-20vh", scale: 1.2 }}
-           transition={{ duration: 4, ease: "easeInOut" }}
-           className="fixed inset-0 z-[200] pointer-events-none flex items-center justify-start"
+          initial={{ x: "-50vw", y: "30vh", scale: 0.8 }}
+          animate={{ x: "120vw", y: "-20vh", scale: 1.2 }}
+          transition={{ duration: 4, ease: "easeInOut" }}
+          className="fixed inset-0 z-[200] pointer-events-none flex items-center justify-start"
         >
-          <video 
-            autoPlay 
-            loop={false}
-            muted 
-            playsInline
+          <img
+            src={`${crowVideo}?t=${Date.now()}`} 
+            alt="crow flying"
             className="w-72 h-72 md:w-96 md:h-96 object-contain opacity-90 drop-shadow-[0_0_20px_rgba(255,255,255,0.2)]"
-          >
-            <source src={crowVideo} type="video/webm" />
-          </video>
+          />
         </motion.div>
       )}
 
