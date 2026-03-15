@@ -28,9 +28,9 @@ const Navbar = () => {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-charcoal/90 backdrop-blur-md shadow-lg shadow-black/50 py-3' : 'bg-transparent py-5'}`}>
       <div className="container mx-auto px-6 lg:px-12 flex justify-between items-center">
         <a href="#home" className="flex items-center gap-2 group">
-          <Code className="w-8 h-8 text-crimson group-hover:text-gold transition-colors duration-300" />
-          <span className="font-primary text-xl font-bold tracking-wider text-frost group-hover:text-gold transition-colors duration-300">
-            A.K.
+          {/* <Code className="w-8 h-8 text-crimson group-hover:text-crimson transition-colors duration-300" /> */}
+          <span className="font-primary text-xl font-bold tracking-wider text-frost group-hover:text-crimson transition-colors duration-300">
+            
           </span>
         </a>
 
@@ -40,7 +40,7 @@ const Navbar = () => {
             <a 
               key={link.name} 
               href={link.href}
-              className="font-body text-sm md:text-base font-medium text-gray-300 hover:text-gold transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-crimson after:transition-all hover:after:w-full"
+              className="font-body text-sm md:text-base font-medium text-gray-300 hover:text-crimson transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-frost after:transition-all hover:after:w-full"
             >
               {link.name}
             </a>
