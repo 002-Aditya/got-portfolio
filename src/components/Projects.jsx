@@ -106,13 +106,13 @@ const Projects = () => {
                   ))}
                 </div>
 
-                <div className="flex items-center gap-4 pt-4 border-t border-[#4a2e1b]/30">
+                {/* <div className="flex items-center gap-4 pt-4 border-t border-[#4a2e1b]/30">
                   {project.links.github && (
                     <a href={project.links.github} className="text-[#ebd5b3] hover:text-crimson font-bold transition-colors flex items-center gap-2 font-body text-sm">
                       <Github className="w-4 h-4" /> Code
                     </a>
                   )}
-                </div>
+                </div> */}
               </div>
               
               {/* Animated borders */}
