@@ -3,6 +3,7 @@
 A cinematic, Game of Thrones-inspired personal portfolio for Aditya Kumar, Backend Software Engineer. Forged with React, Tailwind CSS, and Framer Motion.
 
 ## ⚔️ Tech Stack
+
 - **React (Vite)**
 - **Tailwind CSS v3**
 - **Framer Motion** (Animations & Parallax)
@@ -13,17 +14,20 @@ A cinematic, Game of Thrones-inspired personal portfolio for Aditya Kumar, Backe
 To run the project locally on your machine, follow these steps:
 
 1. **Navigate to the project directory:**
+
    ```bash
    cd portfolio
    ```
 
 2. **Install dependencies:**
    Make sure you have Node.js installed, then run:
+
    ```bash
    npm install
    ```
 
 3. **Start the development server:**
+
    ```bash
    npm run dev
    ```
@@ -35,7 +39,7 @@ To run the project locally on your machine, follow these steps:
 
 ## 📜 How to Update Content
 
-The website content is strictly based on your `portfolio.md`. 
+The website content is strictly based on your `portfolio.md`.
 If you need to update any information to keep it aligned with a newer version of `portfolio.md`, you can edit the following components located in the `src/components/` directory:
 
 - **Adding New Skills:** Edit the `skillsData` array inside `src/components/Skills.jsx`.
