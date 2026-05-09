@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Stoke:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,27 +6,48 @@
 
 @layer base {
   body {
-    @apply bg-charcoal text-frost overflow-x-hidden antialiased selection:bg-crimson/40 selection:text-frost;
-    font-family: "Stoke", serif;
+    @apply bg-background text-on-background font-body antialiased;
+    /* Noise texture */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-blend-mode: overlay;
+    background-size: 200px 200px;
+    background-color: theme('colors.background');
+    /* Blend mode helps it look like 2-3% opacity noise */
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
-    @apply tracking-wide;
-    font-family: 'Cinzel Decorative', serif;
+    @apply font-heading tracking-tight;
+  }
+
+  code, pre {
+    @apply font-mono;
   }
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #0b0b0b;
-}
-::-webkit-scrollbar-thumb {
-  background: #991b1b;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #d4af37;
+@layer components {
+  /* Ambient lighting base classes */
+  .ambient-glow-purple {
+    @apply absolute w-[600px] h-[600px] rounded-full mix-blend-screen opacity-15 pointer-events-none blur-[100px] bg-primary;
+  }
+  .ambient-glow-cyan {
+    @apply absolute w-[600px] h-[600px] rounded-full mix-blend-screen opacity-15 pointer-events-none blur-[100px] bg-secondary;
+  }
+  .ambient-glow-blue {
+    @apply absolute w-[600px] h-[600px] rounded-full mix-blend-screen opacity-15 pointer-events-none blur-[100px] bg-tertiary;
+  }
+
+  /* Glassmorphism classes */
+  .glass-card {
+    @apply relative bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 transition-all duration-300;
+  }
+  
+  .glass-card:hover {
+    @apply border-white/20;
+  }
+
+  /* Gradient border for the top edge highlight */
+  .glass-card::before {
+    content: '';
+    @apply absolute inset-0 rounded-2xl border-t border-white/10 pointer-events-none bg-gradient-to-b from-white/5 to-transparent opacity-50;
+  }
 }

@@ -1,19 +1,29 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import DragonCursor from './components/DragonCursor';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import { MainLayout } from './layouts/MainLayout';
+import { Home } from './pages/Home';
+import { Projects } from './pages/Projects';
+import { Preloader } from './components/ui/Preloader';
+import { CustomCursor } from './components/ui/CustomCursor';
+import './App.css';
 
 function App() {
+  const location = useLocation();
+
   return (
-    <div className="min-h-screen bg-charcoal text-frost flex flex-col font-body selection:bg-crimson/40 selection:text-frost">
-      <DragonCursor />
-      <Navbar />
-      <main className="flex-grow">
-        <Home />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <Preloader />
+      <CustomCursor />
+      <MainLayout>
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+          </Routes>
+        </AnimatePresence>
+      </MainLayout>
+    </>
   );
 }
 
