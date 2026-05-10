@@ -1,5 +1,3 @@
-import React from 'react';
-import { motion } from 'framer-motion';
 import { IMPACT_DATA } from '../../constants/portfolioData';
 import { Database, Workflow, ShieldCheck, Layers, Server, Cpu } from 'lucide-react';
 
@@ -15,7 +13,7 @@ const IconMap = {
 export const About = () => {
   return (
     <section className="py-stack-xl relative z-10" id="about">
-      <div className="container-max mx-auto px-margin-mobile md:px-gutter">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           <div className="lg:col-span-5">
             <h2 className="text-display-lg text-on-surface mb-8 leading-[1.1]">Architecting <br/><span className="text-primary">the invisible.</span></h2>
@@ -24,7 +22,7 @@ export const About = () => {
             </p>
           </div>
 
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-px bg-surface-container-high/20 no-line-boundary overflow-hidden rounded-[32px]">
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-px bg-surface-container-high/20 no-line-boundary overflow-hidden rounded-[32px] lg:translate-x-12">
             {IMPACT_DATA.map((item, index) => {
               const Icon = IconMap[item.icon];
               return (
@@ -54,7 +52,7 @@ export const About = () => {
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2 group-hover:bg-primary/10 transition-colors duration-700" />
             <Server className="text-primary mb-8 group-hover:rotate-12 transition-transform duration-500" size={40} strokeWidth={1} />
             <h3 className="text-display-lg-mobile md:text-headline-lg text-on-surface mb-4">API Architecture</h3>
-            <p className="text-body-lg text-on-surface-variant/70 leading-relaxed font-light">Designing resilient, versioned REST and GraphQL endpoints that serve as the backbone for high-performance frontend experiences.</p>
+            <p className="text-body-lg text-on-surface-variant/70 leading-relaxed font-light">Designing resilient, versioned REST endpoints that serve as the backbone for high-performance frontend experiences.</p>
           </div>
           
           <div className="md:col-span-4 p-12 tonal-layer-3 rounded-[40px] group flex flex-col justify-end">

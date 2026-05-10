@@ -6,7 +6,7 @@ import { Briefcase, ArrowUpRight } from 'lucide-react';
 export const Experience = () => {
   return (
     <section className="py-stack-xl relative z-10" id="experience">
-      <div className="container-max mx-auto px-margin-mobile md:px-gutter">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
         <div className="mb-20 grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
           <div className="md:col-span-8">
             <div className="mb-6 flex items-center gap-4">

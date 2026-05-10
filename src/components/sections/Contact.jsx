@@ -30,7 +30,7 @@ export const Contact = () => {
 
   return (
     <section className="py-stack-xl relative z-10" id="contact">
-      <div className="container-max mx-auto px-margin-mobile md:px-gutter">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-6">
             <div className="mb-8 flex items-center gap-4">
@@ -81,7 +81,7 @@ export const Contact = () => {
       </div>
 
       {/* Footer Meta */}
-      <div className="mt-32 pt-12 border-t border-on-surface/5 container-max mx-auto px-margin-mobile md:px-gutter flex flex-col md:flex-row justify-between items-center gap-8 pb-12">
+      <div className="mt-32 pt-12 border-t border-on-surface/5 max-w-container-max mx-auto px-margin-mobile md:px-gutter flex flex-col md:flex-row justify-between items-center gap-8 pb-12">
         <div className="flex items-center gap-4">
           <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
             <span className="text-primary font-bold text-xs">P</span>

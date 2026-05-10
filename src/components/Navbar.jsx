@@ -25,7 +25,7 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'py-4' : 'py-8'}`}>
-      <div className="container-max mx-auto px-margin-mobile md:px-gutter">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
         <div className={`relative transition-all duration-500 rounded-[32px] overflow-hidden ${scrolled ? 'bg-surface-container/30 backdrop-blur-xl shadow-2xl shadow-black/40 px-8 py-4 border border-on-surface/5' : 'bg-transparent py-0 border-transparent'}`}>
           <div className="flex justify-between items-center relative z-10">
             <a href="#home" className="flex items-center gap-3 group">

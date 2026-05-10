@@ -17,8 +17,8 @@ const IconMap = {
 export const Skills = () => {
   return (
     <section className="py-stack-xl relative z-10" id="stack">
-      <div className="container-max mx-auto px-margin-mobile md:px-gutter">
-        <div className="mb-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+        <div className="mb-24 grid grid-cols-1 lg:grid-cols-12 gap-16 items-end">
           <div className="lg:col-span-7">
             <div className="mb-6 flex items-center gap-4">
               <span className="text-label-sm font-bold text-primary tracking-[0.4em] uppercase">Stack / Arsenal</span>

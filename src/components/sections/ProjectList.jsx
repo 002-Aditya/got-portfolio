@@ -6,8 +6,8 @@ import { PROJECTS_DATA } from '../../constants/portfolioData';
 
 const ProjectItem = ({ project, index }) => {
   return (
-    <div className="w-screen h-screen flex items-center justify-center shrink-0 px-4 md:px-24">
-      <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+    <div className="w-screen h-screen flex items-center justify-center shrink-0">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-gutter grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
         <div className="lg:col-span-6">
           <div className="mb-8 flex items-center gap-4">
             <span className="text-label-sm font-bold text-primary/60 tracking-[0.3em] uppercase">Project / 0{index + 1}</span>

@@ -40,7 +40,7 @@ export const Hero = () => {
       <div className="ambient-glow-primary top-[-20%] left-[-10%]" />
       <div className="ambient-glow-secondary bottom-[-10%] right-[-5%]" />
 
-      <div className="container-max mx-auto px-margin-mobile md:px-gutter relative z-10">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-gutter relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <motion.div
             variants={container}
