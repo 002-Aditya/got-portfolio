@@ -6,13 +6,13 @@ import './App.css';
 
 function App() {
   return (
-    <>
+    <div>
       <Preloader />
       <CustomCursor />
       <MainLayout>
         <Home />
       </MainLayout>
-    </>
+    </div>
   );
 }
 
