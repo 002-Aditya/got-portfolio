@@ -126,8 +126,9 @@ export const PROJECTS_DATA = [
 
 export const CONTACT_DATA = {
   title: "Ready to build the future?",
-  description: "I'm actively exploring new opportunities to architect performant backend solutions. Whether you have a complex problem to solve or just want to connect, my inbox is always open.",
+  description: "I am actively seeking new opportunities to architect performant systems, specializing in backend engineering and full-stack development. Whether you have a complex technical challenge or are looking for a backend-first collaborator, my inbox is always open.",
   email: "dr.adityakumar2001@gmail.com",
   github: "github.com/002-Aditya",
   linkedin: "linkedin.com/in/adityakkumarr",
+  whatsapp: "8447440206",
 };

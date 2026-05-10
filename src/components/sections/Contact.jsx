@@ -1,7 +1,6 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { CONTACT_DATA } from '../../constants/portfolioData';
-import { Mail, Github, Linkedin, ArrowRight } from 'lucide-react';
+import { Mail, Github, Linkedin, ArrowRight, MessageCircle } from 'lucide-react';
 
 export const Contact = () => {
   const contactItems = [
@@ -25,6 +24,13 @@ export const Contact = () => {
       href: `https://${CONTACT_DATA.linkedin}`,
       icon: Linkedin,
       tag: "OAUTH 2.0"
+    },
+    {
+      label: "WhatsApp Message",
+      value: `+91 ${CONTACT_DATA.whatsapp}`,
+      href: `https://wa.me/91${CONTACT_DATA.whatsapp}`,
+      icon: MessageCircle,
+      tag: "Instant / P2P"
     }
   ];
 
@@ -34,7 +40,7 @@ export const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-6">
             <div className="mb-8 flex items-center gap-4">
-              <span className="text-label-sm font-bold text-primary tracking-[0.4em] uppercase">Connectivity / Gateway</span>
+              <span className="text-label-sm font-bold text-primary tracking-[0.4em] uppercase">Connectivity</span>
               <div className="h-px w-24 tonal-layer-4" />
             </div>
             <h2 className="text-display-lg text-on-surface mb-8 leading-[0.9] tracking-tighter">
@@ -65,7 +71,7 @@ export const Contact = () => {
                     <div>
                       <div className="flex items-center gap-3 mb-1">
                         <p className="text-label-sm font-bold text-on-surface-variant/40 uppercase tracking-widest">{item.label}</p>
-                        <span className="text-[10px] font-mono text-primary/40 px-2 py-0.5 rounded-full no-line-boundary-high">{item.tag}</span>
+                        {/* <span className="text-[10px] font-mono text-primary/40 px-2 py-0.5 rounded-full no-line-boundary-high">{item.tag}</span> */}
                       </div>
                       <p className="text-headline-lg-mobile md:text-title-lg text-on-surface font-mono break-all">{item.value}</p>
                     </div>
