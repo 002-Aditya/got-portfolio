@@ -1,70 +1,81 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GlassCard } from '../ui/GlassCard';
 import { EXPERIENCE_DATA } from '../../constants/portfolioData';
+import { Briefcase, ArrowUpRight } from 'lucide-react';
 
 export const Experience = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    show: { opacity: 1, x: 0, transition: { duration: 0.5 } }
-  };
-
   return (
-    <section className="py-stack-lg relative z-10" id="experience">
+    <section className="py-stack-xl relative z-10" id="experience">
       <div className="container-max mx-auto px-margin-mobile md:px-gutter">
-        <h2 className="text-display-lg text-on-surface mb-12">Experience</h2>
+        <div className="mb-20 grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
+          <div className="md:col-span-8">
+            <div className="mb-6 flex items-center gap-4">
+              <div className="w-12 h-px bg-primary" />
+              <span className="text-label-sm font-bold text-primary tracking-[0.4em] uppercase">Chronicle</span>
+            </div>
+            <h2 className="text-display-lg text-on-surface leading-none tracking-tighter">
+              Professional <br/><span className="text-on-surface/40 italic">Evolution.</span>
+            </h2>
+          </div>
+          <div className="md:col-span-4 pb-2">
+            <p className="text-body-lg text-on-surface-variant/70 font-light leading-relaxed">
+              Decade-defining architecture and infrastructure management across high-stakes enterprise environments.
+            </p>
+          </div>
+        </div>
         
-        <GlassCard>
-          <motion.div 
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-100px" }}
-            className="space-y-12"
-          >
-            {EXPERIENCE_DATA.map((exp, index) => (
-              <motion.div variants={itemVariants} key={index} className="relative pl-8 md:pl-0">
-                {/* Timeline line - mobile only */}
-                <div className="md:hidden absolute left-0 top-2 bottom-0 w-px bg-white/10" />
-                
-                <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-4 md:gap-8">
-                  <div className="text-body-md text-on-surface-variant font-mono relative">
-                    {/* Timeline dot - mobile only */}
-                    <div className="md:hidden absolute -left-[37px] top-1.5 w-3 h-3 rounded-full bg-primary" />
-                    {exp.period}
-                  </div>
-                  <div>
-                    <h3 className="text-headline-md text-on-surface mb-1">{exp.role}</h3>
-                    <h4 className="text-title-lg text-primary mb-4">{exp.company}</h4>
-                    <p className="text-body-lg text-on-surface-variant mb-4">
-                      {exp.description}
-                    </p>
-                    {exp.techStack && (
-                      <div className="flex flex-wrap gap-2 mt-4">
-                        {exp.techStack.map((tech, i) => (
-                          <div key={i} className="inline-flex items-center px-3 py-1 rounded-full bg-surface-bright/50 border border-white/5 text-on-surface-variant font-mono text-sm">
-                            {tech}
-                          </div>
-                        ))}
-                      </div>
-                    )}
+        <div className="space-y-12">
+          {EXPERIENCE_DATA.map((exp, index) => (
+            <div key={exp.id} className="relative group">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
+                {/* Period - Technical Metadata */}
+                <div className="lg:col-span-3 pt-2">
+                  <div className="sticky top-32">
+                    <span className="text-headline-lg font-bold text-on-surface/20 group-hover:text-primary/40 transition-colors duration-500 font-mono">
+                      {exp.period.split(' - ')[0]}
+                    </span>
+                    <div className="h-px w-full tonal-layer-4 my-4 group-hover:bg-primary/20 transition-colors duration-500" />
+                    <span className="text-label-sm font-bold text-on-surface-variant/40 uppercase tracking-widest">
+                      Node / {exp.id}
+                    </span>
                   </div>
                 </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </GlassCard>
+
+                {/* Content - Architectural Layer */}
+                <div className="lg:col-span-9 p-10 md:p-16 tonal-layer-2 rounded-[40px] transition-all duration-700 group-hover:tonal-layer-3 group-hover:translate-x-2">
+                  <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-10">
+                    <div>
+                      <h3 className="text-display-lg-mobile md:text-headline-lg font-bold text-on-surface mb-2">{exp.role}</h3>
+                      <h4 className="text-title-lg text-primary font-medium">{exp.company}</h4>
+                    </div>
+                    <div className="w-12 h-12 rounded-full tonal-layer-4 flex items-center justify-center group-hover:bg-primary transition-colors duration-500">
+                      <ArrowUpRight className="text-on-surface group-hover:text-on-primary transition-colors" size={20} />
+                    </div>
+                  </div>
+
+                  <p className="text-body-lg text-on-surface-variant/80 mb-12 max-w-4xl leading-relaxed font-light">
+                    {exp.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-4">
+                    {exp.techStack.map((tech) => (
+                      <span key={tech} className="no-line-boundary px-5 py-2 rounded-xl text-label-sm text-on-surface-variant/70 font-bold tracking-wider">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Connecting Line - Asymmetric Decorative */}
+              {index !== EXPERIENCE_DATA.length - 1 && (
+                <div className="hidden lg:block absolute left-[1.5rem] bottom-[-3rem] w-px h-12 tonal-layer-4" />
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
 };
+

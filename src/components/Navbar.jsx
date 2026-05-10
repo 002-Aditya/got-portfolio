@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Code } from 'lucide-react';
+import { Menu, X, Terminal } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const NAV_LINKS = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Experience', href: '#experience' },
+  { name: 'Architecture', href: '#home' },
+  { name: 'Core', href: '#about' },
+  { name: 'Stack', href: '#stack' },
+  { name: 'Chronicle', href: '#experience' },
   { name: 'Projects', href: '#projects' },
-  { name: 'Journey', href: '#journey' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Gateway', href: '#contact' },
 ];
 
 const Navbar = () => {
@@ -25,57 +24,74 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-charcoal/90 backdrop-blur-md shadow-lg shadow-black/50 py-3' : 'bg-transparent py-5'}`}>
-      <div className="container mx-auto px-6 lg:px-12 flex justify-between items-center">
-        <a href="#home" className="flex items-center gap-2 group">
-          {/* <Code className="w-8 h-8 text-crimson group-hover:text-crimson transition-colors duration-300" /> */}
-          <span className="font-primary text-xl font-bold tracking-wider text-frost group-hover:text-crimson transition-colors duration-300">
-            
-          </span>
-        </a>
-
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((link) => (
-            <a 
-              key={link.name} 
-              href={link.href}
-              className="font-body text-sm md:text-base font-medium text-gray-300 hover:text-crimson transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-frost after:transition-all hover:after:w-full"
-            >
-              {link.name}
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'py-4' : 'py-8'}`}>
+      <div className="container-max mx-auto px-margin-mobile md:px-gutter">
+        <div className={`relative transition-all duration-500 rounded-[32px] overflow-hidden ${scrolled ? 'tonal-layer-3 shadow-2xl shadow-black/40 px-8 py-4' : 'bg-transparent py-0'}`}>
+          <div className="flex justify-between items-center relative z-10">
+            <a href="#home" className="flex items-center gap-3 group">
+              <div className="w-10 h-10 rounded-xl tonal-layer-4 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+                <Terminal size={20} strokeWidth={2} />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-label-sm font-bold tracking-[0.2em] text-on-surface uppercase leading-tight">
+                  Aditya.
+                </span>
+                <span className="text-[10px] font-mono text-primary/40 uppercase tracking-widest leading-tight">
+                  System_Architect
+                </span>
+              </div>
             </a>
-          ))}
-        </div>
 
-        {/* Mobile Toggle */}
-        <button 
-          className="md:hidden text-frost hover:text-gold transition-colors focus:outline-none"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
-        </button>
+            {/* Desktop Nav */}
+            <div className="hidden md:flex items-center gap-2">
+              {NAV_LINKS.map((link) => (
+                <a 
+                  key={link.name} 
+                  href={link.href}
+                  className="px-5 py-2 text-label-sm font-bold text-on-surface-variant/60 uppercase tracking-widest hover:text-primary hover:tonal-layer-4 rounded-xl transition-all duration-300"
+                >
+                  {link.name}
+                </a>
+              ))}
+              <div className="ml-4 h-8 w-px tonal-layer-4" />
+              <a href="#contact" className="ml-4 px-6 py-2.5 bg-primary text-surface font-bold text-xs uppercase tracking-widest rounded-xl hover:scale-105 active:scale-95 transition-all">
+                Connect
+              </a>
+            </div>
+
+            {/* Mobile Toggle */}
+            <button 
+              className="md:hidden w-10 h-10 rounded-xl tonal-layer-4 flex items-center justify-center text-on-surface hover:text-primary transition-colors focus:outline-none"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* Mobile Nav */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-iron/95 backdrop-blur-lg border-b border-crimson/30 overflow-hidden"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="absolute top-full left-0 w-full px-margin-mobile mt-4 md:hidden"
           >
-            <div className="flex flex-col items-center py-6 gap-6">
-              {NAV_LINKS.map((link) => (
-                <a 
-                  key={link.name} 
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="font-primary text-lg tracking-widest text-gray-300 hover:text-gold transition-colors"
-                >
-                  {link.name}
-                </a>
-              ))}
+            <div className="tonal-layer-3 rounded-[32px] p-8 shadow-2xl shadow-black/60 border border-on-surface/5">
+              <div className="flex flex-col gap-4">
+                {NAV_LINKS.map((link) => (
+                  <a 
+                    key={link.name} 
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="p-4 text-headline-sm text-on-surface hover:text-primary hover:tonal-layer-4 rounded-2xl transition-all font-bold uppercase tracking-widest text-center"
+                  >
+                    {link.name}
+                  </a>
+                ))}
+              </div>
             </div>
           </motion.div>
         )}

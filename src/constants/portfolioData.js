@@ -1,17 +1,88 @@
 export const HERO_DATA = {
   title: "Backend Engineer",
-  subtitle: "Building Scalable Systems",
+  subtitle: "Building scalable backend systems, intelligent workflows, and enterprise-grade APIs.",
   description:
-    "I specialize in distributed systems, high-performance APIs, and cloud infrastructure. I turn complex problems into elegant, reliable services.",
+    "Backend Engineer specializing in Node.js, Spring Boot, PostgreSQL, scalable architectures, and AI-powered automation systems.",
   primaryCta: "View Projects",
   secondaryCta: "Contact Me",
+  tags: ["Node.js", "Spring Boot", "PostgreSQL"]
 };
 
-export const ABOUT_DATA = {
-  title: "About Me",
-  content:
-    "With a deep understanding of core architectural principles, I engineer solutions that can scale from 0 to millions of users. I thrive at the intersection of infrastructure and application logic.",
+export const IMPACT_DATA = [
+  {
+    label: "70%",
+    description: "Reduced database latency",
+    icon: "database"
+  },
+  {
+    label: "Built",
+    description: "enterprise workflows",
+    subtext: "Automated intelligent systems",
+    icon: "workflow"
+  },
+  {
+    label: "Secure",
+    description: "authentication",
+    subtext: "OAuth & JWT implementation",
+    icon: "security"
+  },
+  {
+    label: "PostgreSQL",
+    description: "architecture",
+    subtext: "Complex schema design",
+    icon: "schema"
+  }
+];
+
+export const SKILLS_DATA = {
+  title: "Technical Arsenal",
+  description: "Architecting robust backend systems, event-driven integrations, and AI-powered automation pipelines with enterprise-grade tooling.",
+  categories: [
+    {
+      name: "Core Backend",
+      skills: ["Node.js", "Spring Boot", "Java"],
+      icon: "code"
+    },
+    {
+      name: "Data & Streaming",
+      skills: ["PostgreSQL", "Kafka", "RabbitMQ", "Vector Databases"],
+      icon: "database"
+    },
+    {
+      name: "AI & Automation",
+      skills: ["AI Agents", "n8n", "Docker"],
+      icon: "robot"
+    },
+    {
+      name: "Frontend",
+      skills: ["React", "TailwindCSS"],
+      icon: "layout"
+    },
+  ],
 };
+
+export const STATS_DATA = [
+  {
+    value: "70%",
+    label: "Faster DB Retrieval",
+    icon: "zap"
+  },
+  {
+    value: "24/7",
+    label: "Enterprise-grade systems",
+    icon: "activity"
+  },
+  {
+    value: "100+",
+    label: "Production deployments",
+    icon: "cloud"
+  },
+  {
+    value: "50+",
+    label: "Workflow automations",
+    icon: "cpu"
+  }
+];
 
 export const EXPERIENCE_DATA = [
   {
@@ -32,24 +103,6 @@ export const EXPERIENCE_DATA = [
   },
 ];
 
-export const SKILLS_DATA = {
-  title: "Technical Arsenal",
-  categories: [
-    {
-      name: "Core Languages",
-      skills: ["Go", "Node.js (TypeScript)", "Python", "Rust"],
-    },
-    {
-      name: "Infrastructure & Cloud",
-      skills: ["AWS", "Docker", "Kubernetes", "Terraform"],
-    },
-    {
-      name: "Databases",
-      skills: ["PostgreSQL", "Redis", "MongoDB", "Cassandra"],
-    },
-  ],
-};
-
 export const PROJECTS_DATA = [
   {
     id: "project-1",
@@ -69,21 +122,12 @@ export const PROJECTS_DATA = [
     techStack: ["Node.js", "Express", "JWT", "Nginx"],
     link: "https://github.com/example/auth-gateway",
   },
-  {
-    id: "project-3",
-    title: "Real-time Metrics Pipeline",
-    summary: "Data pipeline for ingesting and processing real-time application metrics.",
-    description:
-      "Built a scalable data ingestion pipeline using Kafka and ClickHouse, capable of handling 50k events per second with sub-second query latency.",
-    techStack: ["Python", "Kafka", "ClickHouse", "Grafana"],
-    link: "https://github.com/example/metrics-pipeline",
-  },
 ];
 
 export const CONTACT_DATA = {
-  title: "Let's Connect",
-  description: "I'm always open to discussing new opportunities, system architecture, or just geeking out about backend tech.",
-  email: "hello@example.com",
-  github: "https://github.com",
-  linkedin: "https://linkedin.com",
+  title: "Ready to build the future?",
+  description: "I'm actively exploring new opportunities to architect performant backend solutions. Whether you have a complex problem to solve or just want to connect, my inbox is always open.",
+  email: "dr.adityakumar2001@gmail.com",
+  github: "github.com/002-Aditya",
+  linkedin: "linkedin.com/in/adityakkumarr",
 };
