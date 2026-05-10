@@ -89,7 +89,7 @@ export const Hero = () => {
       </div>
 
       {/* Scroll Indicator - Minimalist */}
-      <motion.div 
+      {/* <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.5, duration: 1 }}
@@ -103,7 +103,7 @@ export const Hero = () => {
           />
         </div>
         <span className="text-[10px] tracking-[0.4em] font-bold text-on-surface-variant/40 uppercase">Architecture / v1.0</span>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 };
