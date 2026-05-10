@@ -20,6 +20,10 @@
   code, pre {
     @apply font-mono;
   }
+
+  section {
+    scroll-margin-top: 100px;
+  }
 }
 
 @layer components {
