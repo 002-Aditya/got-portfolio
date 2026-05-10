@@ -1,5 +1,7 @@
+import React from 'react';
+import { motion } from 'framer-motion';
 import { HERO_DATA, IMPACT_DATA } from '../../constants/portfolioData';
-import { Server, Share2, Gauge, Workflow, ShieldCheck, Database, Layers, Cpu } from 'lucide-react';
+import { Server, Share2, Gauge, Workflow, ShieldCheck, Database, Layers, Cpu, ArrowRight } from 'lucide-react';
 
 const IconMap = {
   database: Gauge,
@@ -10,94 +12,148 @@ const IconMap = {
   enterprise: Cpu
 };
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+  }
+};
+
 export const About = () => {
   return (
-    <section className="py-stack-xl relative z-10" id="about">
+    <section className="py-stack-xl relative z-10 overflow-hidden" id="about">
+      {/* Background Ambient Glow */}
+      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
+      
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-20 items-start"
+        >
           
           {/* Left Column: Narrative & Feature Cards */}
-          <div className="lg:col-span-6">
-            <h2 className="text-display-lg-mobile md:text-display-lg text-on-surface mb-6 md:mb-8 leading-[0.9] tracking-tighter">
-              Architecting <br/>
-              <span className="text-primary italic opacity-90">the unseen.</span>
-            </h2>
-            <p className="text-body-lg text-on-surface-variant/70 max-w-xl leading-relaxed font-light mb-10 md:mb-16">
-              {HERO_DATA.description}
-            </p>
-
-            {/* Feature Cards Bottom Left */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="p-6 md:p-8 tonal-layer-1 rounded-[32px] group border border-on-surface/5">
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl tonal-layer-2 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Server size={20} md:size={24} strokeWidth={1.5} />
-                </div>
-                <h3 className="text-title-lg text-on-surface mb-3">API Architecture</h3>
-                <p className="text-body-sm text-on-surface-variant/60 leading-relaxed">
-                  Designing resilient, versioned REST endpoints.
-                </p>
+          <div className="lg:col-span-6 space-y-12 md:space-y-16">
+            <motion.div variants={itemVariants}>
+              <div className="flex items-center gap-4 mb-6">
+                <span className="text-label-sm font-bold text-primary tracking-[0.4em] uppercase">Core / Identity</span>
+                <div className="h-px w-12 tonal-layer-4" />
               </div>
+              <h2 className="text-[40px] md:text-display-lg text-on-surface leading-[0.95] tracking-tighter font-black">
+                Architecting <br/>
+                <span className="text-primary italic">the unseen.</span>
+              </h2>
+              <p className="mt-8 text-body-lg text-on-surface-variant/60 max-w-xl leading-relaxed font-light">
+                {HERO_DATA.description}
+              </p>
+            </motion.div>
 
-              <div className="p-6 md:p-8 tonal-layer-1 rounded-[32px] group border border-on-surface/5">
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl tonal-layer-2 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Share2 size={20} md:size={24} strokeWidth={1.5} />
+            {/* Feature Cards Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <motion.div 
+                variants={itemVariants}
+                whileHover={{ y: -5 }}
+                className="p-8 tonal-layer-1 rounded-[40px] group transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5"
+              >
+                <div className="w-14 h-14 rounded-2xl tonal-layer-2 flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform duration-500">
+                  <Server size={24} strokeWidth={1.5} />
                 </div>
-                <h3 className="text-title-lg text-on-surface mb-3">Enterprise Systems</h3>
-                <p className="text-body-sm text-on-surface-variant/60 leading-relaxed">
-                  Building distributed, fault-tolerant microservices.
+                <h3 className="text-title-lg text-on-surface mb-3 font-bold">API Systems</h3>
+                <p className="text-body-sm text-on-surface-variant/50 leading-relaxed">
+                  Designing resilient, versioned REST endpoints for scale.
                 </p>
-              </div>
+              </motion.div>
+
+              <motion.div 
+                variants={itemVariants}
+                whileHover={{ y: -5 }}
+                className="p-8 tonal-layer-1 rounded-[40px] group transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5"
+              >
+                <div className="w-14 h-14 rounded-2xl tonal-layer-2 flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform duration-500">
+                  <Share2 size={24} strokeWidth={1.5} />
+                </div>
+                <h3 className="text-title-lg text-on-surface mb-3 font-bold">Enterprise</h3>
+                <p className="text-body-sm text-on-surface-variant/50 leading-relaxed">
+                  Building distributed, fault-tolerant microservices for complex flows.
+                </p>
+              </motion.div>
             </div>
           </div>
 
-          {/* Right Column: Stacked Metric Cards from Data */}
-          <div className="lg:col-span-6 space-y-4">
-            {IMPACT_DATA.map((item, index) => {
-              const Icon = IconMap[item.icon] || Layers;
-              const isHighlight = item.icon === 'workflow';
+          {/* Right Column: Minimal Impact Stack */}
+          <div className="lg:col-span-6 space-y-6">
+            <motion.div variants={itemVariants} className="mb-10">
+              <span className="text-label-sm font-bold text-on-surface-variant/40 uppercase tracking-[0.2em]">Operational Impact</span>
+            </motion.div>
+            
+            <div className="space-y-4">
+              {IMPACT_DATA.map((item, index) => {
+                const Icon = IconMap[item.icon] || Layers;
 
-              return (
-                <div 
-                  key={index} 
-                  className={`p-6 md:p-10 rounded-[32px] flex items-center gap-5 md:gap-8 border transition-all duration-500 ${
-                    isHighlight 
-                      ? 'tonal-layer-2 border-on-surface/10 hover:tonal-layer-3' 
-                      : 'tonal-layer-1 border-on-surface/5 hover:tonal-layer-2'
-                  }`}
-                >
-                  <div className={`shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center ${
-                    isHighlight ? 'bg-primary/10 text-primary' : 'tonal-layer-2 text-on-surface-variant/40'
-                  }`}>
-                    <Icon className="w-6 h-6 md:w-7 md:h-7" strokeWidth={1} />
-                  </div>
-                  <div>
-                    <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1 mb-1">
-                      <span className={`${item.label.includes('%') ? 'text-headline-lg-mobile md:text-display-sm' : 'text-title-md md:text-title-lg'} text-on-surface leading-none font-extrabold`}>
-                        {item.label}
-                      </span>
-                      {item.label.includes('%') ? null : (
-                        <span className="text-title-md md:text-title-lg text-on-surface font-extrabold">
-                          {item.description}
-                        </span>
-                      )}
+                return (
+                  <motion.div 
+                    key={index}
+                    variants={itemVariants}
+                    whileHover={{ x: 10 }}
+                    className={`p-8 md:p-10 rounded-[40px] flex items-center gap-8 group cursor-default transition-all duration-500 ${
+                      'tonal-layer-1 hover:tonal-layer-2'
+                    }`}
+                  >
+                    <div className={`shrink-0 w-16 h-16 rounded-full flex items-center justify-center transition-all duration-500 ${
+                      'tonal-layer-2 text-primary'
+                    }`}>
+                      <Icon size={28} strokeWidth={1.5} />
                     </div>
-                    {item.label.includes('%') && (
-                      <p className="text-[10px] md:text-label-sm text-on-surface-variant/60 uppercase tracking-widest">
-                        {item.description}
-                      </p>
-                    )}
-                    {item.subtext && (
-                      <p className="text-[10px] md:text-label-sm text-on-surface-variant/60 uppercase tracking-widest">
-                        {item.subtext}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              );
-            })}
+                    
+                    <div className="flex-1">
+                      <div className="flex flex-wrap items-baseline gap-3 mb-2">
+                        <span className={`${item.label.includes('%') ? 'text-display-sm' : 'text-title-lg'} text-on-surface leading-none font-black tracking-tight`}>
+                          {item.label}
+                        </span>
+                        {!item.label.includes('%') && (
+                          <span className="text-title-lg text-on-surface font-bold tracking-tight">
+                            {item.description}
+                          </span>
+                        )}
+                      </div>
+                      
+                      <div className="flex items-center justify-between">
+                        <div>
+                          {item.label.includes('%') && (
+                            <p className="text-label-sm text-on-surface-variant/40 uppercase tracking-widest font-medium">
+                              {item.description}
+                            </p>
+                          )}
+                          {item.subtext && (
+                            <p className="text-label-sm text-on-surface-variant/40 uppercase tracking-widest font-medium">
+                              {item.subtext}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
 
-        </div>
+        </motion.div>
       </div>
     </section>
   );

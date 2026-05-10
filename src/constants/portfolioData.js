@@ -23,7 +23,7 @@ export const IMPACT_DATA = [
   {
     label: "Secure",
     description: "authentication",
-    subtext: "OAuth & JWT implementation",
+    subtext: "OAuth, SSO & JWT implementation",
     icon: "security"
   },
   {
@@ -98,7 +98,7 @@ export const EXPERIENCE_DATA = [
     role: "Backend Engineer",
     company: "CloudNative Corp",
     period: "2020 - 2023",
-    description: "Developed robust REST and GraphQL APIs for a global user base.",
+    description: "Developed robust REST for a global user base.",
     techStack: ["Python", "Django", "Redis", "AWS"],
   },
 ];
