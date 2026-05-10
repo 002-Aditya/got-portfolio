@@ -331,67 +331,62 @@ export const Skills = () => {
           viewport={{ once: true }}
           transition={{ delay: 0.15 }}
           className="
-            mt-20
+            mt-16 md:mt-32
             grid
-            grid-cols-2
-            gap-4
-            md:grid-cols-4
-            md:gap-6
+            grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
+            gap-6 md:gap-8
           "
         >
           {STATS_DATA.map((stat, index) => {
-            const StatIcon =
-              IconMap[stat.icon] || Activity;
+            const StatIcon = IconMap[stat.icon] || Activity;
 
             return (
               <motion.div
                 key={index}
-                whileHover={{ y: -4 }}
+                whileHover={{ y: -6 }}
                 className="
-                  rounded-3xl
+                  rounded-[32px]
                   border
-                  border-white/[0.05]
+                  border-white/[0.06]
                   bg-white/[0.03]
-                  p-5
+                  p-6 md:p-8
                   backdrop-blur-xl
                   transition-all
-                  duration-300
-                  hover:border-primary/20
-                  hover:bg-primary/[0.04]
-
-                  /* MOBILE */
-                  max-md:border-0
-                  max-md:bg-white/[0.02]
-                  max-md:px-2
+                  duration-500
+                  hover:border-primary/30
+                  hover:bg-white/[0.06]
+                  group
                 "
               >
                 {/* Icon + Number */}
-                <div className="mb-4 flex items-center gap-3">
+                <div className="mb-6 flex items-center gap-4">
                   <div
                     className="
                       flex
-                      h-12
-                      w-12
+                      h-14 w-14
                       items-center
                       justify-center
                       rounded-2xl
                       bg-primary/10
                       text-primary
+                      group-hover:scale-110
+                      transition-transform
+                      duration-500
                     "
                   >
                     <StatIcon
-                      className="h-5 w-5"
+                      className="h-6 w-6"
                       strokeWidth={1.8}
                     />
                   </div>
 
                   <div
                     className="
-                      text-3xl
+                      text-4xl
                       font-black
                       leading-none
                       text-white
-                      md:text-4xl
+                      tracking-tighter
                     "
                   >
                     {stat.value}
@@ -403,8 +398,9 @@ export const Skills = () => {
                   className="
                     text-[11px]
                     font-bold
-                    tracking-[0.25em]
+                    tracking-[0.3em]
                     text-white/40
+                    uppercase
                   "
                 >
                   {stat.label}
