@@ -90,9 +90,9 @@ export const MainLayout = ({ children }) => {
                 <p className="text-[10px] font-mono text-on-surface-variant/20 uppercase tracking-[0.2em] mb-2">
                   Built with React + Framer Motion
                 </p>
-                <p className="text-[10px] font-mono text-on-surface-variant/20 uppercase tracking-[0.2em]">
+                {/* <p className="text-[10px] font-mono text-on-surface-variant/20 uppercase tracking-[0.2em]">
                   © 2024 Aditya Kumar
-                </p>
+                </p> */}
               </div>
             </div>
          </div>
