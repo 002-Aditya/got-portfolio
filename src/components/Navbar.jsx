@@ -3,12 +3,12 @@ import { Menu, X, Terminal } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const NAV_LINKS = [
-  { name: 'Architecture', href: '#home' },
+  // { name: 'Architecture', href: '#home' },
   { name: 'Core', href: '#about' },
   { name: 'Stack', href: '#stack' },
   { name: 'Chronicle', href: '#experience' },
   { name: 'Projects', href: '#projects' },
-  { name: 'Gateway', href: '#contact' },
+  // { name: 'Gateway', href: '#contact' },
 ];
 
 const Navbar = () => {
