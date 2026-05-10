@@ -23,10 +23,14 @@ export const Hero = () => {
   };
 
   const codeString = `const system = new Architecture({
-  scale: 'infinite',
-  latency: 'minimal',
-  resilience: 'monolith'
-});`;
+    scale: 'infinite',
+    latency: 'minimal',
+    database: 'PostgreSQL',
+    APIs: 'REST',
+    authentication & authorization: 'JWT, RBAC',
+    messaging: 'RabbitMQ',
+    containerization: 'Docker',
+  });`;
 
   return (
     <section
@@ -93,12 +97,12 @@ export const Hero = () => {
 
           {/* Right Side: Code Snippet - Asymmetric displacement */}
           <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 40, opacity: 0 }}
+            animate={{ opacity: 1, y: 0, opacity: 1 }}
             transition={{ duration: 1.5, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-5 relative hidden lg:block"
+            className="lg:col-span-5 relative mt-12 lg:mt-0"
           >
-            <div className="relative z-10 transform lg:translate-x-12 lg:translate-y-8">
+            <div className="relative z-10 transform translate-x-0 translate-y-0 lg:translate-x-12 lg:translate-y-8">
               <CodeSnippet
                 code={codeString}
                 language="architecture.sys"
@@ -107,8 +111,8 @@ export const Hero = () => {
             </div>
 
             {/* Architectural Layering - Background blocks */}
-            <div className="absolute -z-10 top-0 left-0 w-full h-full tonal-layer-2 rounded-[40px] transform rotate-3" />
-            <div className="absolute -z-20 top-4 left-4 w-full h-full tonal-layer-1 rounded-[40px] transform -rotate-6 opacity-50" />
+            <div className="absolute -z-10 top-2 left-2 w-full h-full bg-on-surface/[0.02] backdrop-blur-md rounded-[40px] transform rotate-2 lg:rotate-3 border border-on-surface/5" />
+            <div className="absolute -z-20 top-4 left-4 w-full h-full bg-on-surface/[0.01] backdrop-blur-sm rounded-[40px] transform -rotate-1 lg:-rotate-2 border border-on-surface/5" />
           </motion.div>
         </div>
       </div>

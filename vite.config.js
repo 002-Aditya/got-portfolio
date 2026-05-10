@@ -5,9 +5,6 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   server: {
-    allowedHosts: [
-      "characteristics-brilliant-appreciated-hist.trycloudflare.com",
-      "kent-transformation-brick-eggs.trycloudflare.com"
-    ],
+    allowedHosts: true,
   },
 });
