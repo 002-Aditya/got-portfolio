@@ -39,17 +39,19 @@ export const Hero = () => {
             className="lg:col-span-7"
           >
             {/* Status Tag */}
-            <motion.div variants={item} className="mb-10">
+            {/* <motion.div variants={item} className="mb-10">
               <span className="no-line-boundary px-6 py-2 rounded-full text-label-sm uppercase tracking-[0.2em] text-primary/80">
                 <span className="w-2 h-2 rounded-full bg-primary inline-block mr-3 animate-pulse" />
                 Available for Architecture
               </span>
-            </motion.div>
+            </motion.div> */}
 
             {/* Heading - Asymmetric focus */}
-            <motion.h1 variants={item} className="text-display-xl-mobile md:text-display-xl text-on-surface mb-10 leading-[0.9] tracking-tighter">
-              Building <span className="text-primary italic">Resilient</span> <br />
-              <span className="pl-4 md:pl-12 text-on-surface/90">Infrastructures.</span>
+            <motion.h1 variants={item} className="text-display-xl-mobile md:text-display-xl text-on-surface mb-10 mt-10 leading-[0.9] tracking-tighter">
+              Building Scalable <br />
+              backend systems, <br />
+              workflows, and<br />
+              <p className="text-primary">enterprise-grade APIs.</p>
             </motion.h1>
             
             {/* Description */}

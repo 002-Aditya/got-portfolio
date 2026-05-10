@@ -37,7 +37,7 @@ const Navbar = () => {
                   Aditya.
                 </span>
                 <span className="text-[10px] font-mono text-primary/40 uppercase tracking-widest leading-tight">
-                  System_Architect
+                  Backend Architect
                 </span>
               </div>
             </a>

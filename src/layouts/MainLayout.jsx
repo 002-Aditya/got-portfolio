@@ -70,7 +70,7 @@ export const MainLayout = ({ children }) => {
          <div className="container-max mx-auto px-margin-mobile md:px-gutter relative z-10 border-t border-on-surface/5 pt-24">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16">
               <div className="lg:col-span-4">
-                <h2 className="text-display-sm text-on-surface mb-6 tracking-tighter">PRATEEK.<span className="text-primary italic">DEV</span></h2>
+                <h2 className="text-display-sm text-on-surface mb-6 tracking-tighter">ADITYA.<span className="text-primary italic">DEV</span></h2>
                 <p className="text-body-md text-on-surface-variant/50 max-w-xs font-light">
                   Architecting high-performance backends and scalable systems for the modern web.
                 </p>
