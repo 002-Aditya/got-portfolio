@@ -34,7 +34,7 @@ export const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col justify-center pt-24 pb-40 overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center pt-24 pb-40 overflow-hidden pr-10"
     >
       {/* Ambient Background Elements */}
       <div className="ambient-glow-primary top-[-20%] left-[-10%]" />
