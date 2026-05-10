@@ -78,19 +78,23 @@ export const Hero = () => {
 
             {/* CTAs */}
             <motion.div variants={item} className="flex flex-wrap gap-4">
-              <Button
-                variant="primary"
-                className="rounded-xl px-6 py-3 text-sm tracking-wide"
-              >
-                {HERO_DATA.primaryCta}
-              </Button>
+              <a href="#projects">
+                <Button
+                  variant="primary"
+                  className="rounded-xl px-6 py-3 text-sm tracking-wide"
+                >
+                  {HERO_DATA.primaryCta}
+                </Button>
+              </a>
 
-              <Button
-                variant="secondary"
-                className="rounded-xl px-6 py-3 text-sm tracking-wide no-line-boundary-high"
-              >
-                {HERO_DATA.secondaryCta}
-              </Button>
+              <a href="#contact">
+                <Button
+                  variant="secondary"
+                  className="rounded-xl px-6 py-3 text-sm tracking-wide no-line-boundary-high"
+                >
+                  {HERO_DATA.secondaryCta}
+                </Button>
+              </a>
             </motion.div>
           </motion.div>
 
