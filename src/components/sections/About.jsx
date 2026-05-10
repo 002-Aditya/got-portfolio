@@ -1,11 +1,11 @@
-import { IMPACT_DATA } from '../../constants/portfolioData';
-import { Database, Workflow, ShieldCheck, Layers, Server, Cpu } from 'lucide-react';
+import { HERO_DATA, IMPACT_DATA } from '../../constants/portfolioData';
+import { Server, Share2, Gauge, Workflow, ShieldCheck, Database, Layers, Cpu } from 'lucide-react';
 
 const IconMap = {
-  database: Database,
+  database: Gauge,
   workflow: Workflow,
   security: ShieldCheck,
-  schema: Layers,
+  schema: Database,
   api: Server,
   enterprise: Cpu
 };
@@ -15,51 +15,76 @@ export const About = () => {
     <section className="py-stack-xl relative z-10" id="about">
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-          <div className="lg:col-span-5">
-            <h2 className="text-display-lg text-on-surface mb-8 leading-[1.1]">Architecting <br/><span className="text-primary">the invisible.</span></h2>
-            <p className="text-body-lg text-on-surface-variant/80 max-w-xl leading-relaxed font-light">
-              My focus lies deep within the server architecture. I build the robust foundations that power complex applications, ensuring data flows securely, APIs respond instantly, and enterprise systems scale effortlessly under load.
+          
+          {/* Left Column: Narrative & Feature Cards */}
+          <div className="lg:col-span-6">
+            <h2 className="text-display-lg text-on-surface mb-8 leading-[0.9] tracking-tighter">
+              Architecting <br/>
+              <span className="text-primary italic opacity-90">the unseen.</span>
+            </h2>
+            <p className="text-body-lg text-on-surface-variant/70 max-w-xl leading-relaxed font-light mb-16">
+              {HERO_DATA.description}
             </p>
+
+            {/* Feature Cards Bottom Left */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="p-8 tonal-layer-1 rounded-[32px] group border border-on-surface/5">
+                <div className="w-12 h-12 rounded-2xl tonal-layer-2 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Server size={24} strokeWidth={1.5} />
+                </div>
+                <h3 className="text-title-lg text-on-surface mb-3">API Architecture</h3>
+                <p className="text-body-sm text-on-surface-variant/60 leading-relaxed">
+                  Designing resilient, versioned REST endpoints.
+                </p>
+              </div>
+
+              <div className="p-8 tonal-layer-1 rounded-[32px] group border border-on-surface/5">
+                <div className="w-12 h-12 rounded-2xl tonal-layer-2 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Share2 size={24} strokeWidth={1.5} />
+                </div>
+                <h3 className="text-title-lg text-on-surface mb-3">Enterprise Systems</h3>
+                <p className="text-body-sm text-on-surface-variant/60 leading-relaxed">
+                  Building distributed, fault-tolerant microservices.
+                </p>
+              </div>
+            </div>
           </div>
 
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-px bg-surface-container-high/20 no-line-boundary overflow-hidden rounded-[32px] lg:translate-x-12">
+          {/* Right Column: Stacked Metric Cards from Data */}
+          <div className="lg:col-span-6 space-y-4">
             {IMPACT_DATA.map((item, index) => {
-              const Icon = IconMap[item.icon];
+              const Icon = IconMap[item.icon] || Layers;
+              const isHighlight = item.icon === 'workflow'; // Matching the highlight from the design
+
               return (
-                <div key={index} className="p-10 tonal-layer-2 group hover:tonal-layer-4 transition-colors duration-500">
-                  <div className="w-12 h-12 rounded-2xl tonal-layer-3 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300 mb-8">
-                    {Icon && <Icon size={24} strokeWidth={1.5} />}
+                <div 
+                  key={index} 
+                  className={`p-10 rounded-[32px] flex items-center gap-8 border transition-all duration-500 ${
+                    isHighlight 
+                      ? 'tonal-layer-2 border-on-surface/10 hover:tonal-layer-3' 
+                      : 'tonal-layer-1 border-on-surface/5 hover:tonal-layer-2'
+                  }`}
+                >
+                  <div className={`w-14 h-14 rounded-full flex items-center justify-center ${
+                    isHighlight ? 'bg-primary/10 text-primary' : 'tonal-layer-2 text-on-surface-variant/40'
+                  }`}>
+                    <Icon size={28} strokeWidth={1} />
                   </div>
                   <div>
-                    <span className="text-headline-lg font-bold text-on-surface block mb-1">{item.label}</span>
-                    <p className="text-label-sm uppercase tracking-widest text-on-surface-variant/60 mb-4">{item.description}</p>
-                    {item.subtext && (
-                      <div className="no-line-boundary-high h-px w-8 mb-4" />
-                    )}
-                    {item.subtext && (
-                      <p className="text-[10px] font-mono text-primary/70 uppercase tracking-widest">{item.subtext}</p>
-                    )}
+                    <div className="flex items-baseline gap-2 mb-1">
+                      <span className={`${item.label.includes('%') ? 'text-display-sm' : 'text-title-lg'} text-on-surface leading-none font-extrabold`}>
+                        {item.label}
+                      </span>
+                      {item.label.includes('%') ? null : <span className="text-title-lg text-on-surface font-extrabold">{item.description}</span>}
+                    </div>
+                    {item.label.includes('%') && <p className="text-label-sm text-on-surface-variant/60 uppercase tracking-widest">{item.description}</p>}
+                    {item.subtext && <p className="text-label-sm text-on-surface-variant/60 uppercase tracking-widest">{item.subtext}</p>}
                   </div>
                 </div>
               );
             })}
           </div>
-        </div>
 
-        {/* Feature Highlights - Asymmetric Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mt-16">
-          <div className="md:col-span-8 p-12 tonal-layer-1 rounded-[40px] group overflow-hidden relative">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2 group-hover:bg-primary/10 transition-colors duration-700" />
-            <Server className="text-primary mb-8 group-hover:rotate-12 transition-transform duration-500" size={40} strokeWidth={1} />
-            <h3 className="text-display-lg-mobile md:text-headline-lg text-on-surface mb-4">API Architecture</h3>
-            <p className="text-body-lg text-on-surface-variant/70 leading-relaxed font-light">Designing resilient, versioned REST endpoints that serve as the backbone for high-performance frontend experiences.</p>
-          </div>
-          
-          <div className="md:col-span-4 p-12 tonal-layer-3 rounded-[40px] group flex flex-col justify-end">
-            <Cpu className="text-primary mb-8" size={40} strokeWidth={1} />
-            <h3 className="text-headline-lg text-on-surface mb-4">Enterprise Systems</h3>
-            <p className="text-body-md text-on-surface-variant/70 leading-relaxed">Building distributed, fault-tolerant microservices that handle extreme concurrency with 99.99% uptime guarantees.</p>
-          </div>
         </div>
       </div>
     </section>
