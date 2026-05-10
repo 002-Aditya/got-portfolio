@@ -71,6 +71,11 @@ export default {
           DEFAULT: '#690005',
           container: '#ffdad6',
         },
+        'status-accent': {
+          rose: '#ff9e9e',
+          amber: '#ffd37c',
+          lavender: '#d6c8ff',
+        },
         background: '#141313',
         'on-background': '#e5e2e1',
       },
