@@ -20,7 +20,6 @@ import {
   Atom,
   Palette,
   Shapes,
-  ArrowRight,
 } from "lucide-react";
 
 import { SKILLS_DATA, STATS_DATA } from "../../constants/portfolioData";
@@ -43,28 +42,24 @@ const IconMap = {
 };
 
 const SkillIconMap = {
-  // Backend
   "Node.js": Hexagon,
   "Spring Boot": Leaf,
   Java: Coffee,
   Python: Terminal,
   Go: Cpu,
 
-  // Data
   PostgreSQL: Database,
   Kafka: Zap,
   RabbitMQ: MessageSquare,
   "Vector Databases": Layers,
   Redis: Database,
 
-  // AI
   "AI Agents": Bot,
   n8n: Workflow,
   Docker: Box,
   Kubernetes: Box,
   AWS: Cloud,
 
-  // Frontend
   React: Atom,
   TailwindCSS: Palette,
 };
@@ -85,7 +80,7 @@ const container = {
 const item = {
   hidden: {
     opacity: 0,
-    y: 24,
+    y: 30,
   },
   show: {
     opacity: 1,
@@ -105,11 +100,11 @@ export const Skills = () => {
   return (
     <section
       id="stack"
-      className="relative overflow-hidden py-12 md:py-16"
+      className="relative overflow-hidden pb-24 pt-10 md:pb-32"
     >
-      {/* Ambient Background */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-primary/10 blur-[140px]" />
+      {/* Ambient Glow */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-primary/10 blur-[140px]" />
         <div className="absolute bottom-0 right-0 h-[300px] w-[300px] rounded-full bg-primary/5 blur-[120px]" />
       </div>
 
@@ -118,13 +113,13 @@ export const Skills = () => {
         {/* HEADER */}
         {/* ------------------------------------------------------------------ */}
 
-        <div className="mb-20 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-end">
+        <div className="mb-16 md:mb-24 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="mb-6 flex items-center gap-4"
+              className="mb-5 flex items-center gap-4"
             >
               <div className="h-px w-10 bg-primary" />
               <span className="text-[11px] font-bold uppercase tracking-[0.35em] text-primary">
@@ -135,7 +130,6 @@ export const Skills = () => {
             <motion.h2
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
               viewport={{ once: true }}
               className="
                 text-5xl
@@ -147,10 +141,10 @@ export const Skills = () => {
                 md:text-7xl
               "
             >
-              Building
+              Modern
               <br />
               <span className="italic text-primary">
-                Scalable Systems.
+                Tech Stack.
               </span>
             </motion.h2>
           </div>
@@ -158,7 +152,7 @@ export const Skills = () => {
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15 }}
+            transition={{ delay: 0.1 }}
             viewport={{ once: true }}
             className="lg:col-span-5"
           >
@@ -169,7 +163,7 @@ export const Skills = () => {
         </div>
 
         {/* ------------------------------------------------------------------ */}
-        {/* SKILLS GRID */}
+        {/* 2x2 GRID */}
         {/* ------------------------------------------------------------------ */}
 
         <motion.div
@@ -182,7 +176,6 @@ export const Skills = () => {
             grid-cols-1
             gap-5
             md:grid-cols-2
-            xl:grid-cols-3
           "
         >
           {SKILLS_DATA.categories.map((category, index) => {
@@ -193,14 +186,12 @@ export const Skills = () => {
               <motion.div
                 key={index}
                 variants={item}
-                whileHover={{
-                  y: -6,
-                }}
+                whileHover={{ y: -6 }}
                 className="
                   group
                   relative
                   overflow-hidden
-                  rounded-3xl
+                  rounded-[28px]
                   border
                   border-white/[0.06]
                   bg-white/[0.03]
@@ -233,27 +224,22 @@ export const Skills = () => {
                   "
                 />
 
-                {/* Top */}
-                <div className="relative mb-8 flex items-start justify-between">
-                  <div>
+                {/* Heading + Icon */}
+                <div className="relative mb-8 flex items-center justify-between">
+                  <div className="flex items-center gap-4">
                     <div
                       className="
-                        mb-5
                         flex
                         h-14
                         w-14
                         items-center
                         justify-center
                         rounded-2xl
-                        border
-                        border-white/10
-                        bg-white/[0.04]
+                        bg-primary/10
                         text-primary
                         transition-transform
                         duration-500
                         group-hover:scale-110
-                        md:h-16
-                        md:w-16
                       "
                     >
                       <CategoryIcon
@@ -262,28 +248,31 @@ export const Skills = () => {
                       />
                     </div>
 
-                    <h3
-                      className="
-                        text-2xl
-                        font-bold
-                        tracking-tight
-                        text-white
-                      "
-                    >
-                      {category.name}
-                    </h3>
-                  </div>
+                    <div>
+                      <h3
+                        className="
+                          text-2xl
+                          font-bold
+                          tracking-tight
+                          text-white
+                        "
+                      >
+                        {category.name}
+                      </h3>
 
-                  <span
-                    className="
-                      text-xs
-                      font-bold
-                      tracking-[0.25em]
-                      text-white/20
-                    "
-                  >
-                    0{index + 1}
-                  </span>
+                      <span
+                        className="
+                          text-xs
+                          font-bold
+                          uppercase
+                          tracking-[0.25em]
+                          text-white/25
+                        "
+                      >
+                        0{index + 1}
+                      </span>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Skills */}
@@ -295,9 +284,7 @@ export const Skills = () => {
                     return (
                       <motion.div
                         key={sIndex}
-                        whileHover={{
-                          scale: 1.04,
-                        }}
+                        whileHover={{ scale: 1.04 }}
                         className="
                           flex
                           items-center
@@ -321,18 +308,13 @@ export const Skills = () => {
                           className="h-4 w-4 opacity-70"
                           strokeWidth={2}
                         />
+
                         <span className="font-medium">
                           {skill}
                         </span>
                       </motion.div>
                     );
                   })}
-                </div>
-
-                {/* Bottom Accent */}
-                <div className="mt-10 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/25">
-                  <span>Technology Stack</span>
-                  <ArrowRight className="h-3.5 w-3.5" />
                 </div>
               </motion.div>
             );
@@ -344,59 +326,55 @@ export const Skills = () => {
         {/* ------------------------------------------------------------------ */}
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
+          transition={{ delay: 0.15 }}
           className="
-            mt-24
-            rounded-[32px]
-            border
-            border-white/[0.06]
-            bg-white/[0.03]
-            p-6
-            backdrop-blur-xl
-            md:p-10
+            mt-20
+            grid
+            grid-cols-2
+            gap-4
+            md:grid-cols-4
+            md:gap-6
           "
         >
-          <div
-            className="
-              grid
-              grid-cols-2
-              gap-6
-              md:grid-cols-4
-              md:gap-10
-            "
-          >
-            {STATS_DATA.map((stat, index) => {
-              const StatIcon =
-                IconMap[stat.icon] || Activity;
+          {STATS_DATA.map((stat, index) => {
+            const StatIcon =
+              IconMap[stat.icon] || Activity;
 
-              return (
-                <motion.div
-                  key={index}
-                  whileHover={{ y: -4 }}
-                  className="
-                    rounded-2xl
-                    border
-                    border-white/[0.04]
-                    bg-black/10
-                    p-5
-                    transition-all
-                    duration-300
-                    hover:border-primary/20
-                    hover:bg-primary/[0.04]
-                  "
-                >
+            return (
+              <motion.div
+                key={index}
+                whileHover={{ y: -4 }}
+                className="
+                  rounded-3xl
+                  border
+                  border-white/[0.05]
+                  bg-white/[0.03]
+                  p-5
+                  backdrop-blur-xl
+                  transition-all
+                  duration-300
+                  hover:border-primary/20
+                  hover:bg-primary/[0.04]
+
+                  /* MOBILE */
+                  max-md:border-0
+                  max-md:bg-white/[0.02]
+                  max-md:px-2
+                "
+              >
+                {/* Icon + Number */}
+                <div className="mb-4 flex items-center gap-3">
                   <div
                     className="
-                      mb-5
                       flex
                       h-12
                       w-12
                       items-center
                       justify-center
-                      rounded-xl
+                      rounded-2xl
                       bg-primary/10
                       text-primary
                     "
@@ -418,23 +396,22 @@ export const Skills = () => {
                   >
                     {stat.value}
                   </div>
+                </div>
 
-                  <div
-                    className="
-                      mt-2
-                      text-[11px]
-                      font-bold
-                      uppercase
-                      tracking-[0.25em]
-                      text-white/40
-                    "
-                  >
-                    {stat.label}
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
+                {/* Label */}
+                <div
+                  className="
+                    text-[11px]
+                    font-bold
+                    tracking-[0.25em]
+                    text-white/40
+                  "
+                >
+                  {stat.label}
+                </div>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>
