@@ -100,7 +100,7 @@ export const Skills = () => {
   return (
     <section
       id="stack"
-      className="relative overflow-hidden pb-24 pt-10 md:pb-32"
+      className="relative overflow-hidden pb-12 pt-10 md:pb-32"
     >
       {/* Ambient Glow */}
       <div className="absolute inset-0 -z-10 overflow-hidden">

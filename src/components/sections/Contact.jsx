@@ -136,7 +136,7 @@ export const Contact = () => {
 
                     <div className="mt-6 flex items-center justify-between">
                       {/* <span className="text-[10px] font-mono text-on-surface-variant/30 uppercase tracking-[0.2em]">{item.tag}</span> */}
-                      <ArrowRight size={18} className="text-primary opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500" />
+                      {/* <ArrowRight size={18} className="text-primary opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500" /> */}
                     </div>
                   </div>
                 </motion.a>
