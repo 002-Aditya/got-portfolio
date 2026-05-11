@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CONTACT_DATA } from '../../constants/portfolioData';
-import { Mail, Github, Linkedin, ArrowRight, MessageCircle, ExternalLink } from 'lucide-react';
+import { Mail, Github, Linkedin, ArrowRight, MessageCircle, ExternalLink, Phone } from 'lucide-react';
 
 export const Contact = () => {
   const contactItems = [
@@ -36,6 +36,14 @@ export const Contact = () => {
       icon: MessageCircle,
       tag: "Instant / P2P",
       color: "primary"
+    },
+    {
+      label: "Direct Call",
+      value: `+91 ${CONTACT_DATA.whatsapp}`,
+      href: `tel:+91${CONTACT_DATA.whatsapp}`,
+      icon: Phone,
+      tag: "Voice / GSM",
+      color: "secondary"
     }
   ];
 
@@ -119,8 +127,11 @@ export const Contact = () => {
                 >
                   <div className="glass-card p-8 h-full flex flex-col justify-between min-h-[220px] transition-all duration-500 group-hover:bg-surface-container-high/60 group-hover:-translate-y-2 border border-on-surface/5 hover:border-primary/20">
                     <div className="flex justify-between items-start mb-8">
-                      <div className={`w-14 h-14 rounded-2xl tonal-layer-4 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500`}>
-                        {React.createElement(item.icon, { size: 28, strokeWidth: 1.5 })}
+                      <div className="flex items-center gap-4">
+                        <div className={`w-14 h-14 rounded-2xl tonal-layer-4 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500`}>
+                          {React.createElement(item.icon, { size: 28, strokeWidth: 1.5 })}
+                        </div>
+                        <p className="text-label-sm text-[16px] font-bold text-on-surface-variant/40 uppercase tracking-widest">{item.label}</p>
                       </div>
                       <div className="p-2 rounded-lg tonal-layer-3 opacity-0 group-hover:opacity-100 transition-all duration-500">
                         <ExternalLink size={16} className="text-on-surface-variant/40" />
@@ -128,7 +139,6 @@ export const Contact = () => {
                     </div>
                     
                     <div>
-                      <p className="text-label-sm font-bold text-on-surface-variant/40 uppercase tracking-widest mb-2">{item.label}</p>
                       <p className="text-title-lg text-on-surface font-mono break-all leading-tight group-hover:text-primary transition-colors duration-300">
                         {item.value}
                       </p>
@@ -144,6 +154,7 @@ export const Contact = () => {
             </div>
           </div>
         </motion.div>
+
 
         {/* Footer Meta */}
         {/* <motion.div 
