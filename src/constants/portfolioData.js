@@ -37,28 +37,48 @@ export const IMPACT_DATA = [
 
 export const SKILLS_DATA = {
   title: "Technical Arsenal",
-  description: "Building resilient distributed systems, event-driven microservices, and high-performance database architectures.",
+  description: "A comprehensive overview of my technical expertise, from core systems to enterprise infrastructure.",
   categories: [
     {
-      name: "Core Engine",
-      skills: ["Node.js", "Java", "Spring Boot", "Express.js"],
+      name: "Core Competencies",
+      skills: ["REST APIs", "Scalable Systems", "Auth (RBAC)", "Database Design", "API Security"],
+      icon: "shield"
+    },
+    {
+      name: "Languages",
+      skills: ["JavaScript", "Java", "SQL"],
       icon: "code"
     },
     {
-      name: "Data & Messaging",
-      skills: ["PostgreSQL", "RabbitMQ", "Sequelize", "Hibernate"],
-      icon: "database"
-    },
-    {
-      name: "DevOps & Tools",
-      skills: ["Docker", "Microsoft SSO", "JWT", "REST APIs"],
+      name: "Backend Runtime",
+      skills: ["Node.js", "Express.js", "Spring Boot"],
       icon: "cpu"
     },
     {
-      name: "Frontend Meta",
+      name: "Databases & ORM",
+      skills: ["PostgreSQL", "Sequelize", "Hibernate", "Vector DBs"],
+      icon: "database"
+    },
+    {
+      name: "Messaging & Automation",
+      skills: ["Kafka", "RabbitMQ", "n8n", "AI Agents"],
+      icon: "workflow"
+    },
+    {
+      name: "Tools & Infrastructure",
+      skills: ["Docker", "Git", "Postman", "PgAdmin", "Jira"],
+      icon: "box"
+    },
+    {
+      name: "Frontend & UI",
       skills: ["React", "TailwindCSS"],
       icon: "layout"
     },
+    {
+      name: "Soft Skills",
+      skills: ["Problem Solving", "Adaptability", "Communication", "Collaboration"],
+      icon: "activity"
+    }
   ],
 };
 

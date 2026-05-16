@@ -22,6 +22,10 @@ import {
   Shapes,
   ShieldCheck,
   Share2,
+  Shield,
+  GitBranch,
+  Send,
+  Trello,
 } from "lucide-react";
 
 import { SKILLS_DATA, STATS_DATA } from "../../constants/portfolioData";
@@ -41,6 +45,9 @@ const IconMap = {
   cpu: Cpu,
   binary: Binary,
   server: Server,
+  shield: Shield,
+  workflow: Workflow,
+  box: Box,
 };
 
 const SkillIconMap = {
@@ -66,9 +73,14 @@ const SkillIconMap = {
   "Microsoft SSO": ShieldCheck,
   JWT: ShieldCheck,
   "REST APIs": Share2,
+  "Auth (RBAC)": ShieldCheck,
+  "API Security": Shield,
 
   React: Atom,
   TailwindCSS: Palette,
+  Git: GitBranch,
+  Postman: Send,
+  Jira: Trello,
 };
 
 /* -------------------------------------------------------------------------- */
