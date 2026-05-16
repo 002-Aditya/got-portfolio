@@ -79,18 +79,26 @@ const Navbar = () => {
             exit={{ opacity: 0, y: -20 }}
             className="absolute top-full left-0 w-full px-margin-mobile mt-4 md:hidden"
           >
-            <div className="bg-surface-container/80 backdrop-blur-2xl rounded-[32px] p-8 shadow-2xl shadow-black/60 border border-on-surface/5">
-              <div className="flex flex-col gap-4">
+            <div className="bg-surface-container/60 backdrop-blur-3xl rounded-[32px] p-4 lg:p-8 shadow-2xl shadow-black/60 border border-on-surface/5">
+              <div className="flex flex-col gap-2">
                 {NAV_LINKS.map((link) => (
                   <a 
                     key={link.name} 
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="p-4 text-headline-sm text-on-surface hover:text-primary hover:tonal-layer-4 rounded-2xl transition-all font-bold uppercase tracking-widest text-center"
+                    className="p-4 text-headline-sm-mobile text-on-surface hover:text-primary hover:tonal-layer-4 rounded-2xl transition-all font-bold uppercase tracking-widest text-center"
                   >
                     {link.name}
                   </a>
                 ))}
+                <div className="h-px tonal-layer-4 my-2" />
+                <a 
+                  href="#contact" 
+                  onClick={() => setIsOpen(false)}
+                  className="p-6 bg-primary text-surface font-black text-sm uppercase tracking-[0.3em] rounded-2xl text-center shadow-lg shadow-primary/20"
+                >
+                  Connect
+                </a>
               </div>
             </div>
           </motion.div>

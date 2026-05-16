@@ -68,7 +68,7 @@ export const Contact = () => {
   };
 
   return (
-    <section className="py-stack-xl relative overflow-hidden" id="contact">
+    <section className="py-stack-mobile-lg lg:py-stack-xl relative overflow-hidden" id="contact">
       {/* Ambient Background Elements */}
       <div className="ambient-glow-primary -top-[400px] -right-[200px] opacity-10" />
       <div className="ambient-glow-secondary -bottom-[300px] -left-[100px] opacity-5" />
@@ -79,35 +79,34 @@ export const Contact = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-24 items-start"
         >
           {/* Header & Description */}
           <div className="lg:col-span-5">
-            <motion.div variants={itemVariants} className="mb-12">
-              <div className="mb-6 flex items-center gap-4">
-                <span className="text-label-sm font-bold text-primary tracking-[0.4em] uppercase">Connectivity</span>
-                <div className="h-px w-16 tonal-layer-4" />
+            <motion.div variants={itemVariants} className="mb-8 lg:mb-12">
+              <div className="mb-4 lg:mb-6 flex items-center gap-3 lg:gap-4">
+                <div className="h-[2px] w-8 lg:h-px lg:w-16 bg-primary" />
+                <span className="text-label-sm font-bold text-primary tracking-[0.3em] lg:tracking-[0.4em] uppercase">Connectivity</span>
               </div>
-              <h2 className="text-display-lg md:text-display-xl text-on-surface mb-8 leading-[0.9] tracking-tighter">
-                Let's build <br/>
-                <span className="text-primary italic">the Future.</span>
+              <h2 className="text-display-lg-mobile lg:text-display-lg text-on-surface mb-6 lg:mb-8 leading-[1.1] lg:leading-[0.95] tracking-tighter">
+                Let's build <span className="text-primary italic">the Future.</span>
               </h2>
-              <p className="text-body-lg text-on-surface-variant/70 max-w-xl leading-relaxed font-light mb-12">
+              <p className="text-body-md lg:text-body-lg text-on-surface-variant/60 max-w-xl leading-relaxed font-light mb-8 lg:mb-12">
                 {CONTACT_DATA.description}
               </p>
 
               {/* Status Indicator Card */}
-              <div className="glass-card p-8 group border border-on-surface/5 hover:border-primary/20 transition-colors duration-500">
-                <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-label-sm font-bold text-on-surface/50 uppercase tracking-widest">Inquiry Status</h3>
-                  <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
-                    <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                    <span className="text-[10px] font-mono text-primary uppercase font-bold">Live</span>
+              <div className="glass-card p-6 lg:p-8 group border border-on-surface/5 hover:border-primary/20 transition-colors duration-500">
+                <div className="flex items-center justify-between mb-4 lg:mb-6">
+                  <h3 className="text-[10px] lg:text-label-sm font-black text-on-surface/40 uppercase tracking-widest">Inquiry Status</h3>
+                  <div className="flex items-center gap-2 px-2.5 py-1 rounded-full bg-primary/10 border border-primary/20">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                    <span className="text-[9px] font-mono text-primary uppercase font-bold">Live</span>
                   </div>
                 </div>
-                <div className="flex flex-col gap-2">
-                  <span className="text-headline-lg font-mono text-on-surface tracking-tighter">system_ready</span>
-                  <p className="text-label-sm text-on-surface-variant/40 font-mono">EST_LATENCY: 24-48 HOURS</p>
+                <div className="flex flex-col gap-1">
+                  <span className="text-headline-sm-mobile lg:text-headline-lg font-mono text-on-surface tracking-tighter uppercase font-black">system_ready</span>
+                  <p className="text-[10px] text-on-surface-variant/30 font-mono tracking-widest uppercase">LATENCY: 24-48 HRS</p>
                 </div>
               </div>
             </motion.div>
@@ -125,28 +124,23 @@ export const Contact = () => {
                   variants={itemVariants}
                   className="block group"
                 >
-                  <div className="glass-card p-8 h-full flex flex-col justify-between min-h-[220px] transition-all duration-500 group-hover:bg-surface-container-high/60 group-hover:-translate-y-2 border border-on-surface/5 hover:border-primary/20">
-                    <div className="flex justify-between items-start mb-8">
-                      <div className="flex items-center gap-4">
-                        <div className={`w-14 h-14 rounded-2xl tonal-layer-4 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500`}>
-                          {React.createElement(item.icon, { size: 28, strokeWidth: 1.5 })}
+                  <div className="glass-card p-5 lg:p-8 h-full flex flex-col justify-between min-h-[140px] lg:min-h-[220px] transition-all duration-500 group-hover:bg-surface-container-high/60 lg:group-hover:-translate-y-2 border border-on-surface/5 hover:border-primary/20">
+                    <div className="flex justify-between items-start mb-4 lg:mb-8">
+                      <div className="flex items-center gap-3 lg:gap-4">
+                        <div className={`w-10 h-10 lg:w-14 lg:h-14 rounded-lg lg:rounded-2xl tonal-layer-4 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500`}>
+                          {React.createElement(item.icon, { size: 20, strokeWidth: 1.5 })}
                         </div>
-                        <p className="text-label-sm text-[16px] font-bold text-on-surface-variant/40 uppercase tracking-widest">{item.label}</p>
+                        <p className="text-[10px] lg:text-label-sm font-black text-on-surface-variant/30 uppercase tracking-[0.2em] leading-none">{item.label}</p>
                       </div>
-                      <div className="p-2 rounded-lg tonal-layer-3 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                        <ExternalLink size={16} className="text-on-surface-variant/40" />
+                      <div className="p-1.5 rounded-lg tonal-layer-3 opacity-40 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-500">
+                        <ExternalLink size={12} className="text-on-surface-variant/40" />
                       </div>
                     </div>
                     
                     <div>
-                      <p className="text-title-lg text-on-surface font-mono break-all leading-tight group-hover:text-primary transition-colors duration-300">
+                      <p className="text-title-md lg:text-title-lg text-on-surface font-mono break-all leading-tight group-hover:text-primary transition-colors duration-300">
                         {item.value}
                       </p>
-                    </div>
-
-                    <div className="mt-6 flex items-center justify-between">
-                      {/* <span className="text-[10px] font-mono text-on-surface-variant/30 uppercase tracking-[0.2em]">{item.tag}</span> */}
-                      {/* <ArrowRight size={18} className="text-primary opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500" /> */}
                     </div>
                   </div>
                 </motion.a>
@@ -157,16 +151,16 @@ export const Contact = () => {
 
 
         {/* Footer Meta */}
-        {/* <motion.div 
+        <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 1 }}
           viewport={{ once: true }}
-          className="mt-32 pt-12 border-t border-on-surface/5 flex flex-col md:flex-row justify-between items-center gap-8 pb-12"
+          className="mt-24 lg:mt-32 pt-8 lg:pt-12 border-t border-on-surface/5 flex flex-col md:flex-row justify-between items-center gap-8 pb-12"
         >
           <div className="flex items-center gap-4">
             <div className="w-10 h-10 rounded-xl tonal-layer-2 flex items-center justify-center border border-on-surface/5">
-              <span className="text-primary font-bold text-sm">P</span>
+              <span className="text-primary font-bold text-sm">A</span>
             </div>
             <div>
               <p className="text-label-sm font-bold text-on-surface-variant/60 uppercase tracking-[0.3em]">Architect v1.0.4</p>
@@ -174,17 +168,17 @@ export const Contact = () => {
             </div>
           </div>
           
-          <div className="flex flex-col items-center md:items-end gap-2">
-            <p className="text-[10px] font-mono text-on-surface-variant/30 uppercase tracking-widest text-center md:text-right">
+          <div className="flex flex-col items-center md:items-end gap-3">
+            <p className="text-[10px] font-mono text-on-surface-variant/30 uppercase tracking-[0.2em] text-center md:text-right">
               Designed for scalability. Built with precision.
             </p>
             <div className="flex gap-4">
-              <div className="w-2 h-2 rounded-full bg-surface-container-highest" />
-              <div className="w-2 h-2 rounded-full bg-primary/20" />
-              <div className="w-2 h-2 rounded-full bg-primary" />
+              <div className="w-1.5 h-1.5 rounded-full bg-surface-container-highest" />
+              <div className="w-1.5 h-1.5 rounded-full bg-primary/20" />
+              <div className="w-1.5 h-1.5 rounded-full bg-primary" />
             </div>
           </div>
-        </motion.div> */}
+        </motion.div>
       </div>
     </section>
   );

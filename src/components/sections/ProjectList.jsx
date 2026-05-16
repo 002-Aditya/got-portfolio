@@ -82,8 +82,9 @@ export const ProjectList = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", `${xPercentage}%`]);
 
   return (
-    <section ref={targetRef} className="relative h-[500vh]" id="projects">
-      <div className="sticky top-0 h-screen flex items-center overflow-hidden">
+    <section ref={targetRef} className="relative lg:h-[500vh]" id="projects">
+      {/* Desktop View: Horizontal Scroll */}
+      <div className="hidden lg:block sticky top-0 h-screen flex items-center overflow-hidden">
         <motion.div style={{ x, width: `${totalSlides * 100}vw` }} className="flex">
           {/* Intro Slide - High Impact */}
           <div className="w-screen h-screen flex items-center justify-center shrink-0 relative">
@@ -105,6 +106,58 @@ export const ProjectList = () => {
             <ProjectItem key={project.id} project={project} index={index} />
           ))}
         </motion.div>
+      </div>
+
+      {/* Mobile View: Vertical Stacking */}
+      <div className="lg:hidden px-margin-mobile py-stack-mobile-lg space-y-16">
+        <div className="mb-16">
+          <div className="mb-4 flex items-center gap-3">
+            <div className="w-8 h-[2px] bg-primary" />
+            <span className="text-label-sm font-bold text-primary tracking-[0.3em] uppercase">Works</span>
+          </div>
+          <h2 className="text-display-lg-mobile font-black text-on-surface leading-[1.1] tracking-tighter">
+            Selected <span className="text-primary italic">Architectures.</span>
+          </h2>
+        </div>
+
+        <div className="space-y-24">
+          {PROJECTS_DATA.map((project, index) => (
+            <div key={project.id} className="relative group">
+              <div className="mb-6 flex items-center gap-3">
+                <span className="text-[10px] font-mono font-bold text-on-surface/30 uppercase tracking-widest">Node / 0{index + 1}</span>
+                <div className="flex-1 h-px tonal-layer-4" />
+              </div>
+              
+              <h3 className="text-headline-lg-mobile text-on-surface mb-4 font-black tracking-tight leading-none group-hover:text-primary transition-colors">
+                {project.title}
+              </h3>
+              
+              <p className="text-body-md text-on-surface-variant/60 font-light mb-8 leading-relaxed">
+                {project.description}
+              </p>
+              
+              <div className="flex flex-wrap gap-2 mb-8">
+                {project.techStack.map(tech => (
+                  <span key={tech} className="no-line-boundary px-3 py-1.5 rounded-lg text-[9px] uppercase tracking-widest text-on-surface-variant font-bold bg-surface-container-low/50">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              
+              <a 
+                href={project.link} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="group flex items-center justify-between p-5 rounded-2xl tonal-layer-2 active:scale-[0.98] transition-all"
+              >
+                <span className="text-label-sm font-bold text-on-surface uppercase tracking-[0.1em]">View Architecture</span>
+                <div className="w-9 h-9 rounded-full tonal-layer-4 flex items-center justify-center transition-transform group-hover:rotate-45">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
+              </a>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

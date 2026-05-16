@@ -100,7 +100,7 @@ export const Skills = () => {
   return (
     <section
       id="stack"
-      className="relative overflow-hidden pb-12 pt-10 md:pb-32"
+      className="relative overflow-hidden pb-16 pt-stack-mobile-lg lg:pt-20 md:pb-32"
     >
       {/* Ambient Glow */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -108,21 +108,21 @@ export const Skills = () => {
         <div className="absolute bottom-0 right-0 h-[300px] w-[300px] rounded-full bg-primary/5 blur-[120px]" />
       </div>
 
-      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-margin-mobile md:px- gutter lg:px-8">
         {/* ------------------------------------------------------------------ */}
         {/* HEADER */}
         {/* ------------------------------------------------------------------ */}
 
-        <div className="mb-16 md:mb-24 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-end">
+        <div className="mb-12 lg:mb-24 grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="mb-5 flex items-center gap-4"
+              className="mb-4 lg:mb-6 flex items-center gap-3 lg:gap-4"
             >
-              <div className="h-px w-10 bg-primary" />
-              <span className="text-[11px] font-bold uppercase tracking-[0.35em] text-primary">
+              <div className="h-[2px] w-8 lg:h-px lg:w-10 bg-primary" />
+              <span className="text-label-sm font-bold uppercase tracking-[0.3em] lg:tracking-[0.4em] text-primary">
                 Stack / Expertise
               </span>
             </motion.div>
@@ -131,21 +131,9 @@ export const Skills = () => {
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="
-                text-5xl
-                font-black
-                leading-none
-                tracking-tight
-                text-white
-                sm:text-6xl
-                md:text-7xl
-              "
+              className="text-display-lg-mobile lg:text-display-lg font-black leading-[1.1] lg:leading-[0.95] tracking-tighter text-on-surface"
             >
-              Modern
-              <br />
-              <span className="italic text-primary">
-                Tech Stack.
-              </span>
+              Modern <span className="italic text-primary">Tech Stack.</span>
             </motion.h2>
           </div>
 
@@ -156,7 +144,7 @@ export const Skills = () => {
             viewport={{ once: true }}
             className="lg:col-span-5"
           >
-            <p className="max-w-xl text-base leading-relaxed text-white/60 md:text-lg">
+            <p className="max-w-xl text-body-md lg:text-body-lg text-on-surface-variant/60 leading-relaxed font-light">
               {SKILLS_DATA.description}
             </p>
           </motion.div>
@@ -191,17 +179,18 @@ export const Skills = () => {
                   group
                   relative
                   overflow-hidden
-                  rounded-[28px]
+                  rounded-2xl
+                  lg:rounded-[28px]
                   border
-                  border-white/[0.06]
-                  bg-white/[0.03]
+                  border-on-surface/5
+                  bg-surface-container-low/30
                   p-6
                   backdrop-blur-xl
                   transition-all
                   duration-500
                   hover:border-primary/20
-                  hover:bg-white/[0.05]
-                  md:p-8
+                  hover:bg-surface-container-low/50
+                  lg:p-8
                 "
               >
                 {/* Glow */}
@@ -225,58 +214,24 @@ export const Skills = () => {
                 />
 
                 {/* Heading + Icon */}
-                <div className="relative mb-8 flex items-center justify-between">
+                <div className="relative mb-6 flex items-center justify-between">
                   <div className="flex items-center gap-4">
-                    <div
-                      className="
-                        flex
-                        h-14
-                        w-14
-                        items-center
-                        justify-center
-                        rounded-2xl
-                        bg-primary/10
-                        text-primary
-                        transition-transform
-                        duration-500
-                        group-hover:scale-110
-                      "
-                    >
-                      <CategoryIcon
-                        className="h-7 w-7"
-                        strokeWidth={1.8}
-                      />
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-transform duration-500 group-hover:scale-110 lg:h-14 lg:w-14 lg:rounded-2xl">
+                      <CategoryIcon className="h-6 w-6 lg:h-7 lg:w-7" strokeWidth={1.8} />
                     </div>
-
                     <div>
-                      <h3
-                        className="
-                          text-2xl
-                          font-bold
-                          tracking-tight
-                          text-white
-                        "
-                      >
+                      <h3 className="text-lg lg:text-2xl font-black tracking-tight text-on-surface">
                         {category.name}
                       </h3>
-
-                      <span
-                        className="
-                          text-xs
-                          font-bold
-                          uppercase
-                          tracking-[0.25em]
-                          text-white/25
-                        "
-                      >
-                        0{index + 1}
+                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-on-surface/20">
+                        Node / 0{index + 1}
                       </span>
                     </div>
                   </div>
                 </div>
 
                 {/* Skills */}
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2 lg:gap-3">
                   {category.skills.map((skill, sIndex) => {
                     const SkillIcon =
                       SkillIconMap[skill] || Terminal;
@@ -285,33 +240,10 @@ export const Skills = () => {
                       <motion.div
                         key={sIndex}
                         whileHover={{ scale: 1.04 }}
-                        className="
-                          flex
-                          items-center
-                          gap-2
-                          rounded-full
-                          border
-                          border-white/[0.06]
-                          bg-black/20
-                          px-4
-                          py-2.5
-                          text-sm
-                          text-white/75
-                          transition-all
-                          duration-300
-                          hover:border-primary/20
-                          hover:bg-primary/10
-                          hover:text-primary
-                        "
+                        className="flex items-center gap-2 rounded-lg border border-on-surface/5 bg-surface-container-high/20 px-3 py-1.5 text-[11px] lg:text-sm text-on-surface-variant/80 transition-all duration-300 hover:border-primary/20 hover:bg-primary/5 hover:text-primary lg:px-4 lg:py-2.5"
                       >
-                        <SkillIcon
-                          className="h-4 w-4 opacity-70"
-                          strokeWidth={2}
-                        />
-
-                        <span className="font-medium">
-                          {skill}
-                        </span>
+                        <SkillIcon className="h-3 w-3 opacity-60 lg:h-4 lg:w-4" strokeWidth={2.5} />
+                        <span className="font-bold tracking-wide">{skill}</span>
                       </motion.div>
                     );
                   })}
@@ -330,12 +262,7 @@ export const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.15 }}
-          className="
-            mt-16 md:mt-32
-            grid
-            grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
-            gap-6 md:gap-8
-          "
+          className="mt-12 md:mt-32 grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8"
         >
           {STATS_DATA.map((stat, index) => {
             const StatIcon = IconMap[stat.icon] || Activity;
@@ -344,65 +271,17 @@ export const Skills = () => {
               <motion.div
                 key={index}
                 whileHover={{ y: -6 }}
-                className="
-                  rounded-[32px]
-                  border
-                  border-white/[0.06]
-                  bg-white/[0.03]
-                  p-6 md:p-8
-                  backdrop-blur-xl
-                  transition-all
-                  duration-500
-                  hover:border-primary/30
-                  hover:bg-white/[0.06]
-                  group
-                "
+                className="rounded-2xl border border-on-surface/5 bg-surface-container-low/30 p-5 lg:p-8 backdrop-blur-xl transition-all duration-500 hover:border-primary/30 hover:bg-surface-container-low/50 group"
               >
-                {/* Icon + Number */}
-                <div className="mb-6 flex items-center gap-4">
-                  <div
-                    className="
-                      flex
-                      h-14 w-14
-                      items-center
-                      justify-center
-                      rounded-2xl
-                      bg-primary/10
-                      text-primary
-                      group-hover:scale-110
-                      transition-transform
-                      duration-500
-                    "
-                  >
-                    <StatIcon
-                      className="h-6 w-6"
-                      strokeWidth={1.8}
-                    />
+                <div className="mb-4 lg:mb-6 flex items-center gap-3 lg:gap-4">
+                  <div className="flex h-10 w-10 lg:h-14 lg:w-14 items-center justify-center rounded-lg lg:rounded-2xl bg-primary/10 text-primary group-hover:scale-110 transition-transform duration-500">
+                    <StatIcon className="h-5 w-5 lg:h-6 lg:w-6" strokeWidth={1.8} />
                   </div>
-
-                  <div
-                    className="
-                      text-4xl
-                      font-black
-                      leading-none
-                      text-white
-                      tracking-tighter
-                    "
-                  >
+                  <div className="text-2xl lg:text-4xl font-black leading-none text-on-surface tracking-tighter">
                     {stat.value}
                   </div>
                 </div>
-
-                {/* Label */}
-                <div
-                  className="
-                    text-[11px]
-                    font-bold
-                    tracking-[0.3em]
-                    text-white/40
-                    uppercase
-                  "
-                >
+                <div className="text-[9px] lg:text-[11px] font-black tracking-[0.2em] text-on-surface/40 uppercase">
                   {stat.label}
                 </div>
               </motion.div>

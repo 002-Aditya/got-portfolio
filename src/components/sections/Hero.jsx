@@ -34,63 +34,54 @@ export const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col justify-center pt-24 pb-40 overflow-hidden pr-10"
+      className="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-center pt-24 pb-20 lg:pb-40 overflow-hidden"
     >
       {/* Ambient Background Elements */}
-      <div className="ambient-glow-primary top-[-20%] left-[-10%]" />
-      <div className="ambient-glow-secondary bottom-[-10%] right-[-5%]" />
+      <div className="ambient-glow-primary top-[-10%] left-[-10%] md:top-[-20%]" />
+      <div className="ambient-glow-secondary bottom-[-5%] right-[-5%] md:bottom-[-10%]" />
 
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-gutter relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           <motion.div
             variants={container}
             initial="hidden"
             animate="show"
             className="lg:col-span-7"
           >
-            {/* Status Tag */}
-            {/* <motion.div variants={item} className="mb-10">
-              <span className="no-line-boundary px-6 py-2 rounded-full text-label-sm uppercase tracking-[0.2em] text-primary/80">
-                <span className="w-2 h-2 rounded-full bg-primary inline-block mr-3 animate-pulse" />
-                Available for Architecture
-              </span>
-            </motion.div> */}
-
             {/* Heading - Asymmetric focus */}
             <motion.h1
               variants={item}
-              className="text-display-xl-mobile md:text-display-xl text-on-surface mb-10 mt-10 leading-[0.9] tracking-tighter"
+              className="text-display-xl-mobile lg:text-display-xl text-on-surface mb-8 lg:mb-12 mt-4 lg:mt-10 leading-tight lg:leading-[0.95] tracking-tighter"
             >
-              Building Scalable <br />
-              backend systems, <br />
-              workflows, and
-              <br />
-              <p className="text-primary">enterprise-grade APIs.</p>
+              Building Scalable <br className="hidden lg:block" />
+              backend systems, <br className="hidden lg:block" />
+              workflows, and <br className="lg:hidden" />
+              <span className="text-primary italic">enterprise-grade APIs.</span>
             </motion.h1>
 
             {/* Description */}
             <motion.p
               variants={item}
-              className="text-body-lg text-on-surface-variant/80 mb-12 max-w-xl leading-relaxed font-light"
+              className="text-body-md lg:text-body-lg text-on-surface-variant/70 mb-10 lg:mb-12 max-w-xl leading-relaxed font-light"
             >
               {HERO_DATA.description}
             </motion.p>
 
             {/* CTAs */}
             <motion.div variants={item} className="flex flex-wrap gap-4">
-              <a href="#projects">
+              <a href="#projects" className="flex-1 sm:flex-none">
                 <Button
                   variant="primary"
-                  className="rounded-xl px-6 py-3 text-sm tracking-wide"
+                  className="w-full sm:w-auto rounded-xl px-6 py-3.5 text-sm tracking-wide"
                 >
                   {HERO_DATA.primaryCta}
                 </Button>
               </a>
 
-              <a href="#contact">
+              <a href="#contact" className="flex-1 sm:flex-none">
                 <Button
                   variant="secondary"
-                  className="rounded-xl px-6 py-3 text-sm tracking-wide no-line-boundary-high"
+                  className="w-full sm:w-auto rounded-xl px-6 py-3.5 text-sm tracking-wide no-line-boundary-high"
                 >
                   {HERO_DATA.secondaryCta}
                 </Button>
@@ -100,12 +91,12 @@ export const Hero = () => {
 
           {/* Right Side: Code Snippet - Asymmetric displacement */}
           <motion.div
-            initial={{ opacity: 0, y: 40, opacity: 0 }}
-            animate={{ opacity: 1, y: 0, opacity: 1 }}
-            transition={{ duration: 1.5, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-5 relative mt-12 lg:mt-0"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-5 relative mt-6 lg:mt-0"
           >
-            <div className="relative z-10 transform translate-x-0 translate-y-0 lg:translate-x-12 lg:translate-y-8">
+            <div className="relative z-10 transform translate-x-0 lg:translate-x-12 lg:translate-y-8 scale-[0.9] sm:scale-100 origin-left lg:origin-center">
               <CodeSnippet
                 code={codeString}
                 language="architecture.sys"
@@ -114,8 +105,7 @@ export const Hero = () => {
             </div>
 
             {/* Architectural Layering - Background blocks */}
-            <div className="absolute -z-10 top-2 left-2 w-full h-full bg-on-surface/[0.02] backdrop-blur-md rounded-[40px] transform rotate-2 lg:rotate-3 border border-on-surface/5" />
-            <div className="absolute -z-20 top-4 left-4 w-full h-full bg-on-surface/[0.01] backdrop-blur-sm rounded-[40px] transform -rotate-1 lg:-rotate-2 border border-on-surface/5" />
+            <div className="absolute -z-10 top-2 left-2 w-full h-full bg-on-surface/[0.02] backdrop-blur-md rounded-[32px] lg:rounded-[40px] transform rotate-2 lg:rotate-3 border border-on-surface/5" />
           </motion.div>
         </div>
       </div>
