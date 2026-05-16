@@ -20,6 +20,8 @@ import {
   Atom,
   Palette,
   Shapes,
+  ShieldCheck,
+  Share2,
 } from "lucide-react";
 
 import { SKILLS_DATA, STATS_DATA } from "../../constants/portfolioData";
@@ -47,18 +49,23 @@ const SkillIconMap = {
   Java: Coffee,
   Python: Terminal,
   Go: Cpu,
+  "Express.js": Server,
 
   PostgreSQL: Database,
-  Kafka: Zap,
-  RabbitMQ: MessageSquare,
+  RabbitMQ: Zap,
   "Vector Databases": Layers,
   Redis: Database,
+  Sequelize: Database,
+  Hibernate: Layers,
 
   "AI Agents": Bot,
   n8n: Workflow,
   Docker: Box,
   Kubernetes: Box,
   AWS: Cloud,
+  "Microsoft SSO": ShieldCheck,
+  JWT: ShieldCheck,
+  "REST APIs": Share2,
 
   React: Atom,
   TailwindCSS: Palette,

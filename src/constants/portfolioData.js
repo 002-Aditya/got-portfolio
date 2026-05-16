@@ -1,60 +1,61 @@
 export const HERO_DATA = {
-  title: "Backend Engineer",
-  subtitle: "Building scalable backend systems, intelligent workflows, and enterprise-grade APIs.",
+  title: "Backend Architect",
+  subtitle: "Architecting high-performance backends and scalable systems for the modern web.",
   description:
-    "Backend Engineer specializing in Node.js, Spring Boot, PostgreSQL, scalable architectures, and AI-powered automation systems.",
-  primaryCta: "View Projects",
-  secondaryCta: "Contact Me",
-  tags: ["Node.js", "Spring Boot", "PostgreSQL"]
+    "Associate Software Engineer specializing in Node.js, Spring Boot, and PostgreSQL. Expert in designing modular enterprise architectures and optimizing mission-critical database systems.",
+  primaryCta: "View Architectures",
+  secondaryCta: "Connect",
+  tags: ["Node.js", "Spring Boot", "PostgreSQL", "RabbitMQ"]
 };
 
 export const IMPACT_DATA = [
   {
     label: "70%",
-    description: "Reduced database latency",
+    description: "Reduction in query latency",
+    subtext: "Optimized indexing & data patterns",
     icon: "database"
   },
   {
-    label: "Built",
-    description: "enterprise workflows",
-    subtext: "Automated intelligent systems",
+    label: "Modular",
+    description: "Enterprise Systems",
+    subtext: "Architected scalable core backends",
     icon: "workflow"
   },
   {
     label: "Secure",
-    description: "authentication",
-    subtext: "OAuth, SSO & JWT implementation",
+    description: "Identity Protocols",
+    subtext: "Microsoft SSO & OAuth integration",
     icon: "security"
   },
   {
-    label: "PostgreSQL",
-    description: "architecture",
-    subtext: "Complex schema design",
+    label: "Complex",
+    description: "Schema Architectures",
+    subtext: "Multi-model JSONB PostgreSQL",
     icon: "schema"
   }
 ];
 
 export const SKILLS_DATA = {
   title: "Technical Arsenal",
-  description: "Architecting robust backend systems, event-driven integrations, and AI-powered automation pipelines with enterprise-grade tooling.",
+  description: "Building resilient distributed systems, event-driven microservices, and high-performance database architectures.",
   categories: [
     {
-      name: "Core Backend",
-      skills: ["Node.js", "Spring Boot", "Java"],
+      name: "Core Engine",
+      skills: ["Node.js", "Java", "Spring Boot", "Express.js"],
       icon: "code"
     },
     {
-      name: "Data & Streaming",
-      skills: ["PostgreSQL", "Kafka", "RabbitMQ", "Vector Databases"],
+      name: "Data & Messaging",
+      skills: ["PostgreSQL", "RabbitMQ", "Sequelize", "Hibernate"],
       icon: "database"
     },
     {
-      name: "AI & Automation",
-      skills: ["AI Agents", "n8n", "Docker"],
-      icon: "robot"
+      name: "DevOps & Tools",
+      skills: ["Docker", "Microsoft SSO", "JWT", "REST APIs"],
+      icon: "cpu"
     },
     {
-      name: "Frontend",
+      name: "Frontend Meta",
       skills: ["React", "TailwindCSS"],
       icon: "layout"
     },
@@ -64,22 +65,22 @@ export const SKILLS_DATA = {
 export const STATS_DATA = [
   {
     value: "70%",
-    label: "Faster DB Retrieval",
+    label: "Faster Data Retrieval",
     icon: "zap"
   },
   {
-    value: "24/7",
-    label: "Enterprise-grade systems",
+    value: "Node.js",
+    label: "Enterprise Platform",
     icon: "activity"
   },
   {
-    value: "100+",
-    label: "Production deployments",
+    value: "Java",
+    label: "Scalable HRMS",
     icon: "cloud"
   },
   {
-    value: "50+",
-    label: "Workflow automations",
+    value: "RabbitMQ",
+    label: "Asynchronous Systems",
     icon: "cpu"
   }
 ];
@@ -87,40 +88,48 @@ export const STATS_DATA = [
 export const EXPERIENCE_DATA = [
   {
     id: 1,
-    role: "Senior Backend Engineer",
-    company: "Tech Solutions Inc.",
-    period: "2023 - Present",
-    description: "Architected microservices for high-throughput payment processing systems.",
-    techStack: ["Node.js", "Go", "Kubernetes", "PostgreSQL"],
-  },
-  {
-    id: 2,
-    role: "Backend Engineer",
-    company: "CloudNative Corp",
-    period: "2020 - 2023",
-    description: "Developed robust REST for a global user base.",
-    techStack: ["Python", "Django", "Redis", "AWS"],
-  },
+    role: "Associate Software Engineer",
+    company: "MPC Cloud Consulting Pvt. Ltd.",
+    period: "Aug 2023 – Present",
+    description: "Architecting modular enterprise management backends and scalable SaaS HRMS solutions.",
+    techStack: ["Node.js", "Java", "Spring Boot", "PostgreSQL", "RabbitMQ", "Docker"],
+  }
 ];
 
 export const PROJECTS_DATA = [
   {
     id: "project-1",
-    title: "Distributed Task Queue",
-    summary: "A high-performance, distributed task queue built with Go and Redis.",
+    title: "Unified Business Operations",
+    category: "Node.js",
+    summary: "Modular enterprise management backend for end-to-end business operations.",
     description:
-      "Engineered a highly available task queue that processes millions of jobs per day. It features automatic retries, prioritization, and real-time dashboard analytics.",
-    techStack: ["Go", "Redis", "Docker", "Prometheus"],
-    link: "https://github.com/example/task-queue",
+      "Architected a modular enterprise backend handling projects, customers, vendors, and invoices. Developed secure Microsoft SSO integration with real-time geolocation tracking and a complex multi-model PostgreSQL schema.",
+    techStack: ["Node.js", "Express.js", "Sequelize", "PostgreSQL", "Docker"],
+    link: "#",
+    repoLink: null,
+    config: {
+      "node": "ops-platform",
+      "architecture": "modular-enterprise",
+      "auth": "microsoft-sso",
+      "tracking": "enabled"
+    }
   },
   {
     id: "project-2",
-    title: "Microservices Auth Gateway",
-    summary: "Unified authentication gateway for microservices architecture.",
+    title: "SaaS-Based HRMS",
+    category: "Java",
+    summary: "Scalable HR management system with microservices architecture.",
     description:
-      "Designed and implemented an API gateway that handles JWT validation, rate limiting, and request routing across 20+ microservices.",
-    techStack: ["Node.js", "Express", "JWT", "Nginx"],
-    link: "https://github.com/example/auth-gateway",
+      "Built scalable Spring Boot APIs with Hibernate ORM. Optimized database queries slashing latency by 70%. Integrated RabbitMQ messaging queues for reliable asynchronous communication across microservices.",
+    techStack: ["Java", "Spring Boot", "PostgreSQL", "RabbitMQ", "Docker"],
+    link: "#",
+    repoLink: null,
+    config: {
+      "service": "hrms-core",
+      "architecture": "microservices",
+      "latency": "1.5s",
+      "streaming": "rabbitmq"
+    }
   },
 ];
 

@@ -32,7 +32,7 @@ export const Experience = () => {
                 <div className="lg:col-span-3 pt-2">
                   <div className="lg:sticky lg:top-32 flex flex-row lg:flex-col items-baseline lg:items-start gap-4 lg:gap-0">
                     <span className="text-headline-lg-mobile lg:text-headline-lg font-bold text-on-surface/20 group-hover:text-primary/40 transition-colors duration-500 font-mono leading-none">
-                      {exp.period.split(' - ')[0]}
+                      {exp.period.split(/[–-]/)[0]}
                     </span>
                     <div className="hidden lg:block h-px w-full tonal-layer-4 my-4 group-hover:bg-primary/20 transition-colors duration-500" />
                     <span className="text-[10px] lg:text-label-sm font-bold text-on-surface-variant/40 uppercase tracking-widest leading-none">

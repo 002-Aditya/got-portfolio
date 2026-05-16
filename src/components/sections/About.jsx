@@ -108,6 +108,22 @@ export const About = () => {
                   flows.
                 </p>
               </motion.div>
+              <motion.div
+                variants={itemVariants}
+                whileHover={{ y: -5 }}
+                className="p-6 lg:p-8 tonal-layer-1 rounded-2xl lg:rounded-[40px] group transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5"
+              >
+                <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl lg:rounded-2xl tonal-layer-2 flex items-center justify-center text-primary mb-6 lg:mb-8 group-hover:scale-110 transition-transform duration-500">
+                  <Layers className="w-5 h-5 lg:w-6 lg:h-6" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-title-lg text-on-surface mb-2 lg:mb-3 font-bold">
+                  Credentials
+                </h3>
+                <p className="text-body-sm text-on-surface-variant/50 leading-relaxed">
+                  B.Tech in Electronics & Communication <br/>
+                  <span className="text-[10px] uppercase tracking-wider opacity-60">MSIT, Delhi</span>
+                </p>
+              </motion.div>
             </div>
           </div>
 

@@ -25,8 +25,8 @@ export const Hero = () => {
     scale: 'infinite',
     latency: 'minimal',
     database: 'PostgreSQL',
-    APIs: 'REST',
-    authentication & authorization: 'JWT, RBAC',
+    APIs: 'REST, GraphQL',
+    SSO: 'Microsoft/OAuth',
     messaging: 'RabbitMQ',
     containerization: 'Docker',
   });`;
