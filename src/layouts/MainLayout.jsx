@@ -7,18 +7,8 @@ import { CONTACT_DATA } from '../constants/portfolioData';
 
 export const MainLayout = ({ children }) => {
   
-  // Header hide/show logic
-  const { scrollY } = useScroll();
-  const [hidden, setHidden] = useState(false);
-
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious();
-    if (latest > previous && latest > 150) {
-      setHidden(true);
-    } else {
-      setHidden(false);
-    }
-  });
+  // Header is permanently visible as requested
+  const hidden = false;
 
   // Lenis Smooth Scroll Setup
   useEffect(() => {
@@ -67,7 +57,7 @@ export const MainLayout = ({ children }) => {
       </main>
 
       <footer className="py-24 bg-background relative overflow-hidden">
-         <div className="max-w-container-max mx-auto px-margin-mobile md:px-gutter relative z-10 border-t border-on-surface/5 pt-24">
+         <div className="content-container relative z-10 border-t border-on-surface/5 pt-24">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16">
               <div className="lg:col-span-4">
                 <h2 className="text-display-sm text-on-surface mb-6 tracking-tighter">ADITYA.<span className="text-primary italic">DEV</span></h2>

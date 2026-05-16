@@ -58,6 +58,12 @@
   .tonal-layer-2 { @apply bg-surface-container-low; }
   .tonal-layer-3 { @apply bg-surface-container; }
   .tonal-layer-4 { @apply bg-surface-container-high; }
+
+  /* Standard Page Container - Aligned with Navbar items */
+  .content-container {
+    @apply max-w-container-max mx-auto;
+    @apply px-[calc(theme('spacing.margin-mobile')+32px)] md:px-[calc(theme('spacing.gutter')+32px)];
+  }
 }
 
 /* Custom Scrollbar */

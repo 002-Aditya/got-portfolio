@@ -108,7 +108,7 @@ export const Skills = () => {
         <div className="absolute bottom-0 right-0 h-[300px] w-[300px] rounded-full bg-primary/5 blur-[120px]" />
       </div>
 
-      <div className="mx-auto max-w-7xl px-margin-mobile md:px- gutter lg:px-8">
+      <div className="content-container">
         {/* ------------------------------------------------------------------ */}
         {/* HEADER */}
         {/* ------------------------------------------------------------------ */}

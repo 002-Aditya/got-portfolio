@@ -73,7 +73,7 @@ export const Contact = () => {
       <div className="ambient-glow-primary -top-[400px] -right-[200px] opacity-10" />
       <div className="ambient-glow-secondary -bottom-[300px] -left-[100px] opacity-5" />
       
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-gutter relative z-10">
+      <div className="content-container relative z-10">
         <motion.div 
           initial="hidden"
           whileInView="visible"

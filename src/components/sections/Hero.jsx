@@ -40,7 +40,7 @@ export const Hero = () => {
       <div className="ambient-glow-primary top-[-10%] left-[-10%] md:top-[-20%]" />
       <div className="ambient-glow-secondary bottom-[-5%] right-[-5%] md:bottom-[-10%]" />
 
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-gutter relative z-10">
+      <div className="content-container relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           <motion.div
             variants={container}
@@ -96,7 +96,7 @@ export const Hero = () => {
             transition={{ duration: 1.2, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-5 relative mt-6 lg:mt-0"
           >
-            <div className="relative z-10 transform translate-x-0 lg:translate-x-12 lg:translate-y-8 scale-[0.9] sm:scale-100 origin-left lg:origin-center">
+            <div className="relative z-10 transform lg:translate-y-8 scale-[0.9] sm:scale-100 origin-left lg:origin-center">
               <CodeSnippet
                 code={codeString}
                 language="architecture.sys"

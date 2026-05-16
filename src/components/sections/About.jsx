@@ -48,7 +48,7 @@ export const About = () => {
       {/* Background Ambient Glow - Responsive placement */}
       <div className="absolute top-0 -left-20 w-72 h-72 md:w-96 md:h-96 bg-primary/5 blur-[100px] md:blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+      <div className="content-container">
         <motion.div
           variants={containerVariants}
           initial="hidden"
