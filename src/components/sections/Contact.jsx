@@ -83,30 +83,42 @@ export const Contact = () => {
         >
           {/* Header & Description */}
           <div className="lg:col-span-5">
-            <motion.div variants={itemVariants} className="mb-8 lg:mb-12">
-              <div className="mb-4 lg:mb-6 flex items-center gap-3 lg:gap-4">
-                <div className="h-[2px] w-8 lg:h-px lg:w-16 bg-primary" />
-                <span className="text-label-sm font-bold text-primary tracking-[0.3em] lg:tracking-[0.4em] uppercase">Connectivity</span>
+            <motion.div variants={itemVariants} className="mb-12 lg:mb-16">
+              <div className="mb-6 lg:mb-8 flex items-center gap-4">
+                <div className="h-[2px] w-12 bg-primary" />
+                <span className="text-label-sm font-bold text-primary tracking-[0.4em] uppercase">Connectivity</span>
               </div>
-              <h2 className="text-display-lg-mobile lg:text-display-lg text-on-surface mb-6 lg:mb-8 leading-[1.1] lg:leading-[0.95] tracking-tighter">
+              <h2 className="text-display-lg-mobile lg:text-display-lg text-on-surface mb-8 lg:mb-10 leading-[1.05] lg:leading-[0.95] tracking-tighter">
                 Let's build <span className="text-primary italic">the Future.</span>
               </h2>
-              <p className="text-body-md lg:text-body-lg text-on-surface-variant/60 max-w-xl leading-relaxed font-light mb-8 lg:mb-12">
+              <p className="text-body-md lg:text-body-lg text-on-surface-variant/60 max-w-xl leading-relaxed font-light mb-10 lg:mb-16">
                 {CONTACT_DATA.description}
               </p>
 
-              {/* Status Indicator Card */}
-              <div className="glass-card p-6 lg:p-8 group border border-on-surface/5 hover:border-primary/20 transition-colors duration-500">
-                <div className="flex items-center justify-between mb-4 lg:mb-6">
-                  <h3 className="text-[10px] lg:text-label-sm font-black text-on-surface/40 uppercase tracking-widest">Inquiry Status</h3>
-                  <div className="flex items-center gap-2 px-2.5 py-1 rounded-full bg-primary/10 border border-primary/20">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                    <span className="text-[9px] font-mono text-primary uppercase font-bold">Live</span>
+              {/* Status Indicator Card - Premium Obsidian Style */}
+              <div className="glass-card p-6 lg:p-10 group border border-on-surface/5 hover:border-primary/20 transition-all duration-700 relative overflow-hidden">
+                {/* Precision scanning line effect */}
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent h-[200%] -translate-y-full group-hover:translate-y-0 transition-transform duration-[2000ms] pointer-events-none" />
+                
+                <div className="flex items-center justify-between mb-8 lg:mb-10 relative z-10">
+                  <div className="flex flex-col gap-1">
+                    <h3 className="text-[10px] lg:text-label-sm font-black text-on-surface/40 uppercase tracking-[0.2em]">Inquiry Status</h3>
+                    <div className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(165,200,255,0.8)]" />
+                      <span className="text-[11px] font-mono text-primary uppercase font-bold tracking-widest">Active_Node</span>
+                    </div>
+                  </div>
+                  <div className="px-3 py-1.5 rounded-lg tonal-layer-2 border border-on-surface/5">
+                    <span className="text-[10px] font-mono text-on-surface/60 uppercase">v1.0.4</span>
                   </div>
                 </div>
-                <div className="flex flex-col gap-1">
-                  <span className="text-headline-sm-mobile lg:text-headline-lg font-mono text-on-surface tracking-tighter uppercase font-black">system_ready</span>
-                  <p className="text-[10px] text-on-surface-variant/30 font-mono tracking-widest uppercase">LATENCY: 24-48 HRS</p>
+                
+                <div className="flex flex-col gap-2 relative z-10">
+                  <span className="text-headline-md-mobile lg:text-headline-lg font-mono text-on-surface tracking-tighter uppercase font-black">system_ready</span>
+                  <div className="flex items-center justify-between">
+                    <p className="text-[10px] text-on-surface-variant/30 font-mono tracking-widest uppercase">LATENCY: 24-48 HRS</p>
+                    <p className="text-[9px] text-primary/30 font-mono uppercase">0x7F2D1_ARCH</p>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -114,7 +126,7 @@ export const Contact = () => {
 
           {/* Contact Links Grid */}
           <div className="lg:col-span-7">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
               {contactItems.map((item, index) => (
                 <motion.a 
                   key={index} 
@@ -124,16 +136,19 @@ export const Contact = () => {
                   variants={itemVariants}
                   className="block group"
                 >
-                  <div className="glass-card p-5 lg:p-8 h-full flex flex-col justify-between min-h-[140px] lg:min-h-[220px] transition-all duration-500 group-hover:bg-surface-container-high/60 lg:group-hover:-translate-y-2 border border-on-surface/5 hover:border-primary/20">
-                    <div className="flex justify-between items-start mb-4 lg:mb-8">
-                      <div className="flex items-center gap-3 lg:gap-4">
-                        <div className={`w-10 h-10 lg:w-14 lg:h-14 rounded-lg lg:rounded-2xl tonal-layer-4 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500`}>
-                          {React.createElement(item.icon, { size: 20, strokeWidth: 1.5 })}
+                  <div className="glass-card p-6 lg:p-8 h-full flex flex-col justify-between min-h-[160px] lg:min-h-[220px] transition-all duration-500 group-hover:bg-surface-container-high/60 lg:group-hover:-translate-y-2 border border-on-surface/5 hover:border-primary/20">
+                    <div className="flex justify-between items-start mb-6 lg:mb-8">
+                      <div className="flex items-center gap-4">
+                        <div className={`w-12 h-12 lg:w-16 lg:h-16 rounded-xl lg:rounded-2xl tonal-layer-4 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500`}>
+                          {React.createElement(item.icon, { size: 24, strokeWidth: 1.5 })}
                         </div>
-                        <p className="text-[10px] lg:text-label-sm font-black text-on-surface-variant/30 uppercase tracking-[0.2em] leading-none">{item.label}</p>
+                        <div className="flex flex-col">
+                          <p className="text-[10px] lg:text-label-sm font-black text-on-surface-variant/30 uppercase tracking-[0.2em] mb-1">{item.label}</p>
+                          <span className="text-[9px] font-mono text-primary/40 uppercase tracking-widest">{item.tag}</span>
+                        </div>
                       </div>
-                      <div className="p-1.5 rounded-lg tonal-layer-3 opacity-40 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-500">
-                        <ExternalLink size={12} className="text-on-surface-variant/40" />
+                      <div className="p-2 rounded-lg tonal-layer-3 opacity-40 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-500">
+                        <ExternalLink size={14} className="text-on-surface-variant/40" />
                       </div>
                     </div>
                     
