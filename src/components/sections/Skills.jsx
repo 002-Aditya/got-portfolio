@@ -177,7 +177,7 @@ export const Skills = () => {
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true }}
           className="
             grid
             grid-cols-1

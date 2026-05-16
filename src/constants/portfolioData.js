@@ -66,7 +66,7 @@ export const SKILLS_DATA = {
     },
     {
       name: "Tools & Infrastructure",
-      skills: ["Docker", "Git", "Postman", "PgAdmin", "Jira"],
+      skills: ["Docker", "Git", "Bitbucket", "GitHub", "Postman", "Jira", "PgAdmin", "VS Code", "WebStorm", "Spring Tool Suite"],
       icon: "box"
     },
     {
@@ -76,7 +76,7 @@ export const SKILLS_DATA = {
     },
     {
       name: "Soft Skills",
-      skills: ["Problem Solving", "Adaptability", "Communication", "Collaboration"],
+      skills: ["Problem Solving", "Adaptability", "Communication", "Collaboration", "Debugging", "Critical Thinking"],
       icon: "activity"
     }
   ],
@@ -126,7 +126,7 @@ export const PROJECTS_DATA = [
       "Architected a modular enterprise backend handling projects, customers, vendors, and invoices. Developed secure Microsoft SSO integration with real-time geolocation tracking and a complex multi-model PostgreSQL schema.",
     techStack: ["Node.js", "Express.js", "Sequelize", "PostgreSQL", "Docker"],
     link: "#",
-    repoLink: null,
+    repoLink: "https://github.com/002-Aditya",
     config: {
       "node": "ops-platform",
       "architecture": "modular-enterprise",
@@ -143,7 +143,7 @@ export const PROJECTS_DATA = [
       "Built scalable Spring Boot APIs with Hibernate ORM. Optimized database queries slashing latency by 70%. Integrated RabbitMQ messaging queues for reliable asynchronous communication across microservices.",
     techStack: ["Java", "Spring Boot", "PostgreSQL", "RabbitMQ", "Docker"],
     link: "#",
-    repoLink: null,
+    repoLink: "https://github.com/002-Aditya",
     config: {
       "service": "hrms-core",
       "architecture": "microservices",
