@@ -151,7 +151,7 @@ export const Contact = () => {
 
 
         {/* Footer Meta */}
-        <motion.div 
+        {/* <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 1 }}
@@ -178,7 +178,7 @@ export const Contact = () => {
               <div className="w-1.5 h-1.5 rounded-full bg-primary" />
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
