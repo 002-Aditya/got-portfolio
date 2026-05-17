@@ -119,7 +119,7 @@ export const Skills = () => {
   return (
     <section
       id="stack"
-      className="relative overflow-hidden pb-16 pt-stack-mobile-lg lg:pt-20 md:pb-32"
+      className="relative overflow-hidden pb-16 pt-32 lg:pt-20 md:pb-32"
     >
       {/* Ambient Glow */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -188,29 +188,28 @@ export const Skills = () => {
                 {/* Mobile View: Technical Index */}
                 <motion.div 
                   variants={item}
-                  className="lg:hidden py-8 border-b border-on-surface/5 first:pt-0 last:border-0"
+                  className="lg:hidden py-4 first:pt-0"
                 >
-                  <div className="flex items-center gap-4 mb-6">
+                  <div className="flex items-center gap-4 mb-4">
                     <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
                       <CategoryIcon size={22} strokeWidth={2} />
                     </div>
                     <div>
-                      <span className="text-[9px] font-mono text-on-surface/20 uppercase tracking-[0.2em] block mb-0.5">
-                        ENTRY / 0{index + 1}
-                      </span>
                       <h3 className="text-title-md-mobile font-black text-on-surface uppercase tracking-tight">
                         {category.name}
                       </h3>
                     </div>
                   </div>
                   
-                  <div className="flex flex-wrap gap-x-6 gap-y-4">
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-3.5">
                     {category.skills.map((skill, sIndex) => {
                       const SkillIcon = SkillIconMap[skill] || Terminal;
                       return (
-                        <div key={sIndex} className="flex items-center gap-2.5 group/skill">
-                          <SkillIcon size={14} className="text-primary/40 group-hover/skill:text-primary transition-colors" />
-                          <span className="text-[13px] font-bold text-on-surface-variant/80 tracking-wide uppercase">
+                        <div key={sIndex} className="flex items-center gap-3 py-1 group/skill">
+                          <div className="flex h-6.5 w-6.5 shrink-0 items-center justify-center rounded bg-primary/5 text-primary/40 group-hover/skill:text-primary transition-colors">
+                            <SkillIcon size={12} strokeWidth={2} />
+                          </div>
+                          <span className="text-[11px] font-mono font-bold text-on-surface-variant/85 tracking-wide uppercase truncate">
                             {skill}
                           </span>
                         </div>
@@ -311,7 +310,7 @@ export const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.15 }}
-          className="mt-12 md:mt-32 grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8"
+          className="mt-12 md:mt-32 grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
         >
           {STATS_DATA.map((stat, index) => {
             const StatIcon = IconMap[stat.icon] || Activity;
@@ -320,18 +319,26 @@ export const Skills = () => {
               <motion.div
                 key={index}
                 whileHover={{ y: -6 }}
-                className="rounded-2xl border border-on-surface/5 bg-surface-container-low/30 p-5 lg:p-8 backdrop-blur-xl transition-all duration-500 hover:border-primary/30 hover:bg-surface-container-low/50 group"
+                className="rounded-2xl border border-on-surface/5 bg-surface-container-low/30 p-5 lg:p-6 backdrop-blur-xl transition-all duration-500 hover:border-primary/30 hover:bg-surface-container-low/50 group flex flex-col justify-between min-h-[140px] lg:min-h-[180px]"
               >
-                <div className="mb-4 lg:mb-6 flex items-center gap-3 lg:gap-4">
-                  <div className="flex h-10 w-10 lg:h-14 lg:w-14 items-center justify-center rounded-lg lg:rounded-2xl bg-primary/10 text-primary group-hover:scale-110 transition-transform duration-500">
-                    <StatIcon className="h-5 w-5 lg:h-6 lg:w-6" strokeWidth={1.8} />
+                {/* Top: Icon & Metadata Tag */}
+                <div className="mb-3 lg:mb-5 flex justify-between items-start">
+                  <div className="flex h-9 w-9 lg:h-12 lg:w-12 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:scale-110 transition-transform duration-500 shrink-0">
+                    <StatIcon className="h-4.5 w-4.5 lg:h-5.5 lg:w-5.5" strokeWidth={1.8} />
                   </div>
-                  <div className="text-2xl lg:text-4xl font-black leading-none text-on-surface tracking-tighter">
+                  <span className="text-[8px] lg:text-[9px] font-mono text-on-surface/10 uppercase tracking-widest font-bold">
+                    STAT // 0{index + 1}
+                  </span>
+                </div>
+
+                {/* Bottom: Stacking Stat Value & Label */}
+                <div className="space-y-1">
+                  <div className="text-lg lg:text-2xl font-black text-on-surface tracking-tight uppercase truncate">
                     {stat.value}
                   </div>
-                </div>
-                <div className="text-[9px] lg:text-[11px] font-black tracking-[0.2em] text-on-surface/40 uppercase">
-                  {stat.label}
+                  <div className="text-[9px] lg:text-[10px] font-mono font-bold tracking-widest text-primary/70 uppercase">
+                    {stat.label}
+                  </div>
                 </div>
               </motion.div>
             );

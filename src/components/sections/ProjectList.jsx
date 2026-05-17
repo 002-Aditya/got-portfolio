@@ -122,7 +122,7 @@ export const ProjectList = () => {
       </div>
 
       {/* Mobile View: Vertical Stacking */}
-      <div className="lg:hidden px-margin-mobile py-stack-mobile-lg space-y-16">
+      <div className="lg:hidden content-container pt-32 pb-16 space-y-16">
         <div className="mb-16">
           <div className="mb-4 flex items-center gap-3">
             <div className="w-8 h-[2px] bg-primary" />
@@ -149,40 +149,28 @@ export const ProjectList = () => {
                 {project.description}
               </p>
               
-              <div className="flex flex-wrap gap-2 mb-8">
+              <div className="flex flex-wrap gap-1.5 mb-6">
                 {project.techStack.map(tech => (
-                  <span key={tech} className="no-line-boundary px-3 py-1.5 rounded-lg text-[9px] uppercase tracking-widest text-on-surface-variant font-bold bg-surface-container-low/50">
+                  <span key={tech} className="px-2 py-1 rounded border border-primary/10 bg-primary/5 text-[9px] font-mono tracking-wider font-bold text-primary/80 uppercase">
                     {tech}
                   </span>
                 ))}
               </div>
               
-              <div className="grid grid-cols-1 gap-3">
-                {/* <a 
-                  href={project.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="group flex items-center justify-between p-5 rounded-2xl tonal-layer-2 active:scale-[0.98] transition-all"
-                >
-                  <span className="text-label-sm font-bold text-on-surface uppercase tracking-[0.1em]">View Architecture</span>
-                  <div className="w-9 h-9 rounded-full tonal-layer-4 flex items-center justify-center transition-transform group-hover:rotate-45">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                  </div>
-                </a> */}
-
+              <div className="grid grid-cols-1">
                 {project.repoLink && (
                   <a 
                     href={project.repoLink} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="group flex items-center justify-between p-5 rounded-2xl tonal-layer-1 active:scale-[0.98] transition-all"
+                    className="group flex items-center justify-between py-4 border-b border-on-surface/5 active:opacity-70 transition-all font-mono"
                   >
-                    <div className="flex items-center gap-3">
-                      <Github className="w-5 h-5 text-on-surface-variant" strokeWidth={1.5} />
-                      <span className="text-label-sm font-bold text-on-surface-variant uppercase tracking-[0.1em]">View Repository</span>
+                    <div className="flex items-center gap-2 text-xs font-bold tracking-wide text-primary">
+                      <span className="text-on-surface-variant/40">$ cat repo.sh //</span>
+                      <span className="uppercase">view repository</span>
                     </div>
-                    <div className="w-9 h-9 rounded-full tonal-layer-3 flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    <div className="w-8 h-8 rounded-full border border-on-surface/5 flex items-center justify-center text-on-surface/20 group-hover:border-primary/30 group-hover:text-primary transition-all">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                     </div>
                   </a>
                 )}

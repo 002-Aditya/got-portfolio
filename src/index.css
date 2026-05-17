@@ -22,7 +22,7 @@
   }
 
   section {
-    scroll-margin-top: 100px;
+    scroll-margin-top: 130px;
   }
 }
 
@@ -62,7 +62,7 @@
   /* Standard Page Container - Aligned with Navbar items */
   .content-container {
     @apply max-w-container-max mx-auto;
-    @apply px-[calc(theme('spacing.margin-mobile')+32px)] md:px-[calc(theme('spacing.gutter')+32px)];
+    @apply px-margin-mobile md:px-[calc(theme('spacing.gutter')+32px)];
   }
 }
 

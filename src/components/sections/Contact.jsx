@@ -68,7 +68,7 @@ export const Contact = () => {
   };
 
   return (
-    <section className="py-stack-mobile-lg lg:py-stack-xl relative overflow-hidden" id="contact">
+    <section className="pt-32 pb-16 lg:py-stack-xl relative overflow-hidden" id="contact">
       {/* Ambient Background Elements */}
       <div className="ambient-glow-primary -top-[400px] -right-[200px] opacity-10" />
       <div className="ambient-glow-secondary -bottom-[300px] -left-[100px] opacity-5" />
@@ -147,7 +147,7 @@ export const Contact = () => {
                           </span>
                         </div>
                         <h4 className="text-title-md-mobile font-black text-on-surface uppercase tracking-tight">{item.label}</h4>
-                        <p className="text-[13px] text-primary/50 font-mono truncate max-w-[180px]">{item.value}</p>
+                        <p className="text-[12px] text-primary/50 font-mono truncate max-w-[190px] xs:max-w-[240px] sm:max-w-none block">{item.value}</p>
                       </div>
                     </div>
                     <div className="w-10 h-10 rounded-full border border-on-surface/5 flex items-center justify-center text-on-surface/20 group-hover:border-primary/30 group-hover:text-primary transition-all duration-500">

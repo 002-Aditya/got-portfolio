@@ -34,7 +34,7 @@ export const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-center pt-24 pb-20 lg:pb-40 overflow-hidden"
+      className="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-center pt-36 pb-20 lg:pb-40 overflow-hidden"
     >
       {/* Ambient Background Elements */}
       <div className="ambient-glow-primary top-[-10%] left-[-10%] md:top-[-20%]" />
@@ -51,37 +51,37 @@ export const Hero = () => {
             {/* Heading - Asymmetric focus */}
             <motion.h1
               variants={item}
-              className="text-display-xl-mobile lg:text-display-xl text-on-surface mb-8 lg:mb-12 mt-4 lg:mt-10 leading-tight lg:leading-[0.95] tracking-tighter"
+              className="text-[32px] sm:text-[38px] md:text-[44px] lg:text-[56px] xl:text-[64px] text-on-surface mb-8 lg:mb-12 mt-4 lg:mt-10 leading-[1.1] lg:leading-[1.0] tracking-tighter font-extrabold"
             >
               Building Scalable <br className="hidden lg:block" />
               backend systems, <br className="hidden lg:block" />
               workflows, and <br className="lg:hidden" />
               <span className="text-primary italic">enterprise-grade APIs.</span>
             </motion.h1>
-
+ 
             {/* Description */}
             <motion.p
               variants={item}
-              className="text-body-md lg:text-body-lg text-on-surface-variant/70 mb-10 lg:mb-12 max-w-xl leading-relaxed font-light"
+              className="text-body-sm lg:text-body-md text-on-surface-variant/70 mb-10 lg:mb-12 max-w-xl leading-relaxed font-light"
             >
               {HERO_DATA.description}
             </motion.p>
-
+ 
             {/* CTAs */}
-            <motion.div variants={item} className="flex flex-wrap gap-4">
-              <a href="#projects" className="flex-1 sm:flex-none">
+            <motion.div variants={item} className="grid grid-cols-2 gap-4 w-full sm:flex sm:w-auto">
+              <a href="#projects" className="w-full sm:w-auto">
                 <Button
                   variant="primary"
-                  className="w-full sm:w-auto rounded-xl px-6 py-3.5 text-sm tracking-wide"
+                  className="w-full sm:w-auto rounded-xl px-6 py-3.5 text-sm tracking-wide h-full flex items-center justify-center text-center"
                 >
                   {HERO_DATA.primaryCta}
                 </Button>
               </a>
-
-              <a href="#contact" className="flex-1 sm:flex-none">
+ 
+              <a href="#contact" className="w-full sm:w-auto">
                 <Button
                   variant="secondary"
-                  className="w-full sm:w-auto rounded-xl px-6 py-3.5 text-sm tracking-wide no-line-boundary-high"
+                  className="w-full sm:w-auto rounded-xl px-6 py-3.5 text-sm tracking-wide no-line-boundary-high h-full flex items-center justify-center text-center"
                 >
                   {HERO_DATA.secondaryCta}
                 </Button>
@@ -96,7 +96,7 @@ export const Hero = () => {
             transition={{ duration: 1.2, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-5 relative mt-6 lg:mt-0"
           >
-            <div className="relative z-10 transform lg:translate-y-8 scale-[0.9] sm:scale-100 origin-left lg:origin-center">
+            <div className="relative z-10 transform lg:translate-y-8 scale-95 sm:scale-100">
               <CodeSnippet
                 code={codeString}
                 language="architecture.sys"

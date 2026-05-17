@@ -5,7 +5,7 @@ import { Briefcase, ArrowUpRight } from 'lucide-react';
 
 export const Experience = () => {
   return (
-    <section className="py-stack-mobile-lg lg:py-stack-xl relative z-10" id="experience">
+    <section className="pt-32 pb-16 lg:py-stack-xl relative z-10" id="experience">
       <div className="content-container">
         <div className="mb-12 lg:mb-20 grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 items-end">
           <div className="md:col-span-8">
