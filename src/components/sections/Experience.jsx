@@ -24,10 +24,66 @@ export const Experience = () => {
           </div>
         </div>
         
-        <div className="space-y-12">
+        <div className="space-y-4 lg:space-y-12">
           {EXPERIENCE_DATA.map((exp, index) => (
             <div key={exp.id} className="relative group">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16">
+              {/* Mobile View: Architectural Timeline */}
+              <div className="lg:hidden flex gap-5 relative overflow-hidden">
+                {/* Timeline Path */}
+                <div className="flex flex-col items-center pt-2">
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    className="w-2.5 h-2.5 rounded-full bg-primary relative z-10 shadow-[0_0_10px_rgba(165,200,255,0.4)]" 
+                  />
+                  {index !== EXPERIENCE_DATA.length - 1 && (
+                    <motion.div 
+                      initial={{ height: 0 }}
+                      whileInView={{ height: '100%' }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8, ease: "easeInOut" }}
+                      className="w-px flex-1 bg-on-surface/10 mt-2" 
+                    />
+                  )}
+                </div>
+                
+                {/* Content Area */}
+                <motion.div 
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  className="pb-12 flex-1"
+                >
+                  <div className="flex flex-col gap-1 mb-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] font-mono text-primary font-bold tracking-widest uppercase">
+                        {exp.period.split(/[–-]/)[0]} // 0x{exp.id}
+                      </span>
+                      <ArrowUpRight className="text-on-surface/20" size={14} />
+                    </div>
+                    <h3 className="text-headline-md-mobile font-black text-on-surface leading-tight uppercase tracking-tighter">
+                      {exp.role}
+                    </h3>
+                    <span className="text-title-md-mobile text-primary/70 font-bold">{exp.company}</span>
+                  </div>
+
+                  <p className="text-body-sm text-on-surface-variant/60 mb-6 leading-relaxed font-light">
+                    {exp.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-x-4 gap-y-2">
+                    {exp.techStack.map((tech) => (
+                      <span key={tech} className="text-[9px] font-mono text-on-surface/30 uppercase tracking-widest">
+                        #{tech}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Desktop View: Architectural Layer */}
+              <div className="hidden lg:grid grid-cols-12 gap-16">
                 {/* Period - Technical Metadata */}
                 <div className="lg:col-span-3 pt-2">
                   <div className="lg:sticky lg:top-32 flex flex-row lg:flex-col items-baseline lg:items-start gap-4 lg:gap-0">
@@ -42,7 +98,7 @@ export const Experience = () => {
                 </div>
 
                 {/* Content - Architectural Layer */}
-                <div className="lg:col-span-9 p-5 lg:p-16 tonal-layer-2 rounded-2xl lg:rounded-[40px] transition-all duration-700 group-hover:tonal-layer-3 group-hover:translate-x-2">
+                <div className="lg:col-span-9 p-16 tonal-layer-2 rounded-[40px] transition-all duration-700 group-hover:tonal-layer-3 group-hover:translate-x-2">
                   <div className="flex flex-col md:flex-row justify-between items-start gap-4 lg:gap-6 mb-6 lg:mb-10">
                     <div>
                       <h3 className="text-headline-md-mobile lg:text-headline-lg font-black text-on-surface mb-1 leading-tight">{exp.role}</h3>

@@ -178,96 +178,126 @@ export const Skills = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="
-            grid
-            grid-cols-1
-            gap-5
-            md:grid-cols-2
-          "
+          className="grid grid-cols-1 gap-0 lg:gap-5 md:grid-cols-2"
         >
           {SKILLS_DATA.categories.map((category, index) => {
-            const CategoryIcon =
-              IconMap[category.icon] || Binary;
+            const CategoryIcon = IconMap[category.icon] || Binary;
 
             return (
-              <motion.div
-                key={index}
-                variants={item}
-                whileHover={{ y: -6 }}
-                className="
-                  group
-                  relative
-                  overflow-hidden
-                  rounded-2xl
-                  lg:rounded-[28px]
-                  border
-                  border-on-surface/5
-                  bg-surface-container-low/30
-                  p-6
-                  backdrop-blur-xl
-                  transition-all
-                  duration-500
-                  hover:border-primary/20
-                  hover:bg-surface-container-low/50
-                  lg:p-8
-                "
-              >
-                {/* Glow */}
-                <div
-                  className="
-                    absolute
-                    right-0
-                    top-0
-                    h-40
-                    w-40
-                    translate-x-1/3
-                    -translate-y-1/3
-                    rounded-full
-                    bg-primary/10
-                    blur-3xl
-                    opacity-0
-                    transition-opacity
-                    duration-500
-                    group-hover:opacity-100
-                  "
-                />
-
-                {/* Heading + Icon */}
-                <div className="relative mb-6 flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-transform duration-500 group-hover:scale-110 lg:h-14 lg:w-14 lg:rounded-2xl">
-                      <CategoryIcon className="h-6 w-6 lg:h-7 lg:w-7" strokeWidth={1.8} />
+              <div key={index}>
+                {/* Mobile View: Technical Index */}
+                <motion.div 
+                  variants={item}
+                  className="lg:hidden py-8 border-b border-on-surface/5 first:pt-0 last:border-0"
+                >
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                      <CategoryIcon size={22} strokeWidth={2} />
                     </div>
                     <div>
-                      <h3 className="text-lg lg:text-2xl font-black tracking-tight text-on-surface">
+                      <span className="text-[9px] font-mono text-on-surface/20 uppercase tracking-[0.2em] block mb-0.5">
+                        ENTRY / 0{index + 1}
+                      </span>
+                      <h3 className="text-title-md-mobile font-black text-on-surface uppercase tracking-tight">
                         {category.name}
                       </h3>
-                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-on-surface/20">
-                        Node / 0{index + 1}
-                      </span>
                     </div>
                   </div>
-                </div>
+                  
+                  <div className="flex flex-wrap gap-x-6 gap-y-4">
+                    {category.skills.map((skill, sIndex) => {
+                      const SkillIcon = SkillIconMap[skill] || Terminal;
+                      return (
+                        <div key={sIndex} className="flex items-center gap-2.5 group/skill">
+                          <SkillIcon size={14} className="text-primary/40 group-hover/skill:text-primary transition-colors" />
+                          <span className="text-[13px] font-bold text-on-surface-variant/80 tracking-wide uppercase">
+                            {skill}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </motion.div>
 
-                {/* Skills */}
-                <div className="flex flex-wrap gap-2 lg:gap-3">
-                  {category.skills.map((skill, sIndex) => {
-                    const SkillIcon =
-                      SkillIconMap[skill] || Terminal;
+                {/* Desktop View: Architectural Card */}
+                <motion.div
+                  variants={item}
+                  whileHover={{ y: -6 }}
+                  className="
+                    hidden
+                    lg:block
+                    group
+                    relative
+                    overflow-hidden
+                    rounded-[28px]
+                    border
+                    border-on-surface/5
+                    bg-surface-container-low/30
+                    p-8
+                    backdrop-blur-xl
+                    transition-all
+                    duration-500
+                    hover:border-primary/20
+                    hover:bg-surface-container-low/50
+                  "
+                >
+                  {/* Glow */}
+                  <div
+                    className="
+                      absolute
+                      right-0
+                      top-0
+                      h-40
+                      w-40
+                      translate-x-1/3
+                      -translate-y-1/3
+                      rounded-full
+                      bg-primary/10
+                      blur-3xl
+                      opacity-0
+                      transition-opacity
+                      duration-500
+                      group-hover:opacity-100
+                    "
+                  />
 
-                    return (
-                      <motion.div
-                        key={sIndex}
-                        whileHover={{ scale: 1.04 }}
-                        className="flex items-center gap-2 rounded-lg border border-on-surface/5 bg-surface-container-high/20 px-3 py-1.5 text-[11px] lg:text-sm text-on-surface-variant/80 transition-all duration-300 hover:border-primary/20 hover:bg-primary/5 hover:text-primary lg:px-4 lg:py-2.5"
-                      >
-                        <SkillIcon className="h-3 w-3 opacity-60 lg:h-4 lg:w-4" strokeWidth={2.5} />
-                        <span className="font-bold tracking-wide">{skill}</span>
-                      </motion.div>
-                    );
-                  })}
-                </div>
-              </motion.div>
+                  {/* Heading + Icon */}
+                  <div className="relative mb-6 flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-transform duration-500 group-hover:scale-110">
+                        <CategoryIcon className="h-7 w-7" strokeWidth={1.8} />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-black tracking-tight text-on-surface">
+                          {category.name}
+                        </h3>
+                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-on-surface/20">
+                          Node / 0{index + 1}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Skills */}
+                  <div className="flex flex-wrap gap-3">
+                    {category.skills.map((skill, sIndex) => {
+                      const SkillIcon =
+                        SkillIconMap[skill] || Terminal;
+
+                      return (
+                        <motion.div
+                          key={sIndex}
+                          whileHover={{ scale: 1.04 }}
+                          className="flex items-center gap-2 rounded-lg border border-on-surface/5 bg-surface-container-high/20 px-4 py-2.5 text-sm text-on-surface-variant/80 transition-all duration-300 hover:border-primary/20 hover:bg-primary/5 hover:text-primary"
+                        >
+                          <SkillIcon className="h-4 w-4 opacity-60" strokeWidth={2.5} />
+                          <span className="font-bold tracking-wide">{skill}</span>
+                        </motion.div>
+                      );
+                    })}
+                  </div>
+                </motion.div>
+              </div>
             );
           })}
         </motion.div>

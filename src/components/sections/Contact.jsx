@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CONTACT_DATA } from '../../constants/portfolioData';
-import { Mail, Github, Linkedin, ArrowRight, MessageCircle, ExternalLink, Phone } from 'lucide-react';
+import { Mail, Github, Linkedin, ArrowUpRight, MessageCircle, Phone } from 'lucide-react';
 
 export const Contact = () => {
   const contactItems = [
@@ -97,7 +97,6 @@ export const Contact = () => {
 
               {/* Status Indicator Card - Premium Obsidian Style */}
               <div className="glass-card p-6 lg:p-10 group border border-on-surface/5 hover:border-primary/20 transition-all duration-700 relative overflow-hidden">
-                {/* Precision scanning line effect */}
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent h-[200%] -translate-y-full group-hover:translate-y-0 transition-transform duration-[2000ms] pointer-events-none" />
                 
                 <div className="flex items-center justify-between mb-8 lg:mb-10 relative z-10">
@@ -126,77 +125,69 @@ export const Contact = () => {
 
           {/* Contact Links Grid */}
           <div className="lg:col-span-7">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 lg:gap-6 border-t lg:border-t-0 border-on-surface/5">
               {contactItems.map((item, index) => (
-                <motion.a 
-                  key={index} 
-                  href={item.href} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  variants={itemVariants}
-                  className="block group"
-                >
-                  <div className="glass-card p-6 lg:p-8 h-full flex flex-col justify-between min-h-[160px] lg:min-h-[220px] transition-all duration-500 group-hover:bg-surface-container-high/60 lg:group-hover:-translate-y-2 border border-on-surface/5 hover:border-primary/20">
-                    <div className="flex justify-between items-start mb-6 lg:mb-8">
-                      <div className="flex items-center gap-4">
-                        <div className={`w-12 h-12 lg:w-16 lg:h-16 rounded-xl lg:rounded-2xl tonal-layer-4 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500`}>
-                          {React.createElement(item.icon, { size: 24, strokeWidth: 1.5 })}
-                        </div>
-                        <div className="flex flex-col">
-                          <p className="text-[10px] lg:text-label-sm font-black text-on-surface-variant/30 uppercase tracking-[0.2em] mb-1">{item.label}</p>
-                          <span className="text-[9px] font-mono text-primary/40 uppercase tracking-widest">{item.tag}</span>
-                        </div>
+                <div key={index}>
+                  {/* Mobile View: Communication Protocol */}
+                  <motion.a 
+                    variants={itemVariants}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="lg:hidden flex items-center justify-between py-8 border-b border-on-surface/5 group"
+                  >
+                    <div className="flex items-center gap-5">
+                      <div className="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center text-primary/40 group-hover:text-primary transition-colors duration-500">
+                        <item.icon size={22} strokeWidth={1.5} />
                       </div>
-                      <div className="p-2 rounded-lg tonal-layer-3 opacity-40 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-500">
-                        <ExternalLink size={14} className="text-on-surface-variant/40" />
+                      <div>
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="text-[9px] font-mono text-on-surface/20 uppercase tracking-[0.2em]">
+                            PROTO / {item.tag.split(' / ')[0]}
+                          </span>
+                        </div>
+                        <h4 className="text-title-md-mobile font-black text-on-surface uppercase tracking-tight">{item.label}</h4>
+                        <p className="text-[13px] text-primary/50 font-mono truncate max-w-[180px]">{item.value}</p>
                       </div>
                     </div>
+                    <div className="w-10 h-10 rounded-full border border-on-surface/5 flex items-center justify-center text-on-surface/20 group-hover:border-primary/30 group-hover:text-primary transition-all duration-500">
+                      <ArrowUpRight size={16} />
+                    </div>
+                  </motion.a>
+
+                  {/* Desktop View: Glass Card */}
+                  <motion.a 
+                    variants={itemVariants}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hidden lg:flex group relative flex-col p-8 lg:p-10 rounded-[32px] glass-card border border-on-surface/5 overflow-hidden transition-all duration-700 hover:border-primary/30 hover:-translate-y-2"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-b from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 translate-y-[-100%] group-hover:animate-scan pointer-events-none" />
                     
-                    <div>
-                      <p className="text-title-md lg:text-title-lg text-on-surface font-mono break-all leading-tight group-hover:text-primary transition-colors duration-300">
-                        {item.value}
-                      </p>
+                    <div className="flex justify-between items-start mb-8 relative z-10">
+                      <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-2xl tonal-layer-3 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500">
+                        <item.icon size={28} strokeWidth={1.5} />
+                      </div>
+                      <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-on-surface/5 flex items-center justify-center text-on-surface/20 group-hover:text-primary group-hover:border-primary/20 transition-all duration-500">
+                        <ArrowUpRight size={20} />
+                      </div>
                     </div>
-                  </div>
-                </motion.a>
+
+                    <div className="mt-auto relative z-10">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="text-[10px] font-mono text-primary/40 uppercase tracking-widest">{item.tag}</span>
+                      </div>
+                      <h4 className="text-headline-md-mobile lg:text-title-lg font-black text-on-surface mb-2 uppercase tracking-tight">{item.label}</h4>
+                      <p className="text-body-sm text-on-surface-variant/60 font-mono break-all">{item.value}</p>
+                    </div>
+                  </motion.a>
+                </div>
               ))}
             </div>
           </div>
         </motion.div>
-
-
-        {/* Footer Meta */}
-        {/* <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.8, duration: 1 }}
-          viewport={{ once: true }}
-          className="mt-24 lg:mt-32 pt-8 lg:pt-12 border-t border-on-surface/5 flex flex-col md:flex-row justify-between items-center gap-8 pb-12"
-        >
-          <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-xl tonal-layer-2 flex items-center justify-center border border-on-surface/5">
-              <span className="text-primary font-bold text-sm">A</span>
-            </div>
-            <div>
-              <p className="text-label-sm font-bold text-on-surface-variant/60 uppercase tracking-[0.3em]">Architect v1.0.4</p>
-              <p className="text-[10px] font-mono text-on-surface-variant/30 uppercase">BUILD_HASH: 0A7F2D1</p>
-            </div>
-          </div>
-          
-          <div className="flex flex-col items-center md:items-end gap-3">
-            <p className="text-[10px] font-mono text-on-surface-variant/30 uppercase tracking-[0.2em] text-center md:text-right">
-              Designed for scalability. Built with precision.
-            </p>
-            <div className="flex gap-4">
-              <div className="w-1.5 h-1.5 rounded-full bg-surface-container-highest" />
-              <div className="w-1.5 h-1.5 rounded-full bg-primary/20" />
-              <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-            </div>
-          </div>
-        </motion.div> */}
       </div>
     </section>
   );
 };
-
-
