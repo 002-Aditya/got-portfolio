@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CONTACT_DATA } from '../../constants/portfolioData';
-import { Mail, Github, Linkedin, ArrowUpRight, MessageCircle, Phone } from 'lucide-react';
+import { Mail, Github, Linkedin, ArrowUpRight, MessageCircle, Phone, FileText } from 'lucide-react';
 
 export const Contact = () => {
   const contactItems = [
@@ -119,6 +119,29 @@ export const Contact = () => {
                     <p className="text-[9px] text-primary/30 font-mono uppercase">0x7F2D1_ARCH</p>
                   </div>
                 </div>
+              </div>
+
+              {/* Resume Download CTA - Balanced Height Card */}
+              <div className="mt-6 glass-card p-6 lg:p-10 border border-primary/10 hover:border-primary/20 transition-all duration-500 relative overflow-hidden flex flex-col gap-6">
+                <div className="flex justify-between items-start">
+                  <div className="flex flex-col gap-1">
+                    <h3 className="text-[10px] lg:text-label-sm font-black text-on-surface/40 uppercase tracking-[0.2em]">Curriculum Vitae</h3>
+                    <span className="text-[11px] font-mono text-primary uppercase font-bold tracking-widest">aditya_resume.pdf</span>
+                  </div>
+                  <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary">
+                    <FileText size={18} />
+                  </div>
+                </div>
+                
+                <a 
+                  href="/Files/Resume.pdf" 
+                  download="Aditya_Resume.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="px-6 py-4 bg-primary text-surface font-black text-xs uppercase tracking-[0.25em] rounded-2xl text-center shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+                >
+                  Download Resume
+                </a>
               </div>
             </motion.div>
           </div>
