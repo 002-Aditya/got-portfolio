@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import Lenis from 'lenis';
 import Navbar from '../components/Navbar';
@@ -75,9 +76,15 @@ export const MainLayout = ({ children }) => {
               <div className="lg:col-span-4 flex flex-col gap-4">
                 <span className="text-label-sm font-bold text-on-surface-variant/30 uppercase tracking-[0.3em] mb-4">Connect_Links</span>
                 <div className="flex gap-8">
-                  <a href={`https://${CONTACT_DATA.github}`} target="_blank" className="text-body-md text-on-surface-variant hover:text-primary transition-colors font-mono">GH</a>
-                  <a href={`https://${CONTACT_DATA.linkedin}`} target="_blank" className="text-body-md text-on-surface-variant hover:text-primary transition-colors font-mono">LI</a>
-                  <a href={`mailto:${CONTACT_DATA.email}`} className="text-body-md text-on-surface-variant hover:text-primary transition-colors font-mono">EM</a>
+                  <a href={`https://${CONTACT_DATA.github}`} target="_blank" className="text-on-surface-variant hover:text-primary transition-colors" aria-label="GitHub">
+                    <Github size={20} />
+                  </a>
+                  <a href={`https://${CONTACT_DATA.linkedin}`} target="_blank" className="text-on-surface-variant hover:text-primary transition-colors" aria-label="LinkedIn">
+                    <Linkedin size={20} />
+                  </a>
+                  <a href={`mailto:${CONTACT_DATA.email}`} className="text-on-surface-variant hover:text-primary transition-colors" aria-label="Email">
+                    <Mail size={20} />
+                  </a>
                 </div>
               </div>
 
