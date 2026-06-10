@@ -134,7 +134,7 @@ export const Contact = () => {
                 </div>
                 
                 <a 
-                  href="/Files/Resume.pdf" 
+                  href="/Files/AdityaKumar_Resume.pdf" 
                   download="AdityaKumar_Resume.pdf"
                   target="_blank"
                   rel="noreferrer"

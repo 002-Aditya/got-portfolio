@@ -55,7 +55,7 @@ const Navbar = () => {
               ))}
               <div className="ml-4 h-8 w-px tonal-layer-4" />
               <a 
-                href="/Files/Resume.pdf" 
+                href="/Files/AdityaKumar_Resume.pdf" 
                 download="AdityaKumar_Resume.pdf"
                 target="_blank"
                 rel="noreferrer"
@@ -103,7 +103,7 @@ const Navbar = () => {
                 ))}
                 <div className="h-px tonal-layer-4 my-2" />
                 <a 
-                  href="/Files/Resume.pdf" 
+                  href="/Files/AdityaKumar_Resume.pdf" 
                   download="AdityaKumar_Resume.pdf"
                   target="_blank"
                   rel="noreferrer"
