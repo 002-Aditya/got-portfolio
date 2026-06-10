@@ -56,7 +56,7 @@ const Navbar = () => {
               <div className="ml-4 h-8 w-px tonal-layer-4" />
               <a 
                 href="/Files/Resume.pdf" 
-                download="Aditya_Resume.pdf"
+                download="AdityaKumar_Resume.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="ml-4 px-5 py-2.5 border border-primary/20 text-primary hover:bg-primary/10 font-bold text-xs uppercase tracking-widest rounded-xl transition-all flex items-center gap-2 hover:scale-105 active:scale-95"
@@ -104,7 +104,7 @@ const Navbar = () => {
                 <div className="h-px tonal-layer-4 my-2" />
                 <a 
                   href="/Files/Resume.pdf" 
-                  download="Aditya_Resume.pdf"
+                  download="AdityaKumar_Resume.pdf"
                   target="_blank"
                   rel="noreferrer"
                   onClick={() => setIsOpen(false)}

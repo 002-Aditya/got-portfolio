@@ -5,12 +5,14 @@
 @tailwind utilities;
 
 @layer base {
-  html,
-  body,
-  *,
-  *::before,
-  *::after {
-    cursor: none !important;
+  @media (pointer: fine) {
+    html,
+    body,
+    *,
+    *::before,
+    *::after {
+      cursor: none !important;
+    }
   }
 
   body {
