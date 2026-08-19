@@ -134,10 +134,8 @@ export const Contact = () => {
                 </div>
                 
                 <a 
-                  href="/Files/AdityaKumar_Resume.pdf" 
-                  download="AdityaKumar_Resume.pdf"
-                  target="_blank"
-                  rel="noreferrer"
+                  href="/Files/Resume_AdityaKumar.pdf"
+                  download="Resume_AdityaKumar.pdf"
                   className="px-6 py-4 bg-primary text-surface font-black text-xs uppercase tracking-[0.25em] rounded-2xl text-center shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2"
                 >
                   Download Resume

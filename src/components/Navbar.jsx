@@ -55,10 +55,8 @@ const Navbar = () => {
               ))}
               <div className="ml-4 h-8 w-px tonal-layer-4" />
               <a 
-                href="/Files/AdityaKumar_Resume.pdf" 
-                download="AdityaKumar_Resume.pdf"
-                target="_blank"
-                rel="noreferrer"
+                href="/Files/Resume_AdityaKumar.pdf"
+                download="Resume_AdityaKumar.pdf"
                 className="ml-4 px-5 py-2.5 border border-primary/20 text-primary hover:bg-primary/10 font-bold text-xs uppercase tracking-widest rounded-xl transition-all flex items-center gap-2 hover:scale-105 active:scale-95"
               >
                 <FileText size={14} />
@@ -103,10 +101,8 @@ const Navbar = () => {
                 ))}
                 <div className="h-px tonal-layer-4 my-2" />
                 <a 
-                  href="/Files/AdityaKumar_Resume.pdf" 
-                  download="AdityaKumar_Resume.pdf"
-                  target="_blank"
-                  rel="noreferrer"
+                  href="/Files/Resume_AdityaKumar.pdf"
+                  download="Resume_AdityaKumar.pdf"
                   onClick={() => setIsOpen(false)}
                   className="p-6 border border-primary/20 text-primary font-black text-sm uppercase tracking-[0.3em] rounded-2xl text-center flex items-center justify-center gap-3 hover:bg-primary/10 transition-all"
                 >
