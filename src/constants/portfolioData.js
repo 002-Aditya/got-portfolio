@@ -107,10 +107,18 @@ export const STATS_DATA = [
 
 export const EXPERIENCE_DATA = [
   {
+    id: 2,
+    role: "Software Engineer",
+    company: "Sarv.com",
+    period: "Aug 2026 – Present",
+    description: "Designing and developing RESTful APIs to support core backend functionality and business logic. Implementing CRM integrations enabling seamless data synchronization between internal systems and third-party CRM platforms.",
+    techStack: ["MongoDB", "Express.js", "React", "Node.js"],
+  },
+  {
     id: 1,
     role: "Associate Software Engineer",
     company: "MPC Cloud Consulting Pvt. Ltd.",
-    period: "Aug 2023 – Present",
+    period: "Aug 2023 – Aug 2026",
     description: "Architecting modular enterprise management backends and scalable SaaS HRMS solutions.",
     techStack: ["Node.js", "Java", "Spring Boot", "PostgreSQL", "RabbitMQ", "Docker"],
   }
