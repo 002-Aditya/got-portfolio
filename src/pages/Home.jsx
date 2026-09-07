@@ -2,6 +2,7 @@ import React from 'react';
 import { Hero } from '../components/sections/Hero';
 import { About } from '../components/sections/About';
 import { ProjectList } from '../components/sections/ProjectList';
+import { PersonalWorks } from '../components/sections/PersonalWorks';
 import { Experience } from '../components/sections/Experience';
 import { Skills } from '../components/sections/Skills';
 import { Contact } from '../components/sections/Contact';
@@ -15,6 +16,7 @@ export const Home = () => {
         <About />
         <ProjectList />
         <Experience />
+        <PersonalWorks />
         <Skills />
         <Contact />
       </div>

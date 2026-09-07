@@ -6,8 +6,9 @@ const NAV_LINKS = [
   // { name: 'Architecture', href: '#home' },
   { name: 'Core', href: '#about' },
   { name: 'Stack', href: '#stack' },
-  { name: 'Chronicle', href: '#experience' },
   { name: 'Projects', href: '#projects' },
+  { name: 'Chronicle', href: '#experience' },
+  { name: 'Personal', href: '#personal-works' },
   // { name: 'Gateway', href: '#contact' },
 ];
 

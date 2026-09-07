@@ -192,6 +192,60 @@ export const PROJECTS_DATA = [
   },
 ];
 
+export const PERSONAL_WORKS_DATA = [
+  {
+    id: "planora",
+    name: "Planora",
+    category: "Full-Stack & Mobile Architecture",
+    badge: "Featured System",
+    tagline: "Offline-first collaborative note-taking and knowledge platform with real-time sync & BYOK AI assistance.",
+    summary: "An offline-first, full-stack note-taking app with real-time sync, AI assistance, and team collaboration across mobile, tablet, and web.",
+    liveUrl: "https://planora-frontend.pages.dev/",
+    repoUrl: "https://github.com/002-Aditya/Planora",
+    highlights: [
+      "End-to-end offline-first architecture with persistent action queue",
+      "Stateless passwordless email OTP + TOTP (2FA) auth (no secrets stored in DB)",
+      "BYOK (Bring Your Own Key) AI integration with AES-256 encrypted key storage",
+      "Teams and collaboration feature with real-time workspace presence",
+      "PostgreSQL-native infinite tree structures using ltree (zero ORM overhead)",
+      "Direct cloud storage uploads to Cloudflare R2 bypassing server bandwidth"
+    ],
+    backend: {
+      title: "Backend Architecture",
+      stack: ["Node.js", "Express", "PostgreSQL", "Socket.io", "Cloudflare R2", "node-cron", "ltree", "otplib", "JWT", "AES-256"],
+      specs: [
+        { label: "Authentication", detail: "Passwordless email OTP + TOTP (2FA) via otplib & JWT — OTP secret never persisted to DB" },
+        { label: "Data Structure", detail: "Infinite folder nesting powered by PostgreSQL ltree extension for high-performance hierarchy traversal" },
+        { label: "Real-time Sync", detail: "Socket.io + PostgreSQL LISTEN/NOTIFY bridge for instant bidirectional event propagation" },
+        { label: "Storage Engine", detail: "Cloudflare R2 with direct presigned upload 3-step handshake avoiding server memory/bandwidth bottlenecks" },
+        { label: "BYOK AI Security", detail: "Users bring their own Anthropic/OpenAI keys, encrypted and stored at rest via AES-256" },
+        { label: "Audit & Jobs", detail: "Scheduled node-cron (every 10 min) batches audit events via persistent queue" }
+      ]
+    },
+    frontend: {
+      title: "Client & Mobile Architecture",
+      stack: ["React Native", "Zustand", "Socket.io-client", "AsyncStorage", "React Navigation", "Cloudflare Pages"],
+      specs: [
+        { label: "Platforms", detail: "React Native universal client (iOS, Android, and Tablet support)" },
+        { label: "State & Hydration", detail: "Zustand reactive stores with instant persistent hydration on application launch" },
+        { label: "Offline Resilience", detail: "AsyncStorage action queue that captures mutations offline and automatically drains on reconnect" },
+        { label: "Real-time Rooms", detail: "Dynamic Socket.io rooms partitioned per workspace and active document" },
+        { label: "Design System", detail: "Custom adaptive light/dark palette with Poppins and Roboto typography" },
+        { label: "Notifications", detail: "In-app and push notification handling with contextual sender name and reply support" }
+      ]
+    },
+    configSnippet: {
+      "system": "Planora",
+      "paradigm": "offline-first-sync",
+      "database": "PostgreSQL (ltree)",
+      "realtime": "Socket.io + PG LISTEN/NOTIFY",
+      "cloudStorage": "Cloudflare R2 (Presigned)",
+      "aiIntegration": "BYOK (AES-256 Encrypted)",
+      "authStrategy": "Stateless OTP + TOTP (2FA)"
+    }
+  }
+];
+
 export const CONTACT_DATA = {
   title: "Ready to build the future?",
   description: "I am actively seeking new opportunities to architect performant systems, specializing in backend engineering and full-stack development. Whether you have a complex technical challenge or are looking for a backend-first collaborator, my inbox is always open.",
