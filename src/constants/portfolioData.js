@@ -2,10 +2,10 @@ export const HERO_DATA = {
   title: "Backend Architect",
   subtitle: "Architecting high-performance backends and scalable systems for the modern web.",
   description:
-    "Associate Software Engineer specializing in Node.js, Spring Boot, and PostgreSQL. Expert in designing modular enterprise architectures and optimizing mission-critical database systems.",
+    "Software Engineer specializing in Node.js, Express.js, Spring Boot, and PostgreSQL. Expert in designing scalable RESTful APIs, Asterisk VoIP telecom infrastructure, and optimizing mission-critical database systems.",
   primaryCta: "View Architectures",
   secondaryCta: "Connect",
-  tags: ["Node.js", "Spring Boot", "PostgreSQL", "RabbitMQ"]
+  tags: ["Node.js", "Express.js", "Spring Boot", "PostgreSQL", "Asterisk (ARI)"]
 };
 
 export const IMPACT_DATA = [
@@ -41,7 +41,7 @@ export const SKILLS_DATA = {
   categories: [
     {
       name: "Core Competencies",
-      skills: ["REST APIs", "Scalable Systems", "Auth (RBAC)", "Database Design", "API Security"],
+      skills: ["REST APIs", "Scalable Systems", "Auth (RBAC)", "Database Design", "API Security", "VoIP & Telecom"],
       icon: "shield"
     },
     {
@@ -66,7 +66,7 @@ export const SKILLS_DATA = {
     },
     {
       name: "Tools & Infrastructure",
-      skills: ["Docker", "Git", "Bitbucket", "GitHub", "Postman", "Jira", "PgAdmin", "VS Code", "WebStorm", "Spring Tool Suite"],
+      skills: ["Asterisk (ARI)", "Docker", "Git", "Bitbucket", "GitHub", "Postman", "Jira", "PgAdmin", "VS Code", "WebStorm", "Spring Tool Suite"],
       icon: "box"
     },
     {
@@ -76,7 +76,7 @@ export const SKILLS_DATA = {
     },
     {
       name: "Soft Skills",
-      skills: ["Problem Solving", "Adaptability", "Communication", "Collaboration", "Debugging", "Critical Thinking"],
+      skills: ["Problem Solving", "Adaptability", "Communication", "Team Collaboration", "Debugging", "Critical Thinking"],
       icon: "activity"
     }
   ],
@@ -99,8 +99,8 @@ export const STATS_DATA = [
     icon: "cloud"
   },
   {
-    value: "RabbitMQ",
-    label: "Asynchronous Systems",
+    value: "Asterisk",
+    label: "VoIP & Telecom Systems",
     icon: "cpu"
   }
 ];
@@ -111,16 +111,30 @@ export const EXPERIENCE_DATA = [
     role: "Software Engineer",
     company: "Sarv.com",
     period: "Aug 2026 – Present",
-    description: "Designing and developing RESTful APIs to support core backend functionality and business logic. Implementing CRM integrations enabling seamless data synchronization between internal systems and third-party CRM platforms.",
-    techStack: ["MongoDB", "Express.js", "React", "Node.js"],
+    description: "Developing robust VoIP communications, custom telecom applications, and third-party enterprise CRM integrations.",
+    highlights: [
+      "Implemented CRM integrations, enabling seamless data synchronization between internal systems and third-party CRM platforms.",
+      "Configured and managed Asterisk Server to handle robust VoIP communications, ensuring high availability and secure SIP trunking for enterprise clients.",
+      "Developed custom telecom applications utilizing Asterisk REST Interface (ARI) and Node.js, enabling real-time call control, dynamic routing, and automated interactive voice responses (IVR)."
+    ],
+    techStack: ["Node.js", "Asterisk (ARI)", "VoIP", "SIP Trunking", "CRM Integrations", "REST APIs"],
   },
   {
     id: 1,
     role: "Associate Software Engineer",
     company: "MPC Cloud Consulting Pvt. Ltd.",
     period: "Aug 2023 – Aug 2026",
-    description: "Architecting modular enterprise management backends and scalable SaaS HRMS solutions.",
-    techStack: ["Node.js", "Java", "Spring Boot", "PostgreSQL", "RabbitMQ", "Docker"],
+    description: "Architected modular enterprise management backends and scalable SaaS HRMS solutions across distributed microservice environments.",
+    highlights: [
+      "Architected a modular enterprise management backend handling projects, customers, vendors, and invoices.",
+      "Developed secure backend authentication flows utilizing a custom Microsoft SSO login handler, coupled with real-time device and geolocation tracking for rigorous audit histories.",
+      "Designed a multi-model PostgreSQL database schema incorporating JSONB, primary/foreign keys, and robust generic functions capable of joining multiple tables while controlling fetch limits.",
+      "Managed the complete end-to-end invoice and expense request lifecycle, designing responsive HTML notification templates to streamline multi-stage workflow approvals.",
+      "Built and deployed scalable backend APIs using Spring Boot, integrating Hibernate ORM to manage complex data access patterns efficiently.",
+      "Spearheaded extensive database query optimizations and implemented strategic indexing, slashing critical data retrieval latency from 5 seconds to 1.5–2 seconds.",
+      "Integrated Kafka messaging queues to facilitate highly reliable, asynchronous communication across disparate microservice environments."
+    ],
+    techStack: ["Node.js", "Express.js", "Java", "Spring Boot", "PostgreSQL", "Kafka", "Docker", "Sequelize"],
   }
 ];
 
@@ -148,15 +162,32 @@ export const PROJECTS_DATA = [
     category: "Java",
     summary: "Scalable HR management system with microservices architecture.",
     description:
-      "Built scalable Spring Boot APIs with Hibernate ORM. Optimized database queries slashing latency by 70%. Integrated RabbitMQ messaging queues for reliable asynchronous communication across microservices.",
-    techStack: ["Java", "Spring Boot", "PostgreSQL", "RabbitMQ", "Docker"],
+      "Built scalable Spring Boot APIs with Hibernate ORM. Optimized database queries slashing latency by 70%. Integrated Kafka messaging queues for reliable asynchronous communication across disparate microservices.",
+    techStack: ["Java", "Spring Boot", "PostgreSQL", "Kafka", "Docker"],
     link: "#",
     repoLink: null,
     config: {
       "service": "hrms-core",
       "architecture": "microservices",
       "latency": "1.5s",
-      "streaming": "rabbitmq"
+      "streaming": "kafka"
+    }
+  },
+  {
+    id: "project-3",
+    title: "Telecom & IVR Platform",
+    category: "VoIP & Node.js",
+    summary: "High-availability VoIP communications and automated IVR system.",
+    description:
+      "Developed custom telecom applications utilizing Asterisk REST Interface (ARI) and Node.js for real-time call control, dynamic routing, and automated IVRs. Configured Asterisk Server for enterprise SIP trunking and built seamless CRM data synchronization pipelines.",
+    techStack: ["Node.js", "Asterisk (ARI)", "VoIP", "SIP Trunking", "CRM Integration", "REST APIs"],
+    link: "#",
+    repoLink: null,
+    config: {
+      "telecom": "asterisk-ari",
+      "voice": "dynamic-ivr-routing",
+      "trunking": "enterprise-sip",
+      "sync": "crm-integrations"
     }
   },
 ];

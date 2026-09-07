@@ -27,9 +27,13 @@ const ProjectItem = ({ project, index }) => {
             {project.description}
           </p>
           
-          <div className="flex flex-wrap gap-3 mb-10">
+          <div className="flex flex-wrap gap-2.5 mb-10">
             {project.techStack.map(tech => (
-              <span key={tech} className="no-line-boundary px-4 py-1.5 rounded-lg text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">
+              <span
+                key={tech}
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-[11px] font-mono font-medium tracking-wider text-primary/90 bg-surface-container-high/90 border border-primary/20 shadow-[0_2px_8px_rgba(0,0,0,0.3)] hover:border-primary/60 hover:bg-primary/10 hover:text-white hover:shadow-[0_0_14px_rgba(165,200,255,0.25)] hover:-translate-y-0.5 transition-all duration-300 backdrop-blur-sm cursor-default"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-primary/70 shadow-[0_0_6px_rgba(165,200,255,0.8)]" />
                 {tech}
               </span>
             ))}

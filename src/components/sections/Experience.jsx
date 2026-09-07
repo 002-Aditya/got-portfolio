@@ -68,14 +68,29 @@ export const Experience = () => {
                     <span className="text-title-md-mobile text-primary/70 font-bold">{exp.company}</span>
                   </div>
 
-                  <p className="text-body-sm text-on-surface-variant/60 mb-6 leading-relaxed font-light">
+                  <p className="text-body-sm text-on-surface-variant/70 mb-3 leading-relaxed font-light">
                     {exp.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-x-4 gap-y-2">
+                  {exp.highlights && exp.highlights.length > 0 && (
+                    <ul className="space-y-2 mb-5">
+                      {exp.highlights.map((highlight, idx) => (
+                        <li key={idx} className="flex items-start gap-2.5 text-[12px] text-on-surface-variant/60 font-light leading-relaxed">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0 shadow-[0_0_8px_rgba(165,200,255,0.5)]" />
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  <div className="flex flex-wrap gap-2">
                     {exp.techStack.map((tech) => (
-                      <span key={tech} className="text-[9px] font-mono text-on-surface/30 uppercase tracking-widest">
-                        #{tech}
+                      <span
+                        key={tech}
+                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] font-mono font-medium tracking-wider text-primary/90 bg-surface-container-high/90 border border-primary/20 shadow-sm"
+                      >
+                        <span className="w-1 h-1 rounded-full bg-primary/70 shadow-[0_0_4px_rgba(165,200,255,0.8)]" />
+                        {tech}
                       </span>
                     ))}
                   </div>
@@ -99,7 +114,7 @@ export const Experience = () => {
 
                 {/* Content - Architectural Layer */}
                 <div className="lg:col-span-9 p-16 tonal-layer-2 rounded-[40px] transition-all duration-700 group-hover:tonal-layer-3 group-hover:translate-x-2">
-                  <div className="flex flex-col md:flex-row justify-between items-start gap-4 lg:gap-6 mb-6 lg:mb-10">
+                  <div className="flex flex-col md:flex-row justify-between items-start gap-4 lg:gap-6 mb-6 lg:mb-8">
                     <div>
                       <h3 className="text-headline-md-mobile lg:text-headline-lg font-black text-on-surface mb-1 leading-tight">{exp.role}</h3>
                       <h4 className="text-title-md-mobile lg:text-title-lg text-primary/80 font-bold">{exp.company}</h4>
@@ -109,13 +124,28 @@ export const Experience = () => {
                     </div>
                   </div>
 
-                  <p className="text-body-md lg:text-body-lg text-on-surface-variant/70 mb-8 lg:mb-12 max-w-4xl leading-relaxed font-light">
+                  <p className="text-body-md lg:text-body-lg text-on-surface-variant/80 mb-5 max-w-4xl leading-relaxed font-light">
                     {exp.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-2 lg:gap-3">
+                  {exp.highlights && exp.highlights.length > 0 && (
+                    <ul className="space-y-3 mb-8 lg:mb-10 max-w-4xl">
+                      {exp.highlights.map((highlight, idx) => (
+                        <li key={idx} className="flex items-start gap-3.5 text-body-sm lg:text-body-md text-on-surface-variant/70 font-light leading-relaxed">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0 shadow-[0_0_8px_rgba(165,200,255,0.5)]" />
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  <div className="flex flex-wrap gap-2 lg:gap-2.5">
                     {exp.techStack.map((tech) => (
-                      <span key={tech} className="no-line-boundary px-3 py-1 lg:px-4 lg:py-1.5 rounded-lg text-[9px] lg:text-label-sm text-on-surface-variant/60 font-bold tracking-widest">
+                      <span
+                        key={tech}
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-[11px] lg:text-xs font-mono font-medium tracking-wider text-primary/90 bg-surface-container-high/90 border border-primary/20 shadow-[0_2px_8px_rgba(0,0,0,0.3)] hover:border-primary/60 hover:bg-primary/10 hover:text-white hover:shadow-[0_0_14px_rgba(165,200,255,0.25)] hover:-translate-y-0.5 transition-all duration-300 backdrop-blur-sm cursor-default"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary/70 shadow-[0_0_6px_rgba(165,200,255,0.8)]" />
                         {tech}
                       </span>
                     ))}
