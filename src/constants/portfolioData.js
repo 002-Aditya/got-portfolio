@@ -204,7 +204,7 @@ export const PERSONAL_WORKS_DATA = [
     repoUrl: "https://github.com/002-Aditya/Planora",
     highlights: [
       "End-to-end offline-first architecture with persistent action queue",
-      "Stateless passwordless email OTP + TOTP (2FA) auth (no secrets stored in DB)",
+      "Google Authenticator / TOTP (2FA) auth (no secrets stored in DB)",
       "BYOK (Bring Your Own Key) AI integration with AES-256 encrypted key storage",
       "Teams and collaboration feature with real-time workspace presence",
       "PostgreSQL-native infinite tree structures using ltree (zero ORM overhead)",
